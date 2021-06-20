@@ -28,7 +28,7 @@ class Character extends FlxSprite
 
 		var tex:FlxAtlasFrames;
 		antialiasing = true;
-		//cval eats piss
+		//cval eats women
 
 		switch (curCharacter)
 		{
