@@ -141,6 +141,22 @@ class Character extends FlxSprite
 				addOffset("singDOWN", 2, -32);
 
 				playAnim('idle');
+			case 'mia':
+				tex = FlxAtlasFrames.fromSparrow('assets/images/Mia.png', 'assets/images/Mia.xml');
+				frames = tex;
+				animation.addByPrefix('idle', 'mia idle', 24, false);
+				animation.addByPrefix('singUP', 'Mia Up', 24);
+				animation.addByPrefix('singRIGHT', 'mia right', 24);
+				animation.addByPrefix('singDOWN', 'Mia Down', 24);
+				animation.addByPrefix('singLEFT', 'Mia Left', 24);
+
+				addOffset('idle');
+				addOffset("singUP", 91, 80);
+				addOffset("singRIGHT", -8, -85);
+				addOffset("singLEFT", 293, -11);
+				addOffset("singDOWN", 62, 8);
+	
+				playAnim('idle');
 			case 'spooky':
 				tex = FlxAtlasFrames.fromSparrow('assets/images/spooky_kids_assets.png', 'assets/images/spooky_kids_assets.xml');
 				frames = tex;
