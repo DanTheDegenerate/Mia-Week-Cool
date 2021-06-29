@@ -60,7 +60,7 @@ class PlayState extends MusicBeatState
 
 	public static var stageSongs:Array<String>;
 	public static var spookySongs:Array<String>;
-	public static var phillySongs:Array<String>;
+	public static var stationSongs:Array<String>;
 	public static var limoSongs:Array<String>;
 	public static var miaSongs:Array<String>;
 	public static var mallSongs:Array<String>;
@@ -145,7 +145,7 @@ class PlayState extends MusicBeatState
 	var halloweenBG:FlxSprite;
 	var isHalloween:Bool = false;
 
-	var phillyCityLights:FlxTypedGroup<FlxSprite>;
+	var stationLights:FlxTypedGroup<FlxSprite>;
 	var phillyTrain:FlxSprite;
 	var trainSound:FlxSound;
 
@@ -194,7 +194,7 @@ class PlayState extends MusicBeatState
 	
 		stageSongs = ["tutorial", "bopeebo", "fresh", "dadbattle"];
 		spookySongs = ["spookeez", "south", "monster"];
-		phillySongs = ["pico", "philly", "blammed"];
+		stationSongs = ["pico", "philly", "blammed"];
 		limoSongs = ["satin-panties", "high", "milf"];
 		miaSongs = ["mia battle"];
 		mallSongs = ["cocoa", "eggnog"];
@@ -249,46 +249,35 @@ class PlayState extends MusicBeatState
 
 			isHalloween = true;
 		}
-		else if (phillySongs.contains(SONG.song.toLowerCase()))
+		else if (stationSongs.contains(SONG.song.toLowerCase()))
 		{
-			curStage = 'philly';
+			curStage = 'station';
 
-			var bg:FlxSprite = new FlxSprite(-100).loadGraphic('assets/images/philly/sky.png');
-			bg.scrollFactor.set(0.1, 0.1);
-			add(bg);
+			var subway:FlxSprite = new FlxSprite(-70).loadGraphic('assets/images/station/subway.png');
+			subway.scrollFactor.set(0.3, 0.3);
+			subway.setGraphicSize(Std.int(subway.width * 0.55));
+			subway.updateHitbox();
+			add(subway);
 
-			var city:FlxSprite = new FlxSprite(-10).loadGraphic('assets/images/philly/city.png');
-			city.scrollFactor.set(0.3, 0.3);
-			city.setGraphicSize(Std.int(city.width * 0.85));
-			city.updateHitbox();
-			add(city);
-
-			phillyCityLights = new FlxTypedGroup<FlxSprite>();
-			add(phillyCityLights);
+			stationLights = new FlxTypedGroup<FlxSprite>();
+			add(stationLights);
 
 			for (i in 0...5)
 			{
-				var light:FlxSprite = new FlxSprite(city.x).loadGraphic('assets/images/philly/win' + i + '.png');
-				light.scrollFactor.set(0.3, 0.3);
-				light.visible = false;
-				light.setGraphicSize(Std.int(light.width * 0.85));
-				light.updateHitbox();
-				phillyCityLights.add(light);
+				var stationLight:FlxSprite = new FlxSprite(-70, 0).loadGraphic('assets/images/station/win' + i + '.png');
+				stationLight.scrollFactor.set(0.3, 0.3);
+				stationLight.setGraphicSize(Std.int(stationLight.width * 0.55));
+				stationLight.updateHitbox();
+				stationLights.add(stationLight);
 			}
 
-			var streetBehind:FlxSprite = new FlxSprite(-40, 50).loadGraphic('assets/images/philly/behindTrain.png');
-			add(streetBehind);
-
-			phillyTrain = new FlxSprite(2000, 360).loadGraphic('assets/images/philly/train.png');
+			phillyTrain = new FlxSprite(2000, 360).loadGraphic('assets/images/station/train.png');
 			add(phillyTrain);
 
 			trainSound = new FlxSound().loadEmbedded('assets/sounds/train_passes' + TitleState.soundExt);
 			FlxG.sound.list.add(trainSound);
 
 			// var cityLights:FlxSprite = new FlxSprite().loadGraphic(AssetPaths.win0.png);
-
-			var street:FlxSprite = new FlxSprite(-40, streetBehind.y).loadGraphic('assets/images/philly/street.png');
-			add(street);
 		}
 		else if (limoSongs.contains(SONG.song.toLowerCase()))
 		{
@@ -1438,7 +1427,7 @@ class PlayState extends MusicBeatState
 
 		switch (curStage)
 		{
-			case 'philly':
+			case 'station':
 				if (trainMoving)
 				{
 					trainFrameTiming += elapsed;
@@ -2821,20 +2810,21 @@ class PlayState extends MusicBeatState
 
 				if (FlxG.random.bool(10) && fastCarCanDrive)
 					fastCarDrive();
-			case "philly":
+			case "station":
+
 				if (!trainMoving)
 					trainCooldown += 1;
 
 				if (totalBeats % 4 == 0)
 				{
-					phillyCityLights.forEach(function(light:FlxSprite)
+					stationLights.forEach(function(light:FlxSprite)
 					{
 						light.visible = false;
 					});
 
-					curLight = FlxG.random.int(0, phillyCityLights.length - 1);
+					curLight = FlxG.random.int(0, stationLights.length - 1);
 
-					phillyCityLights.members[curLight].visible = true;
+					stationLights.members[curLight].visible = true;
 					// phillyCityLights.members[curLight].alpha = 1;
 				}
 

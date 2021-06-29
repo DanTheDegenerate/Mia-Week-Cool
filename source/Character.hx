@@ -170,10 +170,10 @@ class Character extends FlxSprite
 				addOffset('danceLeft');
 				addOffset('danceRight');
 
-				addOffset("singUP", -18, 25);
-				addOffset("singRIGHT", -130, -14);
+				addOffset("singUP", -18, 65);
+				addOffset("singRIGHT", -120, -44);
 				addOffset("singLEFT", 124, -13);
-				addOffset("singDOWN", -46, -144);
+				addOffset("singDOWN", -6, -168);
 
 				playAnim('danceRight');
 			case 'mom':
@@ -271,10 +271,10 @@ class Character extends FlxSprite
 				animation.addByPrefix('singDOWNmiss', 'Pico Down Note MISS', 24, false);
 
 				addOffset('idle');
-				addOffset("singUP", -43, 29);
-				addOffset("singRIGHT", -85, -11);
-				addOffset("singLEFT", 54, 2);
-				addOffset("singDOWN", 198, -76);
+				addOffset("singUP", 27, 139);
+				addOffset("singRIGHT", -84, -11);
+				addOffset("singLEFT", 46, 3);
+				addOffset("singDOWN", -65, -76);
 				addOffset("singUPmiss", -29, 67);
 				addOffset("singRIGHTmiss", -70, 28);
 				addOffset("singLEFTmiss", 62, 50);
@@ -322,6 +322,46 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 
+				flipX = true;
+			
+			case 'week3bf':
+				var tex = FlxAtlasFrames.fromSparrow('assets/images/week3_b3_bf.png', 'assets/images/week3_b3_bf.xml');
+				frames = tex;
+				animation.addByPrefix('idle', 'BF idle dance', 24, false);
+				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
+				animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
+				animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT0', 24, false);
+				animation.addByPrefix('singDOWN', 'BF NOTE DOWN0', 24, false);
+				animation.addByPrefix('singUPmiss', 'BF NOTE UP MISS', 24, false);
+				animation.addByPrefix('singLEFTmiss', 'BF NOTE LEFT MISS', 24, false);
+				animation.addByPrefix('singRIGHTmiss', 'BF NOTE RIGHT MISS', 24, false);
+				animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
+				animation.addByPrefix('hey', 'BF HEY', 24, false);
+				animation.addByPrefix('attack', 'boyfriend attack', 24, false);
+	
+				animation.addByPrefix('firstDeath', "BF dies", 24, false);
+				animation.addByPrefix('deathLoop', "BF Dead Loop", 24, true);
+				animation.addByPrefix('deathConfirm', "BF Dead confirm", 24, false);
+	
+				animation.addByPrefix('scared', 'BF idle shaking', 24);
+	
+				addOffset('idle', -5);
+				addOffset("singUP", -29, 27);
+				addOffset("singRIGHT", -38, -7);
+				addOffset("singLEFT", 12, -6);
+				addOffset("singDOWN", -10, -50);
+				addOffset("singUPmiss", -29, 27);
+				addOffset("singRIGHTmiss", -30, 21);
+				addOffset("singLEFTmiss", 12, 24);
+				addOffset("singDOWNmiss", -11, -19);
+				addOffset("hey", 7, 4);
+				addOffset('firstDeath', 37, 11);
+				addOffset('deathLoop', 37, 5);
+				addOffset('deathConfirm', 37, 69);
+				addOffset('scared', -4);
+	
+				playAnim('idle');
+	
 				flipX = true;
 
 			case 'bf-christmas':
