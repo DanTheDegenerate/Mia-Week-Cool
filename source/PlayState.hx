@@ -330,10 +330,11 @@ class PlayState extends MusicBeatState
 		else if (miaSongs.contains(SONG.song.toLowerCase()))
 			{
 				curStage = 'miaStadium';
-				defaultCamZoom = 0.90;
+				defaultCamZoom = 0.80;
 	
-				var stadiumBG:FlxSprite = new FlxSprite(0, 0).loadGraphic('assets/images/stadium/stadium.png');
-				stadiumBG.scrollFactor.set(0.1, 0.1);
+				var stadiumBG:FlxSprite = new FlxSprite(-560, -200).loadGraphic('assets/images/stadium/stadium.png');
+				stadiumBG.setGraphicSize(Std.int(stadiumBG.width * 0.70));
+				stadiumBG.scrollFactor.set(1, 1);
 				add(stadiumBG);
 			}
 		else if (mallSongs.contains(SONG.song.toLowerCase()))
@@ -649,7 +650,7 @@ class PlayState extends MusicBeatState
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
 			case "mia":
 				dad.x -= -113;
-				dad.y += -164;
+				dad.y += 164;
 		}
 
 		boyfriend = new Boyfriend(770, 450, SONG.player1);
@@ -1570,6 +1571,8 @@ class PlayState extends MusicBeatState
 					case 'schoolEvil':
 						followX = boyfriend.getMidpoint().x - 200;
 						followY = boyfriend.getMidpoint().y - 200;
+					case 'stadium':
+						followX = boyfriend.getMidpoint().x + 200;
 				}
 
 				if (SONG.song.toLowerCase() == 'tutorial')
