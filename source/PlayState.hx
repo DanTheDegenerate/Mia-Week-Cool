@@ -196,7 +196,7 @@ class PlayState extends MusicBeatState
 		spookySongs = ["spookeez", "south", "monster"];
 		stationSongs = ["pico", "philly", "blammed"];
 		limoSongs = ["satin-panties", "high", "milf"];
-		miaSongs = ["mia battle"];
+		miaSongs = ["mia battle", "diva"];
 		mallSongs = ["cocoa", "eggnog"];
 		evilMallSongs = ["winter-horrorland"];
 		schoolSongs = ["senpai", "roses"];
@@ -329,50 +329,12 @@ class PlayState extends MusicBeatState
 
 		else if (miaSongs.contains(SONG.song.toLowerCase()))
 			{
-				curStage = 'miaStage';
+				curStage = 'miaStadium';
 				defaultCamZoom = 0.90;
 	
-				var skyBG:FlxSprite = new FlxSprite(-120, -50).loadGraphic('assets/images/limo/limoSunset.png');
-				skyBG.scrollFactor.set(0.1, 0.1);
-				add(skyBG);
-	
-				var bgLimo:FlxSprite = new FlxSprite(-200, 480);
-				bgLimo.frames = FlxAtlasFrames.fromSparrow('assets/images/limo/bgLimo.png', 'assets/images/limo/bgLimo.xml');
-				bgLimo.animation.addByPrefix('drive', "background limo pink", 24);
-				bgLimo.animation.play('drive');
-				bgLimo.scrollFactor.set(0.4, 0.4);
-				add(bgLimo);
-	
-				grpLimoDancers = new FlxTypedGroup<BackgroundDancer>();
-				add(grpLimoDancers);
-	
-				for (i in 0...5)
-				{
-					var dancer:BackgroundDancer = new BackgroundDancer((370 * i) + 130, bgLimo.y - 400);
-					dancer.scrollFactor.set(0.4, 0.4);
-					grpLimoDancers.add(dancer);
-				}
-	
-				var overlayShit:FlxSprite = new FlxSprite(-500, -600).loadGraphic('assets/images/limo/limoOverlay.png');
-				overlayShit.alpha = 0.5;
-				// add(overlayShit);
-	
-				// var shaderBullshit = new BlendModeEffect(new OverlayShader(), FlxColor.RED);
-	
-				// FlxG.camera.setFilters([new ShaderFilter(cast shaderBullshit.shader)]);
-	
-				// overlayShit.shader = shaderBullshit;
-	
-				var limoTex = FlxAtlasFrames.fromSparrow('assets/images/limo/limoDrive.png', 'assets/images/limo/limoDrive.xml');
-	
-				limo = new FlxSprite(-120, 550);
-				limo.frames = limoTex;
-				limo.animation.addByPrefix('drive', "Limo stage", 24);
-				limo.animation.play('drive');
-				limo.antialiasing = true;
-	
-				fastCar = new FlxSprite(-300, 160).loadGraphic('assets/images/limo/fastCarLol.png');
-				// add(limo);
+				var stadiumBG:FlxSprite = new FlxSprite(-120, -50).loadGraphic('assets/images/stadium/stadium.png');
+				stadiumBG.scrollFactor.set(0.1, 0.1);
+				add(stadiumBG);
 			}
 		else if (mallSongs.contains(SONG.song.toLowerCase()))
 		{
