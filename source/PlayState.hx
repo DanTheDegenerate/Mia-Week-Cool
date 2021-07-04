@@ -332,7 +332,7 @@ class PlayState extends MusicBeatState
 				curStage = 'miaStadium';
 				defaultCamZoom = 0.90;
 	
-				var stadiumBG:FlxSprite = new FlxSprite(-120, -50).loadGraphic('assets/images/stadium/stadium.png');
+				var stadiumBG:FlxSprite = new FlxSprite(0, 0).loadGraphic('assets/images/stadium/stadium.png');
 				stadiumBG.scrollFactor.set(0.1, 0.1);
 				add(stadiumBG);
 			}
@@ -647,6 +647,9 @@ class PlayState extends MusicBeatState
 				dad.x -= 150;
 				dad.y += 100;
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case "mia":
+				dad.x -= -113;
+				dad.y += -164;
 		}
 
 		boyfriend = new Boyfriend(770, 450, SONG.player1);
