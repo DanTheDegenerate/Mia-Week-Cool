@@ -155,6 +155,8 @@ class PlayState extends MusicBeatState
 
 	var upperBoppers:FlxSprite;
 	var bottomBoppers:FlxSprite;
+	var frontBoppers:FlxSprite;
+	var backBoppers:FlxSprite;
 	var santa:FlxSprite;
 
 	var bgGirls:BackgroundGirls;
@@ -330,12 +332,34 @@ class PlayState extends MusicBeatState
 		else if (miaSongs.contains(SONG.song.toLowerCase()))
 			{
 				curStage = 'miaStadium';
-				defaultCamZoom = 0.80;
+				defaultCamZoom = 0.575;
 	
-				var stadiumBG:FlxSprite = new FlxSprite(-560, -200).loadGraphic('assets/images/stadium/stadium.png');
-				stadiumBG.setGraphicSize(Std.int(stadiumBG.width * 0.70));
-				stadiumBG.scrollFactor.set(1, 1);
+				var stadiumBG:FlxSprite = new FlxSprite(-550, -270).loadGraphic('assets/images/stadium/stadium.png');
+				stadiumBG.setGraphicSize(Std.int(stadiumBG.width * 1));
+				stadiumBG.scrollFactor.set(0.9, 0.9);
 				add(stadiumBG);
+
+				backBoppers = new FlxSprite(-550, -327);
+				backBoppers.frames = FlxAtlasFrames.fromSparrow('assets/images/stadium/mia_boppers.png', 'assets/images/stadium/mia_boppers.xml');
+				backBoppers.animation.addByPrefix('bop', "Back Crowd Bop", 24, true);
+				backBoppers.antialiasing = true;
+				backBoppers.scrollFactor.set(0.9, 0.9);
+				backBoppers.setGraphicSize(Std.int(backBoppers.width * 1));
+				backBoppers.updateHitbox();
+				add(backBoppers);
+
+				frontBoppers = new FlxSprite(-550, -335);
+				frontBoppers.frames = FlxAtlasFrames.fromSparrow('assets/images/stadium/mia_boppers.png', 'assets/images/stadium/mia_boppers.xml');
+				frontBoppers.animation.addByPrefix('bop', "Front Crowd Bop", 24, true);
+				frontBoppers.antialiasing = true;
+				frontBoppers.scrollFactor.set(0.9, 0.9);
+				frontBoppers.setGraphicSize(Std.int(frontBoppers.width * 1));
+				frontBoppers.updateHitbox();
+				add(frontBoppers);
+
+				frontBoppers.animation.play('bop', true);
+				backBoppers.animation.play('bop', true);
+
 			}
 		else if (mallSongs.contains(SONG.song.toLowerCase()))
 		{
@@ -651,10 +675,15 @@ class PlayState extends MusicBeatState
 			case "mia":
 				dad.x -= -113;
 				dad.y += 164;
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
 		}
 
 		boyfriend = new Boyfriend(770, 450, SONG.player1);
 
+		add(gf);
+		add(dad);
+		add(boyfriend);
+		
 		// REPOSITIONING PER STAGE
 		switch (curStage)
 		{
@@ -689,15 +718,20 @@ class PlayState extends MusicBeatState
 				boyfriend.y += 220;
 				gf.x += 180;
 				gf.y += 300;
+			case 'miaStadium':
+				boyfriend.y += 250;
+				boyfriend.x += 200;
+				gf.y += 160;
+				dad.y += 220;
+				var lights:FlxSprite = new FlxSprite(-550, -280).loadGraphic('assets/images/stadium/lights.png');
+				lights.setGraphicSize(Std.int(lights.width * 1));
+				lights.scrollFactor.set(0.9, 0.9);
+				add(lights);
 		}
 
-		add(gf);
-		
 		if (curStage == 'limo')
 			add(limo);
-		
-		add(dad);
-		add(boyfriend);
+
 
 		var doof:DialogueBox = new DialogueBox(false, dialogue);
 		// doof.x += 70;
@@ -817,6 +851,34 @@ class PlayState extends MusicBeatState
 						FlxG.camera.focusOn(camFollow.getPosition());
 						FlxG.camera.zoom = 1.5;
 
+						new FlxTimer().start(0.8, function(tmr:FlxTimer)
+						{
+							camHUD.visible = true;
+							remove(blackScreen);
+							FlxTween.tween(FlxG.camera, {zoom: defaultCamZoom}, 2.5, {
+								ease: FlxEase.quadInOut,
+								onComplete: function(twn:FlxTween)
+								{
+									startCountdown();
+								}
+							});
+						});
+					});
+				case "mia-battle":
+					var blackScreen:FlxSprite = new FlxSprite(0, 0).makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.BLACK);
+					add(blackScreen);
+					blackScreen.scrollFactor.set();
+					camHUD.visible = false;
+	
+					new FlxTimer().start(0.1, function(tmr:FlxTimer)
+					{
+						remove(blackScreen);
+						//FlxG.sound.play('assets/sounds/Lights_Turn_On' + TitleState.soundExt);
+						camFollow.y = -2050;
+						camFollow.x += 200;
+						FlxG.camera.focusOn(camFollow.getPosition());
+						FlxG.camera.zoom = 1.5;
+	
 						new FlxTimer().start(0.8, function(tmr:FlxTimer)
 						{
 							camHUD.visible = true;
@@ -1535,6 +1597,8 @@ class PlayState extends MusicBeatState
 					case 'senpai-angry':
 						followY = dad.getMidpoint().y - 430;
 						followX = dad.getMidpoint().x - 100;
+					case 'mia':
+						followY = dad.getMidpoint().y - 235;
 				}
 
 				if (dad.curCharacter == 'mom')
@@ -1571,8 +1635,9 @@ class PlayState extends MusicBeatState
 					case 'schoolEvil':
 						followX = boyfriend.getMidpoint().x - 200;
 						followY = boyfriend.getMidpoint().y - 200;
-					case 'stadium':
-						followX = boyfriend.getMidpoint().x + 200;
+					case 'miaStadium':
+						followX = boyfriend.getMidpoint().x - 260;
+						followY = dad.getMidpoint().y - 235;
 				}
 
 				if (SONG.song.toLowerCase() == 'tutorial')
@@ -2769,7 +2834,9 @@ class PlayState extends MusicBeatState
 				upperBoppers.animation.play('bop', true);
 				bottomBoppers.animation.play('bop', true);
 				santa.animation.play('idle', true);
-
+			case "miaStadium":
+				frontBoppers.animation.play('bop', true);
+				backBoppers.animation.play('bop', true);
 			case "limo":
 				grpLimoDancers.forEach(function(dancer:BackgroundDancer)
 				{
