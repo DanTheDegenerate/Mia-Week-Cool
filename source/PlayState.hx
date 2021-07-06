@@ -664,7 +664,7 @@ class PlayState extends MusicBeatState
 			case "spooky":
 				dad.y += 200;
 			case "monster":
-				dad.y += 100;
+				dad.y += -100;
 			case 'monster-christmas':
 				dad.y += 130;
 			case 'dad':
@@ -1597,6 +1597,8 @@ class PlayState extends MusicBeatState
 						followX = dad.getMidpoint().x - 100;
 					case 'mia':
 						followY = dad.getMidpoint().y - 235;
+					case 'monster':
+						followY = dad.getMidpoint().y - 450;
 					case 'spooky':
 						followY = dad.getMidpoint().y - 450;
 						followX = dad.getMidpoint().x + 15;
