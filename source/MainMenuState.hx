@@ -24,13 +24,14 @@ class MainMenuState extends MusicBeatState
 	var curSelected:Int = 0;
 
 	var menuItems:FlxTypedGroup<FlxSprite>;
-	
+	var menuBGs:FlxTypedGroup<FlxSprite>;
 	//var configText:FlxText;
 	//var configSelected:Int = 0;
 	
-	var optionShit:Array<String> = ['story mode', 'freeplay', 'donate', "options"];
+	var optionShit:Array<String> = ['story mode', 'freeplay', "options"];
 
 	var magenta:FlxSprite;
+	var blackbar:FlxSprite;
 	var camFollow:FlxObject;
 
 	var versionText:FlxText;
@@ -69,22 +70,38 @@ class MainMenuState extends MusicBeatState
 		magenta.visible = false;
 		magenta.antialiasing = true;
 		add(magenta);
-		// magenta.scrollFactor.set();
+
+		blackbar = new FlxSprite(-80).loadGraphic('assets/images/black_bar.png');
+		blackbar.setGraphicSize(Std.int(blackbar.width * 0.69));
+		blackbar.updateHitbox();
+		blackbar.screenCenter();
+		blackbar.x += 30;
+		blackbar.y += 315;
+		blackbar.visible = true;
+		blackbar.antialiasing = true;
+		add(blackbar);
+		blackbar.scrollFactor.set();
 
 		menuItems = new FlxTypedGroup<FlxSprite>();
+		menuBGs = new FlxTypedGroup<FlxSprite>();
+		add(menuBGs);
 		add(menuItems);
 
 		var tex = FlxAtlasFrames.fromSparrow('assets/images/FNF_main_menu_assets.png', 'assets/images/FNF_main_menu_assets.xml');
+		var texBg = FlxAtlasFrames.fromSparrow('assets/images/b3_select_thingy.png', 'assets/images/b3_select_thingy.xml');
 		var texMod = FlxAtlasFrames.fromSparrow('assets/images/FNF_mod_menu_assets.png', 'assets/images/FNF_mod_menu_assets.xml');
 
 		for (i in 0...optionShit.length)
 		{
-			var menuItem:FlxSprite = new FlxSprite(0, 60 + (i * 160));
+			var menuItem:FlxSprite = new FlxSprite(0, 60 + (i * 210));
+			var menuBG:FlxSprite = new FlxSprite(0, 60 + (i * 210));
+
 			if(optionShit[i] == "mod") {
 				menuItem.frames = texMod;
 			}
 			else {
 				menuItem.frames = tex;
+				menuBG.frames = texBg;
 			}
 			
 			menuItem.animation.addByPrefix('idle', optionShit[i] + " basic", 24);
@@ -92,7 +109,18 @@ class MainMenuState extends MusicBeatState
 			menuItem.animation.play('idle');
 			menuItem.ID = i;
 			menuItem.screenCenter(X);
+
+			menuBG.animation.addByPrefix('idle', "bar basic", 24);
+			menuBG.animation.addByPrefix('selected', "bar white", 24, false);
+			menuBG.animation.play('idle');
+			menuBG.setGraphicSize(Std.int(menuBG.width * 0.85));
+			menuBG.ID = i;
+			menuBG.screenCenter(X);
+
+			menuBGs.add(menuBG);
 			menuItems.add(menuItem);
+			menuBG.scrollFactor.set();
+			menuBG.antialiasing = true;
 			menuItem.scrollFactor.set();
 			menuItem.antialiasing = true;
 		}
@@ -241,6 +269,10 @@ class MainMenuState extends MusicBeatState
 		{
 			spr.screenCenter(X);
 		});
+		menuBGs.forEach(function(spr:FlxSprite)
+		{
+			spr.screenCenter(X);
+		});
 	}
 
 	function changeItem(huh:Int = 0)
@@ -270,5 +302,16 @@ class MainMenuState extends MusicBeatState
 
 			spr.updateHitbox();
 		});
+		menuBGs.forEach(function(spr:FlxSprite)
+			{
+				spr.animation.play('idle');
+	
+				if (spr.ID == curSelected)
+				{
+					spr.animation.play('selected');
+				}
+	
+				spr.updateHitbox();
+			});
 	}
 }
