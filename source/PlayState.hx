@@ -142,7 +142,11 @@ class PlayState extends MusicBeatState
 									 [334, 968]
 									 ];*/
 
-	var halloweenBG:FlxSprite;
+	var halloweenSky:FlxSprite;
+	var halloweenForeground:FlxSprite;
+	var halloweenGround:FlxSprite;
+	var halloweenTrees:FlxSprite;
+
 	var isHalloween:Bool = false;
 
 	var stationLights:FlxTypedGroup<FlxSprite>;
@@ -238,16 +242,26 @@ class PlayState extends MusicBeatState
 		{
 			curStage = "spooky";
 			halloweenLevel = true;
+			defaultCamZoom = 0.35;
+			var halloweenSky:FlxSprite = new FlxSprite(-1400, -1000).loadGraphic('assets/images/week2bg/Forest.png');
+			halloweenSky.scrollFactor.set(0.3, 0.3);
+			halloweenSky.setGraphicSize(Std.int(halloweenSky.width * 0.8));
+			halloweenSky.updateHitbox();
 
-			var hallowTex = FlxAtlasFrames.fromSparrow('assets/images/halloween_bg.png', 'assets/images/halloween_bg.xml');
+			var halloweenTrees:FlxSprite = new FlxSprite(-1400, -800).loadGraphic('assets/images/week2bg/bg_trees.png');
+			halloweenTrees.scrollFactor.set(0.6, 0.6);
+			halloweenTrees.setGraphicSize(Std.int(halloweenTrees.width * 0.8));
+			halloweenTrees.updateHitbox();
 
-			halloweenBG = new FlxSprite(-200, -100);
-			halloweenBG.frames = hallowTex;
-			halloweenBG.animation.addByPrefix('idle', 'halloweem bg0');
-			halloweenBG.animation.addByPrefix('lightning', 'halloweem bg lightning strike', 24, false);
-			halloweenBG.animation.play('idle');
-			halloweenBG.antialiasing = true;
-			add(halloweenBG);
+			var halloweenGround:FlxSprite = new FlxSprite(-1400, -900).loadGraphic('assets/images/week2bg/house.png');
+			halloweenGround.scrollFactor.set(0.9, 0.9);
+			halloweenGround.setGraphicSize(Std.int(halloweenGround.width * 0.8));
+			halloweenGround.updateHitbox();
+
+			add(halloweenSky);
+			add(halloweenTrees);
+			add(halloweenGround);
+
 
 			isHalloween = true;
 		}
@@ -650,7 +664,7 @@ class PlayState extends MusicBeatState
 			case "spooky":
 				dad.y += 200;
 			case "monster":
-				dad.y += 100;
+				dad.y += -100;
 			case 'monster-christmas':
 				dad.y += 130;
 			case 'dad':
@@ -705,6 +719,18 @@ class PlayState extends MusicBeatState
 				boyfriend.y += 220;
 				gf.x += 180;
 				gf.y += 300;
+			case 'spooky':
+				boyfriend.y += 600;
+				boyfriend.x += 450;
+				gf.y += 600;
+				gf.x += 300;
+				dad.y += 600;
+				var halloweenForeground:FlxSprite = new FlxSprite(-1400, -900).loadGraphic('assets/images/week2bg/foreground_trees.png');
+				halloweenForeground.scrollFactor.set(0.3, 0.3);
+				halloweenForeground.setGraphicSize(Std.int(halloweenForeground.width * 0.8));
+				halloweenForeground.updateHitbox();
+
+				add(halloweenForeground);
 			case 'schoolEvil':
 				// trailArea.scrollFactor.set();
 
@@ -851,34 +877,6 @@ class PlayState extends MusicBeatState
 						FlxG.camera.focusOn(camFollow.getPosition());
 						FlxG.camera.zoom = 1.5;
 
-						new FlxTimer().start(0.8, function(tmr:FlxTimer)
-						{
-							camHUD.visible = true;
-							remove(blackScreen);
-							FlxTween.tween(FlxG.camera, {zoom: defaultCamZoom}, 2.5, {
-								ease: FlxEase.quadInOut,
-								onComplete: function(twn:FlxTween)
-								{
-									startCountdown();
-								}
-							});
-						});
-					});
-				case "mia-battle":
-					var blackScreen:FlxSprite = new FlxSprite(0, 0).makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.BLACK);
-					add(blackScreen);
-					blackScreen.scrollFactor.set();
-					camHUD.visible = false;
-	
-					new FlxTimer().start(0.1, function(tmr:FlxTimer)
-					{
-						remove(blackScreen);
-						//FlxG.sound.play('assets/sounds/Lights_Turn_On' + TitleState.soundExt);
-						camFollow.y = -2050;
-						camFollow.x += 200;
-						FlxG.camera.focusOn(camFollow.getPosition());
-						FlxG.camera.zoom = 1.5;
-	
 						new FlxTimer().start(0.8, function(tmr:FlxTimer)
 						{
 							camHUD.visible = true;
@@ -1599,6 +1597,11 @@ class PlayState extends MusicBeatState
 						followX = dad.getMidpoint().x - 100;
 					case 'mia':
 						followY = dad.getMidpoint().y - 235;
+					case 'monster':
+						followY = dad.getMidpoint().y - 450;
+					case 'spooky':
+						followY = dad.getMidpoint().y - 450;
+						followX = dad.getMidpoint().x + 15;
 				}
 
 				if (dad.curCharacter == 'mom')
@@ -1638,6 +1641,9 @@ class PlayState extends MusicBeatState
 					case 'miaStadium':
 						followX = boyfriend.getMidpoint().x - 260;
 						followY = dad.getMidpoint().y - 235;
+					case 'spooky':
+						followX = boyfriend.getMidpoint().x - 250;
+						followY = dad.getMidpoint().y - 450;
 				}
 
 				if (SONG.song.toLowerCase() == 'tutorial')
@@ -2710,9 +2716,6 @@ class PlayState extends MusicBeatState
 
 	function lightningStrikeShit():Void
 	{
-		FlxG.sound.play('assets/sounds/thunder_' + FlxG.random.int(1, 2) + TitleState.soundExt);
-		halloweenBG.animation.play('lightning');
-
 		lightningStrikeBeat = curBeat;
 		lightningOffset = FlxG.random.int(8, 24);
 
