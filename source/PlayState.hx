@@ -198,7 +198,7 @@ class PlayState extends MusicBeatState
 		spookySongs = ["spookeez", "south", "monster"];
 		stationSongs = ["pico", "philly", "blammed"];
 		limoSongs = ["satin-panties", "high", "milf"];
-		miaSongs = ["mia battle", "diva"];
+		miaSongs = ["mi-opera", "mia battle", "diva"];
 		mallSongs = ["cocoa", "eggnog"];
 		evilMallSongs = ["winter-horrorland"];
 		schoolSongs = ["senpai", "roses"];
