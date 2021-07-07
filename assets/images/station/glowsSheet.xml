@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="glowsSheet.png">
+	<!-- Created with Adobe Animate version 20.0.3.25487 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Glows0000" x="0" y="0" width="2580" height="1452"/>
+	<SubTexture name="Glows0001" x="2580" y="0" width="2580" height="1452"/>
+	<SubTexture name="Glows0002" x="5160" y="0" width="2580" height="1452"/>
+</TextureAtlas>
