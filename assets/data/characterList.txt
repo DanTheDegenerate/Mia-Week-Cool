@@ -6,6 +6,8 @@ pico
 mom
 mom-car
 bf-car
+week2bf
+week3bf
 parents-christmas
 monster-christmas
 bf-christmas

@@ -201,7 +201,7 @@ class PlayState extends MusicBeatState
 	
 		stageSongs = ["tutorial", "bopeebo", "fresh", "dadbattle"];
 		spookySongs = ["spookeez", "south", "monster"];
-		stationSongs = ["pico", "philly", "blammed"];
+		stationSongs = ["pico", "philly", "blammed", "school"];
 		limoSongs = ["satin-panties", "high", "milf"];
 		miaSongs = ["mi-opera", "mia battle", "diva"];
 		mallSongs = ["cocoa", "eggnog"];

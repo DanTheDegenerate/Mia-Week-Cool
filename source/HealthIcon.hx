@@ -22,6 +22,8 @@ class HealthIcon extends FlxSprite
 			animation.add('bf', [0, 1, 30], 0, false, isPlayer);
 			animation.add('mia', [10, 11, 38], 0, false, isPlayer);
 			animation.add('bf-car', [0, 1, 30], 0, false, isPlayer);
+			animation.add('week2bf', [0, 1, 30], 0, false, isPlayer);
+			animation.add('week3bf', [0, 1, 30], 0, false, isPlayer);
 			animation.add('bf-christmas', [0, 1, 30], 0, false, isPlayer);
 			animation.add('bf-pixel', [21, 41, 40], 0, false, isPlayer);
 			animation.add('spooky', [2, 3, 31], 0, false, isPlayer);
@@ -49,6 +51,8 @@ class HealthIcon extends FlxSprite
 			animation.add('bf', [0, 1], 0, false, isPlayer);
 			animation.add('mia', [10, 11], 0, false, isPlayer);
 			animation.add('bf-car', [0, 1], 0, false, isPlayer);
+			animation.add('week2bf', [0, 1, 30], 0, false, isPlayer);
+			animation.add('week3bf', [0, 1, 30], 0, false, isPlayer);
 			animation.add('bf-christmas', [0, 1], 0, false, isPlayer);
 			animation.add('bf-pixel', [21, 21], 0, false, isPlayer);
 			animation.add('spooky', [2, 3], 0, false, isPlayer);

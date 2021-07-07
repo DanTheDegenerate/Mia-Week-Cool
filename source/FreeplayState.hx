@@ -54,7 +54,7 @@ class FreeplayState extends MusicBeatState
 			addWeek(['Spookeez', 'South', 'Monster'], 2, ['spooky', 'spooky', "monster"]);
 
 		if (StoryMenuState.weekUnlocked[3] || isDebug)
-			addWeek(['Pico', 'Philly', 'Blammed'], 3, ['pico']);
+			addWeek(['Pico', 'Philly', 'Blammed', 'School'], 3, ['pico']);
 
 		if (StoryMenuState.weekUnlocked[4] || isDebug)
 			addWeek(['Satin-Panties', 'High', 'Milf'], 4, ['mom']);
@@ -64,6 +64,11 @@ class FreeplayState extends MusicBeatState
 
 		if (StoryMenuState.weekUnlocked[6] || isDebug)
 			addWeek(['Senpai', 'Roses', 'Thorns'], 6, ['senpai', 'senpai-angry', 'spirit']);
+
+		if (StoryMenuState.weekUnlocked[7] || isDebug)
+			addWeek(['Mi-opera', 'Mia Battle', 'Diva'], 7, ['mia']);
+
+
 
 		// LOAD MUSIC
 		/*for(x in songs){
