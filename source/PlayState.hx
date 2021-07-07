@@ -37,7 +37,7 @@ import flixel.util.FlxSort;
 import flixel.util.FlxTimer;
 //import haxe.Json;
 //import lime.utils.Assets;
-//import openfl.display.BlendMode;
+import openfl.display.BlendMode;
 //import openfl.display.StageQuality;
 //import openfl.filters.ShaderFilter;
 
@@ -150,6 +150,7 @@ class PlayState extends MusicBeatState
 	var isHalloween:Bool = false;
 
 	var stationLights:FlxTypedGroup<FlxSprite>;
+	var stationGlow:FlxTypedGroup<FlxSprite>;
 	var phillyTrain:FlxSprite;
 	var trainSound:FlxSound;
 
@@ -275,12 +276,23 @@ class PlayState extends MusicBeatState
 			subway.updateHitbox();
 			add(subway);
 
+			stationGlow = new FlxTypedGroup<FlxSprite>();
+			add(stationGlow);
+
+			for (i in 0...2)
+			{
+				var stationGlow:FlxSprite = new FlxSprite(-70, 0).loadGraphic('assets/images/station/glow' + i + '.png');
+				stationGlow.scrollFactor.set(0.3, 0.3);
+				stationGlow.setGraphicSize(Std.int(stationGlow.width * 0.55));
+				stationGlow.updateHitbox();
+			}
+
 			stationLights = new FlxTypedGroup<FlxSprite>();
 			add(stationLights);
 
-			for (i in 0...5)
+			for (i in 0...2)
 			{
-				var stationLight:FlxSprite = new FlxSprite(-70, 0).loadGraphic('assets/images/station/win' + i + '.png');
+				var stationLight:FlxSprite = new FlxSprite(-70, 0).loadGraphic('assets/images/station/light' + i + '.png');
 				stationLight.scrollFactor.set(0.3, 0.3);
 				stationLight.setGraphicSize(Std.int(stationLight.width * 0.55));
 				stationLight.updateHitbox();
@@ -2855,6 +2867,7 @@ class PlayState extends MusicBeatState
 
 				if (totalBeats % 4 == 0)
 				{
+					{
 					stationLights.forEach(function(light:FlxSprite)
 					{
 						light.visible = false;
@@ -2863,7 +2876,21 @@ class PlayState extends MusicBeatState
 					curLight = FlxG.random.int(0, stationLights.length - 1);
 
 					stationLights.members[curLight].visible = true;
+					}
+
+					{
 					// phillyCityLights.members[curLight].alpha = 1;
+					
+						stationGlow.forEach(function(light:FlxSprite)
+						{
+							light.visible = false;
+						});
+	
+						curLight = FlxG.random.int(0, stationGlow.length - 1);
+	
+						stationGlow.members[curLight].visible = true;
+						// phillyCityLights.members[curLight].alpha = 1;
+					}
 				}
 
 				if (totalBeats % 8 == 4 && FlxG.random.bool(30) && !trainMoving && trainCooldown > 8)
