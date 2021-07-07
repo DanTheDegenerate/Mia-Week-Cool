@@ -37,7 +37,7 @@ import flixel.util.FlxSort;
 import flixel.util.FlxTimer;
 //import haxe.Json;
 //import lime.utils.Assets;
-//import openfl.display.BlendMode;
+import openfl.display.BlendMode;
 //import openfl.display.StageQuality;
 //import openfl.filters.ShaderFilter;
 
@@ -149,7 +149,8 @@ class PlayState extends MusicBeatState
 
 	var isHalloween:Bool = false;
 
-	var stationLights:FlxTypedGroup<FlxSprite>;
+	var stationLights:FlxSprite;
+	var stationGlow:FlxSprite;
 	var phillyTrain:FlxSprite;
 	var trainSound:FlxSound;
 
@@ -268,19 +269,37 @@ class PlayState extends MusicBeatState
 		else if (stationSongs.contains(SONG.song.toLowerCase()))
 		{
 			curStage = 'station';
-
-			var subway:FlxSprite = new FlxSprite(-70).loadGraphic('assets/images/station/subway.png');
-			subway.scrollFactor.set(0.3, 0.3);
-			subway.setGraphicSize(Std.int(subway.width * 0.55));
+			defaultCamZoom = 0.6;
+			var subway:FlxSprite = new FlxSprite(-350,-500).loadGraphic('assets/images/station/subway.png');
+			subway.scrollFactor.set(0.9, 0.9);
+			subway.setGraphicSize(Std.int(subway.width * 1));
 			subway.updateHitbox();
 			add(subway);
+
+			var stationLights:FlxSprite = new FlxSprite(-350,-500);
+			stationLights.frames = FlxAtlasFrames.fromSparrow('assets/images/station/lightsSheet.png','assets/images/station/lightsSheet.xml');
+			stationLights.animation.addByPrefix('bop', "Lights", 24);
+			stationLights.animation.play('bop');
+			stationLights.scrollFactor.set(0.9, 0.9);
+			stationLights.setGraphicSize(Std.int(subway.width * 1));
+			stationLights.updateHitbox();
+			add(stationLights);
+
+
+			/*for (i in 0...2)
+			{
+				var stationGlow:FlxSprite = new FlxSprite(-70, 0).loadGraphic('assets/images/station/glow' + i + '.png');
+				stationGlow.scrollFactor.set(0.3, 0.3);
+				stationGlow.setGraphicSize(Std.int(stationGlow.width * 0.55));
+				stationGlow.updateHitbox();
+			}
 
 			stationLights = new FlxTypedGroup<FlxSprite>();
 			add(stationLights);
 
-			for (i in 0...5)
+			for (i in 0...2)
 			{
-				var stationLight:FlxSprite = new FlxSprite(-70, 0).loadGraphic('assets/images/station/win' + i + '.png');
+				var stationLight:FlxSprite = new FlxSprite(-70, 0).loadGraphic('assets/images/station/light' + i + '.png');
 				stationLight.scrollFactor.set(0.3, 0.3);
 				stationLight.setGraphicSize(Std.int(stationLight.width * 0.55));
 				stationLight.updateHitbox();
@@ -291,7 +310,7 @@ class PlayState extends MusicBeatState
 			add(phillyTrain);
 
 			trainSound = new FlxSound().loadEmbedded('assets/sounds/train_passes' + TitleState.soundExt);
-			FlxG.sound.list.add(trainSound);
+			FlxG.sound.list.add(trainSound);*/
 
 			// var cityLights:FlxSprite = new FlxSprite().loadGraphic(AssetPaths.win0.png);
 		}
@@ -710,7 +729,17 @@ class PlayState extends MusicBeatState
 
 			case 'mall':
 				boyfriend.x += 200;
-
+			case 'station':
+				boyfriend.x += 600;
+				gf.x += 200;
+				var stationGlow:FlxSprite = new FlxSprite(-275,-400);
+				stationGlow.frames = FlxAtlasFrames.fromSparrow('assets/images/station/glowsSheet.png','assets/images/station/glowsSheet.xml');
+				stationGlow.animation.addByPrefix('bop', "Glows", 24);
+				stationGlow.animation.play('bop');
+				stationGlow.scrollFactor.set(0.9, 0.9);
+				stationGlow.setGraphicSize(Std.int(stationGlow.width * 1));
+				stationGlow.updateHitbox();
+				add(stationGlow);
 			case 'mallEvil':
 				boyfriend.x += 320;
 				dad.y -= 80;
@@ -1602,6 +1631,9 @@ class PlayState extends MusicBeatState
 					case 'spooky':
 						followY = dad.getMidpoint().y - 450;
 						followX = dad.getMidpoint().x + 15;
+					case 'pico':
+						followY = dad.getMidpoint().y - 275;
+						followX = dad.getMidpoint().x + 400;
 				}
 
 				if (dad.curCharacter == 'mom')
@@ -1644,6 +1676,9 @@ class PlayState extends MusicBeatState
 					case 'spooky':
 						followX = boyfriend.getMidpoint().x - 250;
 						followY = dad.getMidpoint().y - 450;
+					case 'station':
+						followX = boyfriend.getMidpoint().x - 375;
+						followY = dad.getMidpoint().y - 275;
 				}
 
 				if (SONG.song.toLowerCase() == 'tutorial')
@@ -2832,7 +2867,6 @@ class PlayState extends MusicBeatState
 		{
 			case "school":
 				bgGirls.dance();
-
 			case "mall":
 				upperBoppers.animation.play('bop', true);
 				bottomBoppers.animation.play('bop', true);
@@ -2849,12 +2883,14 @@ class PlayState extends MusicBeatState
 				if (FlxG.random.bool(10) && fastCarCanDrive)
 					fastCarDrive();
 			case "station":
-
-				if (!trainMoving)
+				//stationLights.animation.play('bop', true);
+				//stationGlow.animation.play('bop', true);
+				/*if (!trainMoving)
 					trainCooldown += 1;
 
 				if (totalBeats % 4 == 0)
 				{
+					{
 					stationLights.forEach(function(light:FlxSprite)
 					{
 						light.visible = false;
@@ -2863,20 +2899,34 @@ class PlayState extends MusicBeatState
 					curLight = FlxG.random.int(0, stationLights.length - 1);
 
 					stationLights.members[curLight].visible = true;
+					}
+
+					{
 					// phillyCityLights.members[curLight].alpha = 1;
+					
+						stationGlow.forEach(function(light:FlxSprite)
+						{
+							light.visible = false;
+						});
+	
+						curLight = FlxG.random.int(0, stationGlow.length - 1);
+	
+						stationGlow.members[curLight].visible = true;
+						// phillyCityLights.members[curLight].alpha = 1;
+					}
 				}
 
 				if (totalBeats % 8 == 4 && FlxG.random.bool(30) && !trainMoving && trainCooldown > 8)
 				{
 					trainCooldown = FlxG.random.int(-4, 0);
 					trainStart();
-				}
+				}*/
 		}
 
-		if (isHalloween && FlxG.random.bool(10) && curBeat > lightningStrikeBeat + lightningOffset)
+		/*if (isHalloween && FlxG.random.bool(10) && curBeat > lightningStrikeBeat + lightningOffset)
 		{
 			lightningStrikeShit();
-		}
+		}*/
 	}
 
 	var curLight:Int = 0;

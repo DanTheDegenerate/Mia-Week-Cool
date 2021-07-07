@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="lightsSheet.png">
+	<!-- Created with Adobe Animate version 20.0.3.25487 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Lights0000" x="0" y="0" width="2580" height="1452"/>
+	<SubTexture name="Lights0001" x="0" y="0" width="2580" height="1452"/>
+	<SubTexture name="Lights0002" x="0" y="0" width="2580" height="1452"/>
+	<SubTexture name="Lights0003" x="0" y="0" width="2580" height="1452"/>
+	<SubTexture name="Lights0004" x="0" y="0" width="2580" height="1452"/>
+	<SubTexture name="Lights0005" x="0" y="0" width="2580" height="1452"/>
+	<SubTexture name="Lights0006" x="0" y="0" width="2580" height="1452"/>
+	<SubTexture name="Lights0007" x="0" y="0" width="2580" height="1452"/>
+	<SubTexture name="Lights0008" x="2580" y="0" width="2580" height="1452"/>
+	<SubTexture name="Lights0009" x="2580" y="0" width="2580" height="1452"/>
+	<SubTexture name="Lights0010" x="2580" y="0" width="2580" height="1452"/>
+	<SubTexture name="Lights0011" x="2580" y="0" width="2580" height="1452"/>
+	<SubTexture name="Lights0012" x="2580" y="0" width="2580" height="1452"/>
+	<SubTexture name="Lights0013" x="2580" y="0" width="2580" height="1452"/>
+	<SubTexture name="Lights0014" x="2580" y="0" width="2580" height="1452"/>
+	<SubTexture name="Lights0015" x="2580" y="0" width="2580" height="1452"/>
+	<SubTexture name="Lights0016" x="5160" y="0" width="2580" height="1452"/>
+	<SubTexture name="Lights0017" x="5160" y="0" width="2580" height="1452"/>
+	<SubTexture name="Lights0018" x="5160" y="0" width="2580" height="1452"/>
+	<SubTexture name="Lights0019" x="5160" y="0" width="2580" height="1452"/>
+	<SubTexture name="Lights0020" x="5160" y="0" width="2580" height="1452"/>
+	<SubTexture name="Lights0021" x="5160" y="0" width="2580" height="1452"/>
+	<SubTexture name="Lights0022" x="5160" y="0" width="2580" height="1452"/>
+	<SubTexture name="Lights0023" x="5160" y="0" width="2580" height="1452"/>
+</TextureAtlas>

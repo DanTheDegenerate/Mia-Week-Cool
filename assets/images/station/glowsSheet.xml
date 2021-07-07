@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="glowsSheet.png">
+	<!-- Created with Adobe Animate version 20.0.3.25487 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Glows0000" x="0" y="0" width="2580" height="1452"/>
+	<SubTexture name="Glows0001" x="0" y="0" width="2580" height="1452"/>
+	<SubTexture name="Glows0002" x="0" y="0" width="2580" height="1452"/>
+	<SubTexture name="Glows0003" x="0" y="0" width="2580" height="1452"/>
+	<SubTexture name="Glows0004" x="0" y="0" width="2580" height="1452"/>
+	<SubTexture name="Glows0005" x="0" y="0" width="2580" height="1452"/>
+	<SubTexture name="Glows0006" x="0" y="0" width="2580" height="1452"/>
+	<SubTexture name="Glows0007" x="0" y="0" width="2580" height="1452"/>
+	<SubTexture name="Glows0008" x="2580" y="0" width="2580" height="1452"/>
+	<SubTexture name="Glows0009" x="2580" y="0" width="2580" height="1452"/>
+	<SubTexture name="Glows0010" x="2580" y="0" width="2580" height="1452"/>
+	<SubTexture name="Glows0011" x="2580" y="0" width="2580" height="1452"/>
+	<SubTexture name="Glows0012" x="2580" y="0" width="2580" height="1452"/>
+	<SubTexture name="Glows0013" x="2580" y="0" width="2580" height="1452"/>
+	<SubTexture name="Glows0014" x="2580" y="0" width="2580" height="1452"/>
+	<SubTexture name="Glows0015" x="2580" y="0" width="2580" height="1452"/>
+	<SubTexture name="Glows0016" x="5160" y="0" width="2580" height="1452"/>
+	<SubTexture name="Glows0017" x="5160" y="0" width="2580" height="1452"/>
+	<SubTexture name="Glows0018" x="5160" y="0" width="2580" height="1452"/>
+	<SubTexture name="Glows0019" x="5160" y="0" width="2580" height="1452"/>
+	<SubTexture name="Glows0020" x="5160" y="0" width="2580" height="1452"/>
+	<SubTexture name="Glows0021" x="5160" y="0" width="2580" height="1452"/>
+	<SubTexture name="Glows0022" x="5160" y="0" width="2580" height="1452"/>
+	<SubTexture name="Glows0023" x="5160" y="0" width="2580" height="1452"/>
+</TextureAtlas>
