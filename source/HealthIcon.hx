@@ -20,7 +20,7 @@ class HealthIcon extends FlxSprite
 			loadGraphic('assets/images/fpsPlus/iconGrid.png', true, 150, 150);
 			
 			animation.add('bf', [0, 1, 30], 0, false, isPlayer);
-			animation.add('mia', [10, 11, 38], 0, false, isPlayer);
+			animation.add('mia', [24, 25, 26], 0, false, isPlayer);
 			animation.add('bf-car', [0, 1, 30], 0, false, isPlayer);
 			animation.add('week2bf', [0, 1, 30], 0, false, isPlayer);
 			animation.add('week3bf', [0, 1, 30], 0, false, isPlayer);
@@ -51,7 +51,7 @@ class HealthIcon extends FlxSprite
 			loadGraphic('assets/images/iconGrid.png', true, 150, 150);
 			
 			animation.add('bf', [0, 1], 0, false, isPlayer);
-			animation.add('mia', [10, 11], 0, false, isPlayer);
+			animation.add('mia', [24, 25], 0, false, isPlayer);
 			animation.add('bf-car', [0, 1], 0, false, isPlayer);
 			animation.add('week2bf', [0, 1, 30], 0, false, isPlayer);
 			animation.add('week3bf', [0, 1, 30], 0, false, isPlayer);
