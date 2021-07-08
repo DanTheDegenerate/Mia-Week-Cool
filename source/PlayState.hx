@@ -734,8 +734,8 @@ class PlayState extends MusicBeatState
 			case 'mall':
 				boyfriend.x += 200;
 			case 'station':
-				boyfriend.x += 600;
-				gf.x += 200;
+				boyfriend.x += 300;
+				gf.x += 100;
 				var stationGlow:FlxSprite = new FlxSprite(-275,-400);
 				stationGlow.frames = FlxAtlasFrames.fromSparrow('assets/images/station/glowsSheet.png','assets/images/station/glowsSheet.xml');
 				stationGlow.animation.addByPrefix('bop', "Glows", 24);
