@@ -98,7 +98,7 @@ class Character extends FlxSprite
 
 			case 'gf-train':
 				// GIRLFRIEND CODE
-				tex = FlxAtlasFrames.fromSparrow('assets/images/week3bg/gf_week3.png', 'assets/images/week3bg/gf_week3.xml');
+				tex = FlxAtlasFrames.fromSparrow('assets/images/station/gf_week3.png', 'assets/images/station/gf_week3.xml');
 				frames = tex;
 				animation.addByPrefix('cheer', 'GF Cheer', 24, false);
 				animation.addByPrefix('singLEFT', 'GF left note', 24, false);
