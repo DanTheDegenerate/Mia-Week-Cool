@@ -730,7 +730,7 @@ class Character extends FlxSprite
 		{
 			switch (curCharacter)
 			{
-				case 'gf' |'gf-night' |'gf-spooky' |'gf-car' | 'gf-christmas' | 'gf-pixel':
+				case 'gf' |'gf-night' |'gf-train' |'gf-car' | 'gf-christmas' | 'gf-pixel':
 					if (!animation.curAnim.name.startsWith('hair'))
 					{
 						danced = !danced;
@@ -761,7 +761,7 @@ class Character extends FlxSprite
 		{
 			switch (curCharacter)
 			{
-				case 'gf' |'gf-night' |'gf-spooky' | 'gf-car' | 'gf-christmas' | 'gf-pixel' | "spooky":
+				case 'gf' |'gf-night' |'gf-train' | 'gf-car' | 'gf-christmas' | 'gf-pixel' | "spooky":
 					playAnim('danceRight', true, false, animation.getByName('danceRight').numFrames - 1);
 				default:
 					playAnim('idle', true, false, animation.getByName('idle').numFrames - 1);
