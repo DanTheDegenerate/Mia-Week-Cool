@@ -200,7 +200,7 @@ class PlayState extends MusicBeatState
 		camTween = FlxTween.tween(this, {}, 0);
 	
 		stageSongs = ["tutorial", "bopeebo", "fresh", "dadbattle"];
-		spookySongs = ["spookeez", "south", "monster"];
+		spookySongs = ["spookeez", "south", "not a monster"];
 		stationSongs = ["pico", "philly", "blammed", "school"];
 		limoSongs = ["satin-panties", "high", "milf"];
 		miaSongs = ["mi-opera", "mia battle", "diva"];
