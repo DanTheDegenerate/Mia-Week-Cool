@@ -43,6 +43,8 @@ class HealthIcon extends FlxSprite
 			animation.add('gf', [16, 49, (_id != -1) ? 49 : 35], 0, false, isPlayer);
 			animation.add('gf-car', [16, 49, 35], 0, false, isPlayer);
 			animation.add('gf-pixel', [16, 49, 35], 0, false, isPlayer);
+			animation.add('week2gf', [16, 49, 35], 0, false, isPlayer);
+			animation.add('week3gf', [16, 49, 35], 0, false, isPlayer);
 			
 		}
 		else{
@@ -69,6 +71,8 @@ class HealthIcon extends FlxSprite
 			animation.add('gf', [16], 0, false, isPlayer);
 			animation.add('gf-car', [16], 0, false, isPlayer);
 			animation.add('gf-pixel', [16], 0, false, isPlayer);
+			animation.add('week2gf', [16, 49, 35], 0, false, isPlayer);
+			animation.add('week3gf', [16, 49, 35], 0, false, isPlayer);
 			animation.add('parents-christmas', [17, 18], 0, false, isPlayer);
 			animation.add('monster', [19, 20], 0, false, isPlayer);
 			animation.add('monster-christmas', [19, 20], 0, false, isPlayer);
