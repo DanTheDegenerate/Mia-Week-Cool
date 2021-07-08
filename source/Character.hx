@@ -64,7 +64,7 @@ class Character extends FlxSprite
 
 				playAnim('danceRight');
 
-			case 'week2gf':
+			case 'gf-night':
 				// GIRLFRIEND CODE
 				tex = FlxAtlasFrames.fromSparrow('assets/images/week2bg/gf_week2.png', 'assets/images/week2bg/gf_week2.xml');
 				frames = tex;
@@ -96,7 +96,7 @@ class Character extends FlxSprite
 
 				playAnim('danceRight');
 
-			case 'week3gf':
+			case 'gf-train':
 				// GIRLFRIEND CODE
 				tex = FlxAtlasFrames.fromSparrow('assets/images/week3bg/gf_week3.png', 'assets/images/week3bg/gf_week3.xml');
 				frames = tex;
@@ -730,7 +730,7 @@ class Character extends FlxSprite
 		{
 			switch (curCharacter)
 			{
-				case 'gf' | 'gf-car' | 'gf-christmas' | 'gf-pixel':
+				case 'gf' |'gf-night' |'gf-spooky' |'gf-car' | 'gf-christmas' | 'gf-pixel':
 					if (!animation.curAnim.name.startsWith('hair'))
 					{
 						danced = !danced;
@@ -761,7 +761,7 @@ class Character extends FlxSprite
 		{
 			switch (curCharacter)
 			{
-				case 'gf' | 'gf-car' | 'gf-christmas' | 'gf-pixel' | "spooky":
+				case 'gf' |'gf-night' |'gf-spooky' | 'gf-car' | 'gf-christmas' | 'gf-pixel' | "spooky":
 					playAnim('danceRight', true, false, animation.getByName('danceRight').numFrames - 1);
 				default:
 					playAnim('idle', true, false, animation.getByName('idle').numFrames - 1);
