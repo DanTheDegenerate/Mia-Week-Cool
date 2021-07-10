@@ -1,6 +1,8 @@
 bf
 dad
 gf
+gf-spooky
+gf-train
 spooky
 pico
 mom

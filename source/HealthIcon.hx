@@ -20,7 +20,7 @@ class HealthIcon extends FlxSprite
 			loadGraphic('assets/images/fpsPlus/iconGrid.png', true, 150, 150);
 			
 			animation.add('bf', [0, 1, 30], 0, false, isPlayer);
-			animation.add('mia', [10, 11, 38], 0, false, isPlayer);
+			animation.add('mia', [24, 25, 26], 0, false, isPlayer);
 			animation.add('bf-car', [0, 1, 30], 0, false, isPlayer);
 			animation.add('week2bf', [0, 1, 30], 0, false, isPlayer);
 			animation.add('week3bf', [0, 1, 30], 0, false, isPlayer);
@@ -43,13 +43,15 @@ class HealthIcon extends FlxSprite
 			animation.add('gf', [16, 49, (_id != -1) ? 49 : 35], 0, false, isPlayer);
 			animation.add('gf-car', [16, 49, 35], 0, false, isPlayer);
 			animation.add('gf-pixel', [16, 49, 35], 0, false, isPlayer);
+			animation.add('week2gf', [16, 49, 35], 0, false, isPlayer);
+			animation.add('week3gf', [16, 49, 35], 0, false, isPlayer);
 			
 		}
 		else{
 			loadGraphic('assets/images/iconGrid.png', true, 150, 150);
 			
 			animation.add('bf', [0, 1], 0, false, isPlayer);
-			animation.add('mia', [10, 11], 0, false, isPlayer);
+			animation.add('mia', [24, 25], 0, false, isPlayer);
 			animation.add('bf-car', [0, 1], 0, false, isPlayer);
 			animation.add('week2bf', [0, 1, 30], 0, false, isPlayer);
 			animation.add('week3bf', [0, 1, 30], 0, false, isPlayer);
@@ -69,6 +71,8 @@ class HealthIcon extends FlxSprite
 			animation.add('gf', [16], 0, false, isPlayer);
 			animation.add('gf-car', [16], 0, false, isPlayer);
 			animation.add('gf-pixel', [16], 0, false, isPlayer);
+			animation.add('week2gf', [16, 49, 35], 0, false, isPlayer);
+			animation.add('week3gf', [16, 49, 35], 0, false, isPlayer);
 			animation.add('parents-christmas', [17, 18], 0, false, isPlayer);
 			animation.add('monster', [19, 20], 0, false, isPlayer);
 			animation.add('monster-christmas', [19, 20], 0, false, isPlayer);

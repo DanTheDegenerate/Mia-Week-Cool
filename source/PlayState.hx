@@ -200,7 +200,7 @@ class PlayState extends MusicBeatState
 		camTween = FlxTween.tween(this, {}, 0);
 	
 		stageSongs = ["tutorial", "bopeebo", "fresh", "dadbattle"];
-		spookySongs = ["spookeez", "south", "monster"];
+		spookySongs = ["spookeez", "south", "not a monster"];
 		stationSongs = ["pico", "philly", "blammed", "school"];
 		limoSongs = ["satin-panties", "high", "milf"];
 		miaSongs = ["mi-opera", "mia battle", "diva"];
@@ -650,6 +650,10 @@ class PlayState extends MusicBeatState
 
 		switch (curStage)
 		{
+			case 'spooky':
+				gfVersion = 'gf-night';
+			case 'station':
+				gfVersion = 'gf-train';
 			case 'limo':
 				gfVersion = 'gf-car';
 			case 'mall':
@@ -730,8 +734,8 @@ class PlayState extends MusicBeatState
 			case 'mall':
 				boyfriend.x += 200;
 			case 'station':
-				boyfriend.x += 600;
-				gf.x += 200;
+				boyfriend.x += 300;
+				gf.x += 100;
 				var stationGlow:FlxSprite = new FlxSprite(-275,-400);
 				stationGlow.frames = FlxAtlasFrames.fromSparrow('assets/images/station/glowsSheet.png','assets/images/station/glowsSheet.xml');
 				stationGlow.animation.addByPrefix('bop', "Glows", 24);

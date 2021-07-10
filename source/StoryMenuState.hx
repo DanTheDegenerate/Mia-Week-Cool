@@ -53,7 +53,7 @@ class StoryMenuState extends MusicBeatState
 		weekData = [
 			['Tutorial'],
 			['Bopeebo', 'Fresh', 'Dadbattle'],
-			['Spookeez', 'South', 'Monster'],
+			['Spookeez', 'South', 'Not A Monster'],
 			['Pico', 'Philly', "Blammed", 'School'],
 			['Satin-Panties', "High", "Milf"],
 			['Cocoa', 'Eggnog', 'Winter-Horrorland'],
