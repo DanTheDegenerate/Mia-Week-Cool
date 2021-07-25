@@ -103,6 +103,16 @@ class DialogueBox extends FlxSpriteGroup
 				var face:FlxSprite = new FlxSprite(320, 170).loadGraphic('assets/images/weeb/spiritFaceForward.png');
 				face.setGraphicSize(Std.int(face.width * 6));
 				add(face);
+			case 'tutorial':
+				box.frames = FlxAtlasFrames.fromSparrow('assets/images/speech_bubble_talking.png',
+					'assets/images/speech_bubble_talking.xml');
+				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
+				box.animation.addByIndices('normal', 'speech bubble normal', [4], "", 24);
+			case 'bopeebo':
+				box.frames = FlxAtlasFrames.fromSparrow('assets/images/speech_bubble_talking.png',
+					'assets/images/speech_bubble_talking.xml');
+				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
+				box.animation.addByIndices('normal', 'speech bubble normal', [4], "", 24);
 		}
 
 		box.animation.play('normalOpen');

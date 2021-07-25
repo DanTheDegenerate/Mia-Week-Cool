@@ -2019,6 +2019,9 @@ class PlayState extends MusicBeatState
 				if (storyDifficulty == 2)
 					difficulty = '-hard';
 
+				if (storyDifficulty == 3)
+					difficulty = '-getreal';
+
 				trace('LOADING NEXT SONG');
 				trace(PlayState.storyPlaylist[0].toLowerCase() + difficulty);
 

@@ -181,6 +181,7 @@ class StoryMenuState extends MusicBeatState
 		sprDifficulty.animation.addByPrefix('easy', 'EASY');
 		sprDifficulty.animation.addByPrefix('normal', 'NORMAL');
 		sprDifficulty.animation.addByPrefix('hard', 'HARD');
+		sprDifficulty.animation.addByPrefix('getreal', 'GETREAL');
 		sprDifficulty.animation.play('easy');
 		changeDifficulty();
 
@@ -308,6 +309,8 @@ class StoryMenuState extends MusicBeatState
 					diffic = '-easy';
 				case 2:
 					diffic = '-hard';
+				case 3:
+					diffic = '-getreal';
 			}
 
 			PlayState.storyDifficulty = curDifficulty;
@@ -331,7 +334,7 @@ class StoryMenuState extends MusicBeatState
 
 		if (curDifficulty < 0)
 			curDifficulty = 2;
-		if (curDifficulty > 2)
+		if (curDifficulty > 3)
 			curDifficulty = 0;
 
 		sprDifficulty.offset.x = 0;
@@ -347,6 +350,9 @@ class StoryMenuState extends MusicBeatState
 			case 2:
 				sprDifficulty.animation.play('hard');
 				sprDifficulty.offset.x = 20;
+			case 3:
+				sprDifficulty.animation.play('getreal');
+				sprDifficulty.offset.x = 70;
 		}
 
 		sprDifficulty.alpha = 0;
@@ -378,6 +384,7 @@ class StoryMenuState extends MusicBeatState
 		sprDifficulty.animation.addByPrefix('easy', 'EASY');
 		sprDifficulty.animation.addByPrefix('normal', 'NORMAL');
 		sprDifficulty.animation.addByPrefix('hard', 'HARD');
+		sprDifficulty.animation.addByPrefix('getreal', 'GETREAL');
 		changeDifficulty();
 
 		var bullShit:Int = 0;
