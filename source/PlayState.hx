@@ -758,8 +758,8 @@ class PlayState extends MusicBeatState
 				gf.y += 600;
 				gf.x += 300;
 				dad.y += 600;
-				var halloweenForeground:FlxSprite = new FlxSprite(-1400, -900).loadGraphic('assets/images/week2bg/foreground_trees.png');
-				halloweenForeground.scrollFactor.set(0.3, 0.3);
+				var halloweenForeground:FlxSprite = new FlxSprite(-900, -800).loadGraphic('assets/images/week2bg/foreground_trees.png');
+				halloweenForeground.scrollFactor.set(1.3, 1.3);//this closer to the eye move faster
 				halloweenForeground.setGraphicSize(Std.int(halloweenForeground.width * 0.8));
 				halloweenForeground.updateHitbox();
 
