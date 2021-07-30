@@ -11,6 +11,8 @@ class HealthIcon extends FlxSprite
 	public var iconScale:Float = 1;
 	public var iconSize:Float;
 
+	public var lyricMode:Bool = false;
+
 	var pixelIcons:Array<String> = ["bf-pixel", "senpai", "senpai-angry", "spirit"];
 
 	public function new(char:String = 'face', isPlayer:Bool = false, ?_id:Int = -1)
@@ -89,10 +91,11 @@ class HealthIcon extends FlxSprite
 
 	override function update(elapsed:Float)
 	{
-
-
 		super.update(elapsed);
-		setGraphicSize(Std.int(iconSize * iconScale));
+
+		if (lyricMode == false)
+			setGraphicSize(Std.int(iconSize * iconScale));
+
 		updateHitbox();
 
 		if (sprTracker != null){
