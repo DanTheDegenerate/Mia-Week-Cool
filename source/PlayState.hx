@@ -3,6 +3,9 @@ package;
 import sys.FileSystem;
 //import polymod.fs.SysFileSystem;
 import Section.SwagSection;
+#if desktop
+import Discord.DiscordClient;
+#end
 import Song.SwagSong;
 //import WiggleEffect.WiggleEffectType;
 //import flixel.FlxBasic;
@@ -189,6 +192,17 @@ class PlayState extends MusicBeatState
 
 	var inCutscene:Bool = false;
 
+	
+	#if desktop
+	// Discord RPC variables
+	var storyDifficultyText:String = "";
+	var iconRPC:String = "";
+	var songLength:Float = 0;
+	var detailsText:String = "";
+	var detailsPausedText:String = "";
+	#end
+
+
 	var dadBeats:Array<Int> = [0, 2];
 	var bfBeats:Array<Int> = [1, 3];
 	
@@ -240,6 +254,48 @@ class PlayState extends MusicBeatState
 			SONG = Song.loadFromJson('tutorial');
 
 		Conductor.changeBPM(SONG.bpm);
+
+		#if desktop
+		// Making difficulty text for Discord Rich Presence.
+		switch (storyDifficulty)
+		{
+			case 0:
+				storyDifficultyText = "Easy";
+			case 1:
+				storyDifficultyText = "Normal";
+			case 2:
+				storyDifficultyText = "Hard";
+		}
+
+		iconRPC = SONG.player2;
+
+		// To avoid having duplicate images in Discord assets
+		switch (iconRPC)
+		{
+			case 'senpai-angry':
+				iconRPC = 'senpai';
+			case 'monster-christmas':
+				iconRPC = 'monster';
+			case 'mom-car':
+				iconRPC = 'mom';
+		}
+
+		// String that contains the mode defined here so it isn't necessary to call changePresence for each mode
+		if (isStoryMode)
+		{
+			detailsText = "Story Mode: Week " + storyWeek;
+		}
+		else
+		{
+			detailsText = "Freeplay";
+		}
+
+		// String for when the game is paused
+		detailsPausedText = "Paused - " + detailsText;
+		
+		// Updating Discord Rich Presence.
+		DiscordClient.changePresence(detailsText, SONG.song + " (" + storyDifficultyText + ")", iconRPC);
+		#end
 
 		if(FileSystem.exists("assets/data/" + SONG.song.toLowerCase() + "/" + SONG.song.toLowerCase() + "Dialogue.txt")){
 			try{
@@ -1231,6 +1287,14 @@ class PlayState extends MusicBeatState
 			resyncVocals();
 		});
 
+		#if desktop
+		// Song duration in a float, useful for the time left feature
+		songLength = FlxG.sound.music.length;
+
+		// Updating Discord Rich Presence (with Time Left)
+		DiscordClient.changePresence(detailsText, SONG.song + " (" + storyDifficultyText + ")", iconRPC, true, songLength);
+		#end
+
 	}
 
 	var debugNum:Int = 0;
@@ -1482,10 +1546,52 @@ class PlayState extends MusicBeatState
 			if (!startTimer.finished)
 				startTimer.active = true;
 			paused = false;
+
+			#if desktop
+			if (startTimer.finished)
+			{
+				DiscordClient.changePresence(detailsText, SONG.song + " (" + storyDifficultyText + ")", iconRPC, true, songLength - Conductor.songPosition);
+			}
+			else
+			{
+				DiscordClient.changePresence(detailsText, SONG.song + " (" + storyDifficultyText + ")", iconRPC);
+			}
+			#end
 		}
 
 		super.closeSubState();
 	}
+
+	override public function onFocus():Void
+		{
+			#if desktop
+			if (health > 0 && !paused)
+			{
+				if (Conductor.songPosition > 0.0)
+				{
+					DiscordClient.changePresence(detailsText, SONG.song + " (" + storyDifficultyText + ")", iconRPC, true, songLength - Conductor.songPosition);
+				}
+				else
+				{
+					DiscordClient.changePresence(detailsText, SONG.song + " (" + storyDifficultyText + ")", iconRPC);
+				}
+			}
+			#end
+	
+			super.onFocus();
+		}
+		
+		override public function onFocusLost():Void
+		{
+			#if desktop
+			if (health > 0 && !paused)
+			{
+				DiscordClient.changePresence(detailsPausedText, SONG.song + " (" + storyDifficultyText + ")", iconRPC);
+			}
+			#end
+	
+			super.onFocusLost();
+		}
 
 	function resyncVocals():Void
 	{
@@ -1547,20 +1653,56 @@ class PlayState extends MusicBeatState
 			default:
 				scoreTxt.text = "Score:" + songScore + " | Misses:" + misses + " | Accuracy:" + truncateFloat(accuracy, 2) + "%";
 		}
-
 		if (FlxG.keys.justPressed.ENTER && startedCountdown && canPause)
-		{
-			persistentUpdate = false;
-			persistentDraw = true;
-			paused = true;
+			{
+				persistentUpdate = false;
+				persistentDraw = true;
+				paused = true;
+	
 
-			openSubState(new PauseSubState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
-		}
-
-		if (FlxG.keys.justPressed.SEVEN)
-		{
-			FlxG.switchState(new ChartingState());
-		}
+				
+				
+				
+				
+				
+				
+				#if desktop
+				DiscordClient.changePresence(detailsPausedText, SONG.song + " (" + storyDifficultyText + ")", iconRPC);
+				#end
+			}
+	
+			
+			/*
+			 
+				if(FlxG.keys.justPressed.SIX){
+					var sexScene:FlxVideo = new FlxVideo(Paths.video("sexScene"));
+					add(sexScene);
+					sexScene.play();
+				
+				}
+			
+			
+			
+			
+			
+			
+			*/
+			
+			
+			
+			if (FlxG.keys.justPressed.SEVEN)
+			{
+				FlxG.switchState(new ChartingState());
+	
+				#if desktop
+				if (FlxG.random.bool(40))
+				DiscordClient.changePresence("Shart Editor", null, null, true);
+			
+				else
+				DiscordClient.changePresence("Chart Editor", null, null, true);	
+				#end
+			}
+	
 
 		// FlxG.watch.addQuick('VOL', vocals.amplitudeLeft);
 		// FlxG.watch.addQuick('VOLRight', vocals.amplitudeRight);
@@ -1836,6 +1978,11 @@ class PlayState extends MusicBeatState
 			openSubState(new GameOverSubstate(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y, camFollow.getScreenPosition().x, camFollow.getScreenPosition().y));
 
 			// FlxG.switchState(new GameOverState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
+
+			#if desktop
+			// Game Over doesn't get his own variable because it's only used here
+			DiscordClient.changePresence("Game Over - " + detailsText, SONG.song + " (" + storyDifficultyText + ")", iconRPC);
+			#end
 		}
 
 		if (unspawnNotes[0] != null)

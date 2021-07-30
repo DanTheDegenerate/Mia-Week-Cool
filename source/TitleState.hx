@@ -1,5 +1,10 @@
 package;
 
+#if desktop
+import Discord.DiscordClient;
+import sys.thread.Thread;
+#end
+
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
@@ -65,7 +70,12 @@ class TitleState extends MusicBeatState
 		Main.fpsDisplay.visible = true;
 
 		startIntro();
+
+		#if desktop
+		DiscordClient.initialize();
+		#end
 	}
+
 
 	var logoBl:FlxSprite;
 	var gfDance:FlxSprite;
