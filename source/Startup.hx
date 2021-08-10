@@ -1,5 +1,9 @@
 package;
 
+#if desktop
+import Discord.DiscordClient;
+#end
+
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.addons.transition.FlxTransitionSprite.GraphicTransTileDiamond;
@@ -52,6 +56,11 @@ class Startup extends MusicBeatState
         {
             FlxG.sound.play("assets/sounds/splashSound.ogg");   
         });
+
+        // (tsg - 8/10/2021) initialize discord rpc here because bbpanzu forgot to init it in TitleStateNormal :P
+        #if desktop
+		DiscordClient.initialize();
+		#end
         
         super.create();
 
