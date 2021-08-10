@@ -16,6 +16,7 @@ class Config
 	public static var noteGlow:Bool;
 	public static var noRandomTap:Bool;
 	public static var noFpsCap:Bool;
+	public static var introVal:Bool;
 
 	public static function resetSettings():Void{
 
@@ -29,6 +30,7 @@ class Config
 		FlxG.save.data.noteGlow = false;
 		FlxG.save.data.noRandomTap = false;
 		FlxG.save.data.noFpsCap = true;
+		FlxG.save.data.introVal = true;
 		reload();
 
 	}
@@ -45,6 +47,7 @@ class Config
 		noteGlow = FlxG.save.data.noteGlow;
 		noRandomTap = FlxG.save.data.noRandomTap;
 		noFpsCap = FlxG.save.data.noFpsCap;
+		introVal = FlxG.save.data.introVal;
 	}
 	
 	public static function write(
@@ -57,7 +60,8 @@ class Config
 								newInputW:Bool,
 								noteGlowW:Bool,
 								noRandomTapW:Bool,
-								noFpsCapW:Bool
+								noFpsCapW:Bool,
+								introVal:Bool
 								):Void
 	{
 
@@ -71,6 +75,7 @@ class Config
 		FlxG.save.data.noteGlow = noteGlowW;
 		FlxG.save.data.noRandomTap = noRandomTapW;
 		FlxG.save.data.noFpsCap = noFpsCapW;
+		FlxG.save.data.introVal = introVal;
 
 		FlxG.save.flush();
 		
@@ -100,6 +105,8 @@ class Config
 			FlxG.save.data.noteGlow = false;
 		if(FlxG.save.data.noFpsCap == null)
 			FlxG.save.data.noFpsCap = true;
+		if(FlxG.save.data.introVal == null)
+			FlxG.save.data.introVal = true;
 
 		if(FlxG.save.data.ee1 == null)
 			FlxG.save.data.ee1 = false;

@@ -60,13 +60,17 @@ class Startup extends MusicBeatState
     override function update(elapsed) 
     {
         
-        if(splash.animation.curAnim.finished && splash.animation.curAnim.name == "start"){
-            preload();  
-        }
-        if(splash.animation.curAnim.finished && splash.animation.curAnim.name == "end"){
-            FlxG.switchState(new TitleVidState());
-            
-        }
+			if(splash.animation.curAnim.finished && splash.animation.curAnim.name == "start"){
+				preload();  
+			}
+			if(splash.animation.curAnim.finished && splash.animation.curAnim.name == "end"){
+				if(FlxG.save.data.introVal){
+					FlxG.switchState(new TitleVidState());
+						
+				}else{
+					FlxG.switchState(new TitleStateNormal());
+				}
+			}
         
         super.update(elapsed);
 

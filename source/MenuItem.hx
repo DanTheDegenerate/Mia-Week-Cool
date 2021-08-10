@@ -35,7 +35,7 @@ class MenuItem extends FlxSpriteGroup
 		week.animation.addByPrefix('week12', "week 5", 24);
 		week.animation.addByPrefix('week13', "Week 6", 24);
 		add(week);
-
+		week.antialiasing = true;
 		week.animation.play('week' + (weekNum));
 		week.animation.pause();
 		week.updateHitbox();
@@ -44,6 +44,6 @@ class MenuItem extends FlxSpriteGroup
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
-		y = FlxMath.lerp(y, (targetY * 120) + 480, 0.17);
+		y = FlxMath.lerp(y, (targetY * 240) + 300, 0.17);
 	}
 }
