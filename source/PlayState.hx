@@ -265,6 +265,8 @@ class PlayState extends MusicBeatState
 				storyDifficultyText = "Normal";
 			case 2:
 				storyDifficultyText = "Hard";
+			case 2:
+				storyDifficultyText = "Get Real";
 		}
 
 		iconRPC = SONG.player2;
@@ -2223,7 +2225,7 @@ class PlayState extends MusicBeatState
 			}
 			else
 			{
-				var difficulty:String = "";
+				var difficulty:String = '';
 
 				if (storyDifficulty == 0)
 					difficulty = '-easy';

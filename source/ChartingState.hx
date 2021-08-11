@@ -55,7 +55,7 @@ class ChartingState extends MusicBeatState
 
 	var player1DropDown:FlxUIDropDownMenu;
 	var player2DropDown:FlxUIDropDownMenu;
-	var diffList:Array<String> = ["-easy", "", "-hard"];
+	var diffList:Array<String> = ["-easy", "", "-hard", "-getreal"];
 	var diffDropFinal:String = "";
 	var metronome:FlxUICheckBox;
 	//var halfSpeedCheck:FlxUICheckBox;
@@ -323,7 +323,7 @@ class ChartingState extends MusicBeatState
 
 		player2DropDown.selectedLabel = _song.player2;
 
-		var diffDrop:FlxUIDropDownMenu = new FlxUIDropDownMenu(10, 140, FlxUIDropDownMenu.makeStrIdLabelArray(["Easy", "Normal", "Hard"], true), function(diff:String)
+		var diffDrop:FlxUIDropDownMenu = new FlxUIDropDownMenu(10, 140, FlxUIDropDownMenu.makeStrIdLabelArray(["Easy", "Normal", "Hard", "Get Real"], true), function(diff:String)
 		{
 			trace(diff);
 			diffDropFinal = diffList[Std.parseInt(diff)];

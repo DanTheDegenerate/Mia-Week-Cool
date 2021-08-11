@@ -280,7 +280,7 @@ class TitleStateNormal extends MusicBeatState
 		switch (curBeat)
 		{
 			case 1:
-				createCoolText(['ninjamuffin99', 'phantomArcade', 'kawaisprite', 'evilsk8er', 'Rozebud']);
+				createCoolText(['The B3 Remixed Team']);
 			case 3:
 				deleteCoolText();
 				addMoreText('present');
@@ -307,7 +307,7 @@ class TitleStateNormal extends MusicBeatState
 			case 14:
 				addMoreText('Funkin');
 			case 15:
-				addMoreText('FPS PLUS');
+				addMoreText('B3 REMIXED');
 			case 16:
 				skipIntro();
 		}
