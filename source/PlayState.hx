@@ -266,7 +266,7 @@ class PlayState extends MusicBeatState
 			case 2:
 				storyDifficultyText = "Hard";
 			case 2:
-				storyDifficultyText = "Get Real";
+				storyDifficultyText = "Getreal";
 		}
 
 		iconRPC = SONG.player2;
@@ -673,32 +673,13 @@ class PlayState extends MusicBeatState
 		}
 		else
 		{
-			defaultCamZoom = 0.9;
 			curStage = 'stage';
-			var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic('assets/images/stageback.png');
-			// bg.setGraphicSize(Std.int(bg.width * 2.5));
-			// bg.updateHitbox();
-			bg.antialiasing = true;
-			bg.scrollFactor.set(0.9, 0.9);
-			bg.active = false;
-			add(bg);
-
-			var stageFront:FlxSprite = new FlxSprite(-650, 600).loadGraphic('assets/images/stagefront.png');
-			stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
-			stageFront.updateHitbox();
-			stageFront.antialiasing = true;
-			stageFront.scrollFactor.set(0.9, 0.9);
-			stageFront.active = false;
-			add(stageFront);
-
-			var stageCurtains:FlxSprite = new FlxSprite(-500, -300).loadGraphic('assets/images/stagecurtains.png');
-			stageCurtains.setGraphicSize(Std.int(stageCurtains.width * 0.9));
-			stageCurtains.updateHitbox();
-			stageCurtains.antialiasing = true;
-			stageCurtains.scrollFactor.set(1.3, 1.3);
-			stageCurtains.active = false;
-
-			add(stageCurtains);
+			defaultCamZoom = 0.550;
+		
+			var stageBG:FlxSprite = new FlxSprite(-700, -300).loadGraphic('assets/images/stage/Stadium.png');
+			stageBG.setGraphicSize(Std.int(stageBG.width * 1));
+			stageBG.scrollFactor.set(0.9, 0.9);
+			add(stageBG);
 		}
 
 		switch(SONG.song.toLowerCase()){
