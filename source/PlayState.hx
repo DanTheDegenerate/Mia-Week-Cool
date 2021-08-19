@@ -128,6 +128,7 @@ class PlayState extends MusicBeatState
 	private var lyricSpeakerIcon:HealthIcon;
 	var lyrics:Array<SwagLyricSection>;
 	var hasLyrics:Bool = false;
+	var hasDialogue:Bool = false;
 	var lyricTxt:FlxText;
 
 	var dialogue:Array<String> = ['strange code', '>:]'];
@@ -301,7 +302,9 @@ class PlayState extends MusicBeatState
 
 		if(FileSystem.exists("assets/data/" + SONG.song.toLowerCase() + "/" + SONG.song.toLowerCase() + "Dialogue.txt")){
 			try{
+				hasDialogue = true;
 				dialogue = CoolUtil.coolTextFile("assets/data/" + SONG.song.toLowerCase() + "/" + SONG.song.toLowerCase() + "Dialogue.txt");
+				trace(dialogue);
 			}
 			catch(e){}
 		}
@@ -1009,7 +1012,12 @@ class PlayState extends MusicBeatState
 				case 'thorns':
 					schoolIntro(doof);
 				default:
-					startCountdown();
+					if (hasDialogue){
+						schoolIntro(doof);
+					}else{
+						startCountdown();
+						
+					}
 			}
 		}
 		else

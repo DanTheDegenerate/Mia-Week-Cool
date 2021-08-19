@@ -1,7 +1,28 @@
 :gf:default:Ok so, I told my Mom and Dad about you.
-:bf:what:beep!
+:effect:toY:20
+:effect:shake:12
+:autoskip:during:0.3
+:bf:surprised:
+:effect:toY:-10
+:bf:surprised:beep!
 :gf:default:but they didn't take it too well...
-:bf:yikes:boop?
-:gf:cry:And he invited you to face him in one of his concerts... that's why I brought you here. .............And if you lose against him he's gonna kill you...
-:bf:upset:BAP?!
-:gf:default:But don't worry! If you win, we can keep dating! So, let's make sure your rapping skills are still as good as when I met you.
+:effect:toY:20
+:effect:shake:-2
+:bf:surprised:boop?
+:effect:toX:20
+:autoskip:during:4
+:effect:shake:0
+:gf:scared:And he invited you to face him in one of his concerts... that's why I brought you here.
+:text:pretext:`current
+:text:speed:0.1
+:autoskip:during:1
+:gf:scared:...
+:text:speed:0.04
+:text:pretext:`current
+:gf:scared:And if you lose against him he's gonna kill you...
+:effect:shake:-4
+:bf:smug:BAP?!
+:effect:shake:0
+:gf:reallysmug:But don't worry! If you win, we can keep dating! So, let's make sure your rapping skills are still as good as when I met you.
+:gf:default:also SHIFT to skip dialogue
+:bf:default:thx b3gf ily<3

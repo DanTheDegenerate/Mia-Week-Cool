@@ -182,7 +182,9 @@ class StoryMenuState extends MusicBeatState
 		rightArrow.animation.addByPrefix('press', "arrow push right", 24, false);
 		rightArrow.animation.play('idle');
 		difficultySelectors.add(rightArrow);
-
+		
+		leftArrow.angle = 90;
+		rightArrow.angle = 90;
 		trace("Line 150");
 
 		add(grpWeekCharacters);
@@ -293,7 +295,7 @@ class StoryMenuState extends MusicBeatState
 				FlxG.sound.play('assets/sounds/confirmMenu' + TitleState.soundExt);
 
 				grpWeekText.members[curWeek].week.animation.resume();
-				grpWeekCharacters.members[1].animation.play('bfConfirm');
+				//grpWeekCharacters.members[1].animation.play('bfConfirm');
 				stopspamming = true;
 			}
 

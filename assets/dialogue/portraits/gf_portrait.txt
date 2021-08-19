@@ -1,7 +1,5 @@
 indices:default:0
-indices:cry:1
-indices:sad:1
-indices:anger:2,3,4
-indices:whoa:5
-indices:omg:6
-indices:stim:7,8,9
+indices:smug:0
+indices:reallysmug:1
+indices:scared:2
+indices:angry:3

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="pepper.png">
+	<!-- Created with Adobe Animate version 20.0.3.25487 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="pepper_portrait0000" x="0" y="0" width="319" height="379"/>
+	<SubTexture name="pepper_portrait0001" x="320" y="0" width="319" height="379"/>
+	<SubTexture name="pepper_portrait0002" x="640" y="0" width="319" height="379"/>
+</TextureAtlas>
