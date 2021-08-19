@@ -53,9 +53,9 @@ class Portrait extends FlxSprite
 
            default:
               //  addAnim("default", "noChar instance 1");
-				frames = FlxAtlasFrames.fromSparrow("assets/dialogue/portrait/" + _character + ".png","assets/dialogue/portrait/" + _character + ".xml");
+				frames = FlxAtlasFrames.fromSparrow("assets/dialogue/portraits/" + _character + ".png","assets/dialogue/portraits/" + _character + ".xml");
 				
-				var filepath = "assets/dialogue/portrait/" + _character + "_portrait.txt";
+				var filepath = "assets/dialogue/portraits/" + _character + "_portrait.txt";
 				
 				var rawdata:String = File.getContent(filepath);
 				var data = rawdata.split("\n");

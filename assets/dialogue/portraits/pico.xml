@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="pico.png">
+	<!-- Created with Adobe Animate version 20.0.3.25487 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="pico_portrait0000" x="0" y="0" width="371" height="260"/>
+	<SubTexture name="pico_portrait0001" x="372" y="0" width="371" height="260"/>
+	<SubTexture name="pico_portrait0002" x="0" y="261" width="371" height="260"/>
+	<SubTexture name="pico_portrait0003" x="372" y="261" width="371" height="260"/>
+	<SubTexture name="pico_portrait0004" x="0" y="522" width="371" height="260"/>
+</TextureAtlas>
