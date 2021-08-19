@@ -1,7 +1,7 @@
-:dad:Hello, boy.
-:bf:boop...
-:dad:Is this your first time in front of hundreds of people? 
-:bf:bap...
-:dad:I'm guessing that means yes. You speak quite an old language you know? Last time I heard it was 300 years ago. It'd be a shame if you died so early in your life.
-:bf:bloop!
-:dad:But unfortunately, it's what's going to happen.
+:dad:smile:Hello, boy.
+:bf:depressed:boop...
+:dad:smug:Is this your first time in front of hundreds of people? 
+:bf:angry:bap...
+:dad:smug:I'm guessing that means yes. You speak quite an old language you know? Last time I heard it was 300 years ago. It'd be a shame if you died so early in your life.
+:bf:smug:bloop!
+:dad:smile:But unfortunately, it's what's going to happen.

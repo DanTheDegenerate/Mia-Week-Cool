@@ -1,7 +1,7 @@
-:gf:default:Ok so, I told my Mom and Dad about you.
-:bf:what:beep!
-:gf:default:but they didn't take it too well...
-:bf:yikes:boop?
-:gf:cry:And he invited you to face him in one of his concerts... that's why I brought you here. .............And if you lose against him he's gonna kill you...
-:bf:upset:BAP?!
-:gf:default:But don't worry! If you win, we can keep dating! So, let's make sure your rapping skills are still as good as when I met you.
+:gf:embarrased:Ok so, I told my Mom and Dad about you.
+:bf:happy:beep!
+:gf:embarrased:but they didn't take it too well...
+:bf:depressed:boop?
+:gf:scared:And he invited you to face him in one of his concerts... that's why I brought you here. .............And if you lose against him he's gonna kill you...
+:bf:angry:BAP?!
+:gf:smug:But don't worry! If you win, we can keep dating! So, let's make sure your rapping skills are still as good as when I met you.
