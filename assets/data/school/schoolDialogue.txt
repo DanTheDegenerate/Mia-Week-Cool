@@ -1,13 +1,33 @@
+:music:school:0.4
 :gf:smug: Are you sure you don't wanna take a break?
+:effect:shake:12
+:effect:toX:-24
 :pico:angry: Shut the fuck up you damn bubble guppie kinnie.
+:text:speed:0.1
 :gf:angry: ...
+:text:speed:0.04
 :pico:annoyed: To be honest, you're actually pretty good at this. But I refuse to believe that you're better than ME.
 :bf:smug: Beep bap ska bep boop bo!
 :pico:angry: Hey roblox guest! What the hell did he just say?
+:effect:toAngle:-8
+:effect:toY:8
 :gf:reallysmug: He said he is better than you in bed.
+:effect:toX:12
+:effect:toY:-12
+:effect:toAngle:8
+:sound:animesound:0
+:music:stop:
 :pico:blush:...
+:effect:angle:8
+:effect:toAngle:-8
+:music:fadeIn:0.4
 :pico:confused: Enough playing around, I don't bring this gun around for nothing. 
+:effect:fromY:-20
 :bf:angry:Ba?!
 :pico:smug: I won't kill you. I think.
 :pico:smug: Lets kick it up a notch. Time to "educate" you on who I am. 
-:gf:reallysmug:(Get it? Cause the next song is Schoo-)
+:autoskip:during:1.8
+:music:fadeOutFull:0.1
+:text:speed:0.05
+:gf:reallysmug:(Get it? Cause the next song is Schoo
+:fastEnd::

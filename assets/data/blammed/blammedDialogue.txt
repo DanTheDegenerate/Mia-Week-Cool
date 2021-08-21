@@ -1,3 +1,4 @@
+:music:school:0.4
 :text:speed:0.1
 :pico:annoyed:...
 :text:speed:0.04

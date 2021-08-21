@@ -421,24 +421,24 @@ class DialogueBox extends FlxSpriteGroup
 	
 	var isEnding:Bool = false;
 
-	function endDialogue(){
+	function endDialogue(speed = 1.2){
 
 		if (PlayState.SONG.song.toLowerCase() == 'senpai' || PlayState.SONG.song.toLowerCase() == 'thorns')
-			FlxG.sound.music.fadeOut(2.2, 0);
+			FlxG.sound.music.fadeOut(speed +2, 0);
 
 		hideAll();
 		if (this.sound != null) this.sound.stop();
-		FlxTween.tween(box, {alpha: 0}, 1.2, {ease: FlxEase.linear});
-		FlxTween.tween(bgFade, {alpha: 0}, 1.2, {ease: FlxEase.linear});
-		FlxTween.tween(cutsceneImage, {alpha: 0}, 1.2, {ease: FlxEase.linear});
-		FlxTween.tween(swagDialogue, {alpha: 0}, 1.2, {ease: FlxEase.linear});
-		FlxTween.tween(blackBG, {alpha: 0}, 1.2, {ease: FlxEase.linear});
-		FlxTween.tween(dropText, {alpha: 0}, 1.2, {ease: FlxEase.linear});
-		FlxTween.tween(skipText, {alpha: 0}, 1.2, {ease: FlxEase.linear});
-		FlxG.sound.music.fadeOut(1.2, 0);
+		FlxTween.tween(box, {alpha: 0}, speed, {ease: FlxEase.linear});
+		FlxTween.tween(bgFade, {alpha: 0}, speed, {ease: FlxEase.linear});
+		FlxTween.tween(cutsceneImage, {alpha: 0}, speed, {ease: FlxEase.linear});
+		FlxTween.tween(swagDialogue, {alpha: 0}, speed, {ease: FlxEase.linear});
+		FlxTween.tween(blackBG, {alpha: 0}, speed, {ease: FlxEase.linear});
+		FlxTween.tween(dropText, {alpha: 0}, speed, {ease: FlxEase.linear});
+		FlxTween.tween(skipText, {alpha: 0}, speed, {ease: FlxEase.linear});
+		FlxG.sound.music.fadeOut(speed, 0);
 
 
-		new FlxTimer().start(1.2, function(tmr:FlxTimer)
+		new FlxTimer().start(speed, function(tmr:FlxTimer)
 		{
 			finishThing();
 			kill();
@@ -511,6 +511,8 @@ class DialogueBox extends FlxSpriteGroup
 						case "shake":
 							boxShake = Std.parseFloat(dialogueList[0]);
 					}
+				case "fastEnd":
+					endDialogue(0.01);
 				case "camEffect":
 					skipDialogue = true;
 					switch(curAnim){

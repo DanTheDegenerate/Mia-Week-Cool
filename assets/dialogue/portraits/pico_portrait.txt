@@ -4,4 +4,4 @@ indices:annoyed:1
 indices:confused:1
 indices:angry:2
 indices:angryconfused:3
-indices:angryconfused-blush:4
+indices:blush:4
