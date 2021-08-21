@@ -6,4 +6,7 @@
 	<SubTexture name="gf_portrait0001" x="303" y="0" width="302" height="305"/>
 	<SubTexture name="gf_portrait0002" x="606" y="0" width="302" height="305"/>
 	<SubTexture name="gf_portrait0003" x="0" y="306" width="302" height="305"/>
+	<SubTexture name="gf_portrait0004" x="303" y="306" width="302" height="305"/>
+	<SubTexture name="gf_portrait0005" x="0" y="0" width="302" height="305"/>
+	<SubTexture name="gf_portrait0006" x="606" y="306" width="302" height="305"/>
 </TextureAtlas>

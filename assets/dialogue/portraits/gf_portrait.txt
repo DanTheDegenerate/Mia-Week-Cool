@@ -3,3 +3,7 @@ indices:smug:0
 indices:reallysmug:1
 indices:scared:2
 indices:angry:3
+indices:awkward:4
+indices:death:5
+indices:donewithyourcrap:6
+indices:bruh:6

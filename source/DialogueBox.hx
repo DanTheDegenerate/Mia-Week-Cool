@@ -456,13 +456,14 @@ class DialogueBox extends FlxSpriteGroup
 		cleanDialog();
 		hideAll();
 		box.visible = true;
+		effectAngle(0);
 		box.flipX = true;
 		swagDialogue.visible = true;
 		dropText.visible = true;
 		trace(curCharacter,curAnim,dialogueList[0]);
 		if (portraitNameList.contains(curCharacter)){// if the first thing is a character in the list
 				//changeSound('beat',0.6);
-				portraits[portraitNameList.indexOf(curCharacter)].playFrame(curAnim);
+				portraits[portraitNameList.indexOf(curCharacter)].playFrame(curAnim.toLowerCase() );
 		}else{//if not do special shit
 
 			switch (curCharacter)
@@ -663,6 +664,12 @@ class DialogueBox extends FlxSpriteGroup
 
 				case "addX":
 					effectAddX(Std.parseFloat(effectParamQue[i]));
+				case "angle":
+					effectAngle(Std.parseFloat(effectParamQue[i]));
+				case "toAngle":
+					effectToAngle(Std.parseFloat(effectParamQue[i]));
+				case "fromAngle":
+					effectFromAngle(Std.parseFloat(effectParamQue[i]));
 				case "addY":
 					effectAddY(Std.parseFloat(effectParamQue[i]));
 				case "toX":
@@ -738,6 +745,24 @@ class DialogueBox extends FlxSpriteGroup
         
 		for(i in 0...portraitArray().length){
 		portraitArray()[i].effectFromX(X);
+		}
+    }
+     function effectAngle(?X:Float = 1){
+        
+		for(i in 0...portraitArray().length){
+		portraitArray()[i].effectAngle(X);
+		}
+    }
+     function effectToAngle(?X:Float = 1){
+        
+		for(i in 0...portraitArray().length){
+		portraitArray()[i].effectToAngle(X);
+		}
+    }
+     function effectFromAngle(?X:Float = 1){
+        
+		for(i in 0...portraitArray().length){
+		portraitArray()[i].effectFromAngle(X);
 		}
     }
      function effectFromY(?Y:Float = 1){
