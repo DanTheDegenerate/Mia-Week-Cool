@@ -267,7 +267,7 @@ class FreeplayState extends MusicBeatState
 			case 2:
 				diffText.text = "HARD";
 			case 3:
-				diffText.text = "GETREAL";
+				diffText.text = "GET REAL";
 		}
 	}
 
