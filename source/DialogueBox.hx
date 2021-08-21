@@ -554,7 +554,7 @@ class DialogueBox extends FlxSpriteGroup
 						default:
 						sound = new FlxSound().loadEmbedded(Sound.fromFile("assets/dialogue/sounds/" + curAnim + ".ogg"));
 						sound.play();
-						this.sound.looped = (Std.parseInt(dialogueList[0]) == 1);
+						this.sound.looped = (Std.parseInt(dialogueList[0]) == 1) ||dialogueList[0] == "true";
 					}
 				case "autoskip":
 					skipDialogue = true;
@@ -576,6 +576,13 @@ class DialogueBox extends FlxSpriteGroup
 						case "after":
 								trace("doesn't work currently");
 								new FlxTimer().start(Std.parseFloat(dialogueList[0]), function(e:FlxTimer){
+									inAutoText = false;
+									canAdvance = true;
+									canSkip = true;
+									nextShit();
+								});
+						default:
+								new FlxTimer().start(Std.parseFloat(curAnim), function(e:FlxTimer){
 									inAutoText = false;
 									canAdvance = true;
 									canSkip = true;
