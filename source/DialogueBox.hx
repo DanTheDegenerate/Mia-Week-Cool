@@ -115,8 +115,8 @@ class DialogueBox extends FlxSpriteGroup
 				//FlxG.sound.music.fadeIn(1, 0, 0.8);
 		
 		}
-		blackBG = new FlxSprite(-256, -256).makeGraphic(FlxG.width * 2, FlxG.height * 2, 0);
-		add(blackBG);
+		blackBG = new FlxSprite(-256, -256).makeGraphic(FlxG.width * 2, FlxG.height * 2);
+		//add(blackBG);
 	
 		bgFade = new FlxSprite(-200, -200).makeGraphic(Std.int(FlxG.width * 1.3), Std.int(FlxG.height * 1.3), 0xFF660066);
 		bgFade.scrollFactor.set();
@@ -421,24 +421,24 @@ class DialogueBox extends FlxSpriteGroup
 	
 	var isEnding:Bool = false;
 
-	function endDialogue(){
+	function endDialogue(speed = 1.2){
 
 		if (PlayState.SONG.song.toLowerCase() == 'senpai' || PlayState.SONG.song.toLowerCase() == 'thorns')
-			FlxG.sound.music.fadeOut(2.2, 0);
+			FlxG.sound.music.fadeOut(speed +2, 0);
 
 		hideAll();
 		if (this.sound != null) this.sound.stop();
-		FlxTween.tween(box, {alpha: 0}, 1.2, {ease: FlxEase.linear});
-		FlxTween.tween(bgFade, {alpha: 0}, 1.2, {ease: FlxEase.linear});
-		FlxTween.tween(cutsceneImage, {alpha: 0}, 1.2, {ease: FlxEase.linear});
-		FlxTween.tween(swagDialogue, {alpha: 0}, 1.2, {ease: FlxEase.linear});
-		FlxTween.tween(blackBG, {alpha: 0}, 1.2, {ease: FlxEase.linear});
-		FlxTween.tween(dropText, {alpha: 0}, 1.2, {ease: FlxEase.linear});
-		FlxTween.tween(skipText, {alpha: 0}, 1.2, {ease: FlxEase.linear});
-		FlxG.sound.music.fadeOut(1.2, 0);
+		FlxTween.tween(box, {alpha: 0}, speed, {ease: FlxEase.linear});
+		FlxTween.tween(bgFade, {alpha: 0}, speed, {ease: FlxEase.linear});
+		FlxTween.tween(cutsceneImage, {alpha: 0}, speed, {ease: FlxEase.linear});
+		FlxTween.tween(swagDialogue, {alpha: 0}, speed, {ease: FlxEase.linear});
+		FlxTween.tween(blackBG, {alpha: 0}, speed, {ease: FlxEase.linear});
+		FlxTween.tween(dropText, {alpha: 0}, speed, {ease: FlxEase.linear});
+		FlxTween.tween(skipText, {alpha: 0}, speed, {ease: FlxEase.linear});
+		FlxG.sound.music.fadeOut(speed, 0);
 
 
-		new FlxTimer().start(1.2, function(tmr:FlxTimer)
+		new FlxTimer().start(speed, function(tmr:FlxTimer)
 		{
 			finishThing();
 			kill();
@@ -456,13 +456,14 @@ class DialogueBox extends FlxSpriteGroup
 		cleanDialog();
 		hideAll();
 		box.visible = true;
+		effectAngle(0);
 		box.flipX = true;
 		swagDialogue.visible = true;
 		dropText.visible = true;
 		trace(curCharacter,curAnim,dialogueList[0]);
 		if (portraitNameList.contains(curCharacter)){// if the first thing is a character in the list
 				//changeSound('beat',0.6);
-				portraits[portraitNameList.indexOf(curCharacter)].playFrame(curAnim);
+				portraits[portraitNameList.indexOf(curCharacter)].playFrame(curAnim.toLowerCase() );
 		}else{//if not do special shit
 
 			switch (curCharacter)
@@ -510,6 +511,8 @@ class DialogueBox extends FlxSpriteGroup
 						case "shake":
 							boxShake = Std.parseFloat(dialogueList[0]);
 					}
+				case "fastEnd":
+					endDialogue(0.01);
 				case "camEffect":
 					skipDialogue = true;
 					switch(curAnim){
@@ -551,7 +554,7 @@ class DialogueBox extends FlxSpriteGroup
 						default:
 						sound = new FlxSound().loadEmbedded(Sound.fromFile("assets/dialogue/sounds/" + curAnim + ".ogg"));
 						sound.play();
-						this.sound.looped = (Std.parseInt(dialogueList[0]) == 1);
+						this.sound.looped = (Std.parseInt(dialogueList[0]) == 1) ||dialogueList[0] == "true";
 					}
 				case "autoskip":
 					skipDialogue = true;
@@ -573,6 +576,13 @@ class DialogueBox extends FlxSpriteGroup
 						case "after":
 								trace("doesn't work currently");
 								new FlxTimer().start(Std.parseFloat(dialogueList[0]), function(e:FlxTimer){
+									inAutoText = false;
+									canAdvance = true;
+									canSkip = true;
+									nextShit();
+								});
+						default:
+								new FlxTimer().start(Std.parseFloat(curAnim), function(e:FlxTimer){
 									inAutoText = false;
 									canAdvance = true;
 									canSkip = true;
@@ -663,6 +673,12 @@ class DialogueBox extends FlxSpriteGroup
 
 				case "addX":
 					effectAddX(Std.parseFloat(effectParamQue[i]));
+				case "angle":
+					effectAngle(Std.parseFloat(effectParamQue[i]));
+				case "toAngle":
+					effectToAngle(Std.parseFloat(effectParamQue[i]));
+				case "fromAngle":
+					effectFromAngle(Std.parseFloat(effectParamQue[i]));
 				case "addY":
 					effectAddY(Std.parseFloat(effectParamQue[i]));
 				case "toX":
@@ -738,6 +754,24 @@ class DialogueBox extends FlxSpriteGroup
         
 		for(i in 0...portraitArray().length){
 		portraitArray()[i].effectFromX(X);
+		}
+    }
+     function effectAngle(?X:Float = 1){
+        
+		for(i in 0...portraitArray().length){
+		portraitArray()[i].effectAngle(X);
+		}
+    }
+     function effectToAngle(?X:Float = 1){
+        
+		for(i in 0...portraitArray().length){
+		portraitArray()[i].effectToAngle(X);
+		}
+    }
+     function effectFromAngle(?X:Float = 1){
+        
+		for(i in 0...portraitArray().length){
+		portraitArray()[i].effectFromAngle(X);
 		}
     }
      function effectFromY(?Y:Float = 1){

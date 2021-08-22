@@ -1,0 +1,4 @@
+indices:default:0
+indices:happy:0
+indices:sad:1
+indices:surprised:2

@@ -11,6 +11,7 @@ import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.group.FlxGroup;
 import flixel.math.FlxMath;
 import flixel.text.FlxText;
+import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
@@ -39,10 +40,11 @@ class StoryMenuState extends MusicBeatState
 
 	var grpWeekText:FlxTypedGroup<MenuItem>;
 	var grpWeekCharacters:FlxTypedGroup<MenuCharacter>;
-
+	var coolerArrows:FlxSprite;
 	var grpLocks:FlxTypedGroup<FlxSprite>;
 
 	var ui_tex:FlxAtlasFrames;
+	var bd:FlxSprite;
 
 	var difficultySelectors:FlxGroup;
 	var sprDifficulty:FlxSprite;
@@ -85,7 +87,12 @@ class StoryMenuState extends MusicBeatState
 		{
 			FlxG.sound.playMusic("assets/music/klaskiiLoop.ogg", 0.75);
 		}
-
+		bd = new FlxSprite(0, 0);
+		bd.frames = FlxAtlasFrames.fromSparrow('assets/images/menu/backdrop.png', 'assets/images/menu/backdrop.xml');
+		bd.animation.addByIndices("bd", "bd", [0, 0, 1, 2, 2, 2, 2, 3],"",0);
+		bd.animation.play("bd", true, false, 0);
+		add(bd);
+		bd.alpha = 0.4;
 		persistentUpdate = persistentDraw = true;
 		var yellowBG:FlxSprite = new FlxSprite();
 		scoreText = new FlxText(660, 10, 0, "SCORE: 49324858", 36);
@@ -189,7 +196,7 @@ class StoryMenuState extends MusicBeatState
 
 		add(grpWeekCharacters);
 
-		txtTracklist = new FlxText(FlxG.width * 0.05, yellowBG.x + yellowBG.height + 100, 0, "Tracks", 32);
+		txtTracklist = new FlxText(FlxG.width * 0.05, yellowBG.x + yellowBG.height + 100, 336, "Tracks", 32);
 		txtTracklist.alignment = CENTER;
 		txtTracklist.font = rankText.font;
 		txtTracklist.color = 0xFFe55777;
@@ -199,7 +206,9 @@ class StoryMenuState extends MusicBeatState
 		// add(rankText);
 		add(scoreText);
 		add(txtWeekTitle);
-
+		coolerArrows = new FlxSprite(227.45, 180).loadGraphic('assets/images/menu/coolerarrows.png');
+		coolerArrows.antialiasing = true;
+		add(coolerArrows);
 		updateText();
 
 		trace("Line 165");
@@ -335,7 +344,7 @@ class StoryMenuState extends MusicBeatState
 		curDifficulty += change;
 
 		if (curDifficulty < 0)
-			curDifficulty = 2;
+			curDifficulty = 3;
 		if (curDifficulty > 3)
 			curDifficulty = 0;
 
@@ -376,7 +385,8 @@ class StoryMenuState extends MusicBeatState
 	function changeWeek(change:Int = 0):Void
 	{
 		curWeek += change;
-
+		coolerArrows.y = 180 +20 * change;
+		FlxTween.tween(coolerArrows, {y:180}, 0.2,{ease:FlxEase.circOut});
 		if (curWeek >= weekData.length)
 			curWeek = 0;
 		if (curWeek < 0)
@@ -387,6 +397,7 @@ class StoryMenuState extends MusicBeatState
 		sprDifficulty.animation.addByIndices('normal', 'diff',[1],"");
 		sprDifficulty.animation.addByIndices('hard', 'diff',[2],"");
 		sprDifficulty.animation.addByIndices('getreal', 'diff',[3],"");
+		bd.animation.play("bd", true, false, curWeek);
 		changeDifficulty();
 
 		var bullShit:Int = 0;
@@ -451,7 +462,7 @@ class StoryMenuState extends MusicBeatState
 
 		txtTracklist.text = txtTracklist.text.toUpperCase();
 
-		txtTracklist.setPosition(1000,100);
+		txtTracklist.setPosition(950,100);
 
 		#if !switch
 		intendedScore = Highscore.getWeekScore(curWeek, curDifficulty);

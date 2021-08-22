@@ -1,0 +1,176 @@
+# means a number (integer)
+% means a float (number with decimal)
+$ means a string (text)
+@ means a boolean (true or false / 0 or 1)
+
+if it doesn't have the symbols above, it means it's required to type that
+
+
+---------------------------------------------------------------
+***ATTENTION LOOK HERE LOOK***
+
+all the effects, audio, and visual markups must come BEFORE the dialogue markup
+
+NO--------               YES---------
+:dad:happy:ily<3          :effect:addY:-20
+:effect:addY:-20          :font:color:0xFF334455
+:font:color:0xFF334455    :dad:happy:ily<3
+
+
+-------------------------------------------------------
+
+
+CHARACTERS-----
+
+:$character:$emotionAnim:$dialogue
+-shows the character portrait, the emotion, and sets the dialogue
+
+EFFECT
+
+:effect:toX:%xvalue
+-shifts portrait an amount (+ right   - left)
+
+:effect:toY:%yvalue
+-shifts portrait an amount (+ down   - up)
+
+:effect:fromX:%xvalue
+-shifts portrait from amount (+ right   - left)
+
+:effect:fromY:%yvalue
+-shifts portrait from amount (+ down   - up)
+
+:effect:angle:%value
+-rotates portrait and angle
+
+:effect:toAngle:%value
+-spins portrait to angle
+
+:effect:fromAngle:%value
+-spins portrait from angle
+
+:effect:fadeOut:%value
+-fades out portrait
+
+:effect:fadeIn:%value
+-fades in portrait
+
+:effect:exitStageLeft:%value
+-exits screen toward the left in the speed of %value
+
+:effect:exitStageRight:%value
+-exits screen toward the right in the speed of %value
+
+:effect:enterStageLeft:%value
+-enters screen toward the left in the speed of %value
+
+:effect:enterStageRight:%value
+-enters screen toward the right in the speed of %value
+
+:effect:rightSide:
+-sets portrait and box direction to the right side
+
+:effect:toRight:
+-moves portrait to the right side
+
+:effect:toLeft:
+-moves portrait to the left side
+
+:effect:shake:%value
+-shakes portrait by %value
+
+
+
+
+
+TEXT
+
+:text:shake:%value
+-shakes text at the %value's intensity. positive for oneshot shake. negative for persistant shake
+
+:text:speed:%value
+-changes speed of the typing to the %value. ++ slower  -- faster
+
+:text:speed:%value
+-sets typing variation.
+
+:text:pretext:$text
+sets a text before the typing starts. set $text to `current to set it as the current text displayed
+
+FONT
+
+
+:font:style:$style
+-sets font
+
+:font:color:#0xAARRGGBB
+-sets font color. 
+red (0xFFFF0000)
+transparentblue (0x660000FF)
+
+
+:font:size:#size
+-sets font size
+
+BOX
+
+:box:shake:%value
+-shakes box
+
+CAMERA
+
+:camEffect:flash:%duration
+-flashes camera
+
+
+
+:effect:hidden:
+-hides dialogue
+
+:effect:$effect:%parameter
+
+MUSIC
+
+:music:$musicname:%volume
+-sets music and music volume
+
+:music:stop:
+-stops music
+
+:music:fadeIn:%volume
+-fades in music to volume
+
+:music:fadeOut:
+-fades out music
+
+BG
+
+:bg:shake:%value
+-shakes background
+
+:bg:hide:
+-hides background
+
+:bg:$backgroundname:
+-sets background
+
+SOUND
+
+:sound:$soundname:@loop
+-plays sound effect
+
+:sound:stop:
+-stops sound
+
+MISC
+
+:autoskip:%delay:
+-automatically skips text after a certain amount of time
+
+:fastEnd::
+-ends cutscene immediently
+
+:noChar::
+-shows no characters
+
+:hideBox::
+-hides textbox

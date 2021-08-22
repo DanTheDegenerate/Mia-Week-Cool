@@ -23,6 +23,7 @@ class Portrait extends FlxSprite
     private var characters:Array<String> = ["bf", "gf", "pinkie"];
 
     var posTween:FlxTween;
+    var angleTween:FlxTween;
     var alphaTween:FlxTween;
 	
     public function new(_x:Float, _y:Float, _character:String){
@@ -38,6 +39,7 @@ class Portrait extends FlxSprite
 
         playFrame();
         posTween = FlxTween.tween(this, {x: x}, 0.1);
+        angleTween = FlxTween.tween(this, {angle: angle}, 0.1);
         alphaTween = FlxTween.tween(this, {alpha: alpha}, 0.1);
         hide();
 
@@ -80,6 +82,7 @@ class Portrait extends FlxSprite
 							updateHitbox();
 					}
 				}
+				antialiasing = true;
                 animation.play("default");
 				//name prefix/indices
         
@@ -212,6 +215,22 @@ class Portrait extends FlxSprite
         x = refx;
         y = refy - height;
         posTween = FlxTween.tween(this, {x: x + X}, 0.3, {ease: FlxEase.quintOut});
+    }
+    public function effectAngle(?ang:Float = 1){
+        
+        angle = ang;
+    }
+
+    public function effectToAngle(?ang:Float = 1){
+        
+        angleTween.cancel();
+        angleTween = FlxTween.tween(this, {angle: ang}, 0.3, {ease: FlxEase.quintOut});
+    }
+
+    public function effectFromAngle(?ang:Float = 1){
+        
+        angleTween.cancel();
+        angleTween = FlxTween.tween(this, {angle: ang}, 0.3, {ease: FlxEase.quintOut,type:BACKWARD});
     }
 
     public function effectFromY(?Y:Float = 1){

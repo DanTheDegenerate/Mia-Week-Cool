@@ -2,3 +2,5 @@ indices:default:0
 indices:happy:0
 indices:smug:1
 indices:surprised:2
+indices:depressed:3
+indices:angry:4
