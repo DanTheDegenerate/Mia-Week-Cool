@@ -1,16 +1,22 @@
+:music:shiver:0.4
 :gf:smug:There is no way you have a giant humanoid Pepper friend that lives in the forest, BF. 
 :gf:smug:Dragging me out here is not gonna make me believe you.
 :gf:reallysmug:Unless you dragged me out in the forest for something else~
-:spooky:melo:Hello strangers!
+:spooky:melohappy:Hello strangers!
+:effect:shake:-6
 :gf:scared:What on Earth? Where did you come from?
-:spooky:melo:Our mom's house!
+:effect:shake:0
+:spooky:melohappy:Our mom's house!
 :gf:scared:Our?
 :spooky:happy:This is my brother! Imp!
-:spooky:happy:*Unintelligible sounds*
+:spooky:imphappy:*Unintelligible sounds*
+:text:speed:0.1
 :bf:happy:Where... Pep?
 :spooky:confused:Wait... you know who Pep is?
 :bf:happy:Bap!
 :spooky:happy: I can't understand you but I guess you do! Awesome! You must be the guy that Pep said he was friends with before us! 
+:effect:toY:-4
+:effect:toY:4
 :bf:smug: *nods head*
 :spooky:confused:Well...
 :spooky:happy:Pep said that you're good at singing! Can you sing with us so we can make sure your actually Pep's friend!
