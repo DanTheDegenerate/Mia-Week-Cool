@@ -164,6 +164,7 @@ class PlayState extends MusicBeatState
 
 	var stationLights:FlxSprite;
 	var stationGlow:FlxSprite;
+	var pcameos:FlxSprite;
 	var phillyTrain:FlxSprite;
 	var trainSound:FlxSound;
 
@@ -179,6 +180,8 @@ class PlayState extends MusicBeatState
 
 	var bgGirls:BackgroundGirls;
 	var wiggleShit:WiggleEffect = new WiggleEffect();
+
+	var dcameos:FlxSprite;
 
 	var talking:Bool = true;
 	var songScore:Int = 0;
@@ -266,7 +269,7 @@ class PlayState extends MusicBeatState
 				storyDifficultyText = "Normal";
 			case 2:
 				storyDifficultyText = "Hard";
-			case 2:
+			case 3:
 				storyDifficultyText = "Getreal";
 		}
 
@@ -356,6 +359,18 @@ class PlayState extends MusicBeatState
 			subway.setGraphicSize(Std.int(subway.width * 1));
 			subway.updateHitbox();
 			add(subway);
+
+			pcameos = new FlxSprite(-350,-500);
+			pcameos.frames = FlxAtlasFrames.fromSparrow('assets/images/station/pcameos.png','assets/images/station/pcameos.xml');
+			pcameos.animation.addByPrefix('bop', "Bop 1 instance 1", 24, true);
+			pcameos.antialiasing = true;
+			pcameos.scrollFactor.set(0.9, 0.9);
+			pcameos.setGraphicSize(Std.int(pcameos.width * 4));
+			pcameos.setGraphicSize(Std.int(pcameos.height * 4));
+			pcameos.updateHitbox();
+			add(pcameos);
+
+			pcameos.animation.play('bop', true);
 
 			var stationLights:FlxSprite = new FlxSprite(-350,-500);
 			stationLights.frames = FlxAtlasFrames.fromSparrow('assets/images/station/lightsSheet.png','assets/images/station/lightsSheet.xml');
@@ -678,11 +693,24 @@ class PlayState extends MusicBeatState
 		{
 			curStage = 'stage';
 			defaultCamZoom = 0.550;
-		
+
 			var stageBG:FlxSprite = new FlxSprite(-700, -300).loadGraphic('assets/images/stage/Stadium.png');
 			stageBG.setGraphicSize(Std.int(stageBG.width * 1));
 			stageBG.scrollFactor.set(0.9, 0.9);
 			add(stageBG);
+
+			dcameos = new FlxSprite(-700, -300);
+			dcameos.frames = FlxAtlasFrames.fromSparrow('assets/images/stage/dcameos.png', 'assets/images/stage/dcameos.xml');
+			dcameos.animation.addByPrefix('bop', "Bop 1 instance 1", 24, true);
+			dcameos.antialiasing = true;
+			dcameos.scrollFactor.set(0.9, 0.9);
+			dcameos.setGraphicSize(Std.int(dcameos.width * 4));
+			dcameos.setGraphicSize(Std.int(dcameos.height * 4));
+			dcameos.updateHitbox();
+			add(dcameos);
+
+			dcameos.animation.play('bop', true);
+
 		}
 
 		switch(SONG.song.toLowerCase()){
