@@ -10,9 +10,7 @@
 :gf:scared:Our?
 :spooky:happy:This is my brother! Imp!
 :spooky:imphappy:*Unintelligible sounds*
-:text:speed:0.1
 :bf:happy:Where... Pep?
-:text:speed:0.4
 :spooky:confused:Wait... you know who Pep is?
 :bf:happy:Bap!
 :spooky:happy: I can't understand you but I guess you do! Awesome! You must be the guy that Pep said he was friends with before us! 
