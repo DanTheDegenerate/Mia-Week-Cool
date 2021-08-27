@@ -20,7 +20,7 @@ class Portrait extends FlxSprite
 
     private var resize = 1;
 
-    private var characters:Array<String> = ["bf", "gf", "pinkie"];
+    private var characters:Array<String> = ["bf", "gf"];
 
     var posTween:FlxTween;
     var angleTween:FlxTween;

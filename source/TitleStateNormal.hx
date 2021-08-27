@@ -41,17 +41,27 @@ class TitleStateNormal extends MusicBeatState
 	var curWacky:Array<String> = [];
 
 	var wackyImage:FlxSprite;
+	
+	var xtween:FlxTween;
+	var ytween:FlxTween;
 
 	override public function create():Void
 	{
+		
+		
 		//Polymod.init({modRoot: "mods", dirs: ['introMod']});
 
 		curWacky = FlxG.random.getObject(getIntroTextShit());
 
 		// DEBUG BULLSHIT
 
+		
 		super.create();
 
+		
+		xtween = FlxTween.tween(FlxG.camera.scroll,{x:0},1);
+		ytween = FlxTween.tween(FlxG.camera.scroll,{y:0},1);
+		
 		FlxG.save.bind('data');
 
 		Highscore.load();
@@ -135,7 +145,7 @@ class TitleStateNormal extends MusicBeatState
 		titleText.antialiasing = true;
 		titleText.animation.play('idle');
 		titleText.updateHitbox();
-		titleText.scrollFactor.set(1.1, 1.1);
+		titleText.scrollFactor.set(1.3, 1.3);
 		// titleText.screenCenter(X);
 		add(titleText);
 
@@ -184,18 +194,52 @@ class TitleStateNormal extends MusicBeatState
 	override function update(elapsed:Float)
 	{
 		if (initialized){
-			camOffset.set();
-			if (controls.LEFT_P)FlxTween.tween(FlxG.camera, {x:-80}, 0.4,{ease:FlxEase.sineInOut});
-			if (controls.RIGHT_P)FlxTween.tween(FlxG.camera, {x:80}, 0.4,{ease:FlxEase.sineInOut});
-			if (controls.UP_P)FlxTween.tween(FlxG.camera, {y:-80}, 0.4,{ease:FlxEase.sineInOut});
-			if (controls.DOWN_P) FlxTween.tween(FlxG.camera, {y:80}, 0.4, {ease:FlxEase.sineInOut});
+			//if (controls.LEFT) camOffset.x = -80;//FlxTween.tween(FlxG.camera.scroll, {x:-80}, 0.4,{ease:FlxEase.sineInOut});
+			//if (controls.RIGHT) camOffset.x = 80;//FlxTween.tween(FlxG.camera.scroll, {x:80}, 0.4,{ease:FlxEase.sineInOut});
+			//if (controls.UP) camOffset.y = -80;//FlxTween.tween(FlxG.camera.scroll, {y:-80}, 0.4,{ease:FlxEase.sineInOut});
+			//if (controls.DOWN) camOffset.y = 80; //FlxTween.tween(FlxG.camera.scroll, {y:80}, 0.4, {ease:FlxEase.sineInOut});
 			
-			if (controls.LEFT_R)FlxTween.tween(FlxG.camera, {x:0}, 0.4,{ease:FlxEase.sineInOut});
-			if (controls.RIGHT_R)FlxTween.tween(FlxG.camera, {x:0}, 0.4,{ease:FlxEase.sineInOut});
-			if (controls.UP_R)FlxTween.tween(FlxG.camera, {y:0}, 0.4,{ease:FlxEase.sineInOut});
-			if (controls.DOWN_R)FlxTween.tween(FlxG.camera, {y:0}, 0.4,{ease:FlxEase.sineInOut});
+			if (controls.LEFT_P){
+				xtween.cancel();
+				xtween = FlxTween.tween(FlxG.camera.scroll, {x:-80}, 0.4,{ease:FlxEase.sineInOut});
+			}
+			if (controls.RIGHT_P){
+				xtween.cancel();
+				xtween = FlxTween.tween(FlxG.camera.scroll, {x:80}, 0.4,{ease:FlxEase.sineInOut});
+			}
+			if (controls.UP_P){
+				ytween.cancel();
+				ytween = FlxTween.tween(FlxG.camera.scroll, {y:-80}, 0.4,{ease:FlxEase.sineInOut});
+			}
+			if (controls.DOWN_P){
+				ytween.cancel();
+				ytween = FlxTween.tween(FlxG.camera.scroll, {y:80}, 0.4, {ease:FlxEase.sineInOut});
+			}
 			
+			if (controls.LEFT_R){
+				xtween.cancel();
+				xtween = FlxTween.tween(FlxG.camera.scroll, {x:0}, 0.4,{ease:FlxEase.sineInOut});
+			}
+			if (controls.RIGHT_R){
+				xtween.cancel();
+				xtween = FlxTween.tween(FlxG.camera.scroll, {x:0}, 0.4,{ease:FlxEase.sineInOut});
+			}
+			if (controls.UP_R){
+				ytween.cancel();
+				ytween = FlxTween.tween(FlxG.camera.scroll, {y:0}, 0.4,{ease:FlxEase.sineInOut});
+			}
+			if (controls.DOWN_R){
+				ytween.cancel();
+				ytween = FlxTween.tween(FlxG.camera.scroll, {y:0}, 0.4,{ease:FlxEase.sineInOut});
+			}
 			
+			//if (controls.LEFT_R)camOffset.x = 0;//FlxTween.tween(FlxG.camera.scroll, {x:0}, 0.4,{ease:FlxEase.sineInOut});
+			//if (controls.RIGHT_R)camOffset.x = 0;//FlxTween.tween(FlxG.camera.scroll, {x:0}, 0.4,{ease:FlxEase.sineInOut});
+			//if (controls.UP_R)camOffset.y = 0;//FlxTween.tween(FlxG.camera.scroll, {y:0}, 0.4,{ease:FlxEase.sineInOut});
+			//if (controls.DOWN_R)camOffset.y = 0;//FlxTween.tween(FlxG.camera.scroll, {y:0}, 0.4,{ease:FlxEase.sineInOut});
+			
+			//FlxG.camera.scroll.x += camOffset.x - FlxG.camera.scroll.x / 20;
+			//FlxG.camera.scroll.y += camOffset.y - FlxG.camera.scroll.y / 20;
 			
 			Conductor.songPosition = FlxG.sound.music.time;
 			// FlxG.watch.addQuick('amp', FlxG.sound.music.amplitude);
@@ -224,8 +268,6 @@ class TitleStateNormal extends MusicBeatState
 
 			
 			
-			FlxG.camera.scroll.x = FlxMath.lerp(0, camOffset.x, 0.98);
-			FlxG.camera.scroll.y = FlxMath.lerp(0, camOffset.y, 0.98);
 			
 			if (pressedEnter && !transitioning && skippedIntro)
 			{
