@@ -1924,10 +1924,9 @@ class PlayState extends MusicBeatState
 
 		if (camZooming)
 		{
-			FlxG.camera.zoom = FlxMath.lerp(defaultCamZoom, FlxG.camera.zoom, 0.95);
-			camHUD.zoom = FlxMath.lerp(1, camHUD.zoom, 0.95);
+			FlxG.camera.zoom = FlxMath.lerp(defaultCamZoom, FlxG.camera.zoom, 0.05);
+			camHUD.zoom = FlxMath.lerp(1, camHUD.zoom, 0.05);
 		}
-
 		FlxG.watch.addQuick("totalBeats: ", totalBeats);
 		FlxG.watch.addQuick("conductorPos: ", Conductor.songPosition);	// (tsg - 7/30/21) small things lyric system port
 

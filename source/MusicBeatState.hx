@@ -41,6 +41,7 @@ class MusicBeatState extends FlxUIState
 		// Needs to be ROUNED, rather than ceil or floor
 		updateBeat();
 
+		
 		super.update(elapsed);
 	}
 
@@ -61,7 +62,9 @@ class MusicBeatState extends FlxUIState
 			{
 				stepHit();
 			}
+			
 		}
+		
 	}
 
 	private function updateCurStep():Void

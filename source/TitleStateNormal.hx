@@ -11,6 +11,7 @@ import flixel.graphics.FlxGraphic;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.group.FlxGroup;
 import flixel.input.gamepad.FlxGamepad;
+import flixel.math.FlxMath;
 import flixel.math.FlxPoint;
 import flixel.math.FlxRect;
 import flixel.system.FlxSound;
@@ -30,6 +31,7 @@ class TitleStateNormal extends MusicBeatState
 {
 	static var initialized:Bool = false;
 	static public var soundExt:String = ".ogg";
+	public var camOffset:FlxPoint = new FlxPoint();
 
 	var blackScreen:FlxSprite;
 	var credGroup:FlxGroup;
@@ -104,12 +106,12 @@ class TitleStateNormal extends MusicBeatState
 		// bg.updateHitbox();
 		add(bg);*/
 
-		logoBl = new FlxSprite(-150, -100);
-		logoBl.frames = FlxAtlasFrames.fromSparrow('assets/images/logoBumpin.png', 'assets/images/logoBumpin.xml');
-		logoBl.antialiasing = true;
-		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24);
-		logoBl.animation.play('bump');
-		logoBl.updateHitbox();
+		//logoBl = new FlxSprite(-150, -100);
+		//logoBl.frames = FlxAtlasFrames.fromSparrow('assets/images/logoBumpin.png', 'assets/images/logoBumpin.xml');
+		//logoBl.antialiasing = true;
+		//logoBl.animation.addByPrefix('bump', 'logo bumpin', 24);
+		//logoBl.animation.play('bump');
+		//logoBl.updateHitbox();
 		// logoBl.screenCenter();
 		// logoBl.color = FlxColor.BLACK;
 
@@ -117,14 +119,14 @@ class TitleStateNormal extends MusicBeatState
 		bgGrad.antialiasing = true;
 		bgGrad.updateHitbox();
 
-		gfDance = new FlxSprite(FlxG.width * 0.4, FlxG.height * 0.07);
-		gfDance.frames = FlxAtlasFrames.fromSparrow('assets/images/gfDanceTitle.png', 'assets/images/gfDanceTitle.xml');
-		gfDance.animation.addByIndices('danceLeft', 'gfDance', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
-		gfDance.animation.addByIndices('danceRight', 'gfDance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
+		gfDance = new FlxSprite(-50, -30);
+		gfDance.frames = FlxAtlasFrames.fromSparrow('assets/images/Start_Screen_Assets.png', 'assets/images/Start_Screen_Assets.xml');
+		gfDance.animation.addByIndices('danceLeft', 'Start Screen BG art', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
+		gfDance.animation.addByIndices('danceRight', 'Start Screen BG art', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
 		gfDance.antialiasing = true;
-		add(bgGrad);
+		//add(bgGrad);
 		add(gfDance);
-		add(logoBl);
+		//add(logoBl);
 
 		titleText = new FlxSprite(100, FlxG.height * 0.8);
 		titleText.frames = FlxAtlasFrames.fromSparrow('assets/images/titleEnter.png', 'assets/images/titleEnter.xml');
@@ -133,6 +135,7 @@ class TitleStateNormal extends MusicBeatState
 		titleText.antialiasing = true;
 		titleText.animation.play('idle');
 		titleText.updateHitbox();
+		titleText.scrollFactor.set(1.1, 1.1);
 		// titleText.screenCenter(X);
 		add(titleText);
 
@@ -180,7 +183,20 @@ class TitleStateNormal extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
-		if(initialized){
+		if (initialized){
+			camOffset.set();
+			if (controls.LEFT_P)FlxTween.tween(FlxG.camera, {x:-80}, 0.4,{ease:FlxEase.sineInOut});
+			if (controls.RIGHT_P)FlxTween.tween(FlxG.camera, {x:80}, 0.4,{ease:FlxEase.sineInOut});
+			if (controls.UP_P)FlxTween.tween(FlxG.camera, {y:-80}, 0.4,{ease:FlxEase.sineInOut});
+			if (controls.DOWN_P) FlxTween.tween(FlxG.camera, {y:80}, 0.4, {ease:FlxEase.sineInOut});
+			
+			if (controls.LEFT_R)FlxTween.tween(FlxG.camera, {x:0}, 0.4,{ease:FlxEase.sineInOut});
+			if (controls.RIGHT_R)FlxTween.tween(FlxG.camera, {x:0}, 0.4,{ease:FlxEase.sineInOut});
+			if (controls.UP_R)FlxTween.tween(FlxG.camera, {y:0}, 0.4,{ease:FlxEase.sineInOut});
+			if (controls.DOWN_R)FlxTween.tween(FlxG.camera, {y:0}, 0.4,{ease:FlxEase.sineInOut});
+			
+			
+			
 			Conductor.songPosition = FlxG.sound.music.time;
 			// FlxG.watch.addQuick('amp', FlxG.sound.music.amplitude);
 
@@ -197,6 +213,8 @@ class TitleStateNormal extends MusicBeatState
 			{
 				if (gamepad.justPressed.START)
 					pressedEnter = true;
+					
+				
 
 				#if switch
 				if (gamepad.justPressed.B)
@@ -204,6 +222,11 @@ class TitleStateNormal extends MusicBeatState
 				#end
 			}
 
+			
+			
+			FlxG.camera.scroll.x = FlxMath.lerp(0, camOffset.x, 0.98);
+			FlxG.camera.scroll.y = FlxMath.lerp(0, camOffset.y, 0.98);
+			
 			if (pressedEnter && !transitioning && skippedIntro)
 			{
 				titleText.animation.play('press');
@@ -266,8 +289,12 @@ class TitleStateNormal extends MusicBeatState
 	override function beatHit()
 	{
 		super.beatHit();
+		FlxG.camera.zoom = 1.05;
+		titleText.scale.x = titleText.scale.y = 1.06;
+		FlxTween.tween(FlxG.camera, {zoom:1}, 0.4);
+		FlxTween.tween(titleText.scale, {x:1,y:1}, 0.4);
 
-		logoBl.animation.play('bump', true);
+		//logoBl.animation.play('bump', true);
 		danceLeft = !danceLeft;
 
 		if (danceLeft)
