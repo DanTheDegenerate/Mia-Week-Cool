@@ -74,6 +74,8 @@ class PlayState extends MusicBeatState
 	public static var schoolSongs:Array<String>;
 	public static var schoolScared:Array<String>;
 	public static var evilSchoolSongs:Array<String>;
+	
+	public static var botplay:Bool = true;
 
 	var camFocus:String = "";
 	var camTween:FlxTween;
@@ -699,7 +701,7 @@ class PlayState extends MusicBeatState
 			stageBG.scrollFactor.set(0.9, 0.9);
 			add(stageBG);
 
-			dcameos = new FlxSprite(-700, -300);
+			dcameos = new FlxSprite(360, 110);
 			dcameos.frames = FlxAtlasFrames.fromSparrow('assets/images/stage/dcameos.png', 'assets/images/stage/dcameos.xml');
 			dcameos.animation.addByPrefix('bop', "Bop 1 instance 1", 24, true);
 			dcameos.antialiasing = true;
@@ -710,7 +712,6 @@ class PlayState extends MusicBeatState
 			add(dcameos);
 
 			dcameos.animation.play('bop', true);
-
 		}
 
 		switch(SONG.song.toLowerCase()){
@@ -2077,6 +2078,58 @@ class PlayState extends MusicBeatState
 					});
 
 					dad.holdTimer = 0;
+
+					if (SONG.needsVoices)
+						vocals.volume = 1;
+
+					daNote.destroy();
+				}
+				if (daNote.mustPress && daNote.wasGoodHit && botplay)
+				{
+					if (SONG.song != 'Tutorial')
+						camZooming = true;
+
+					var altAnim:String = "";
+
+					if (SONG.notes[Math.floor(curStep / 16)] != null)
+					{
+						if (SONG.notes[Math.floor(curStep / 16)].altAnim)
+							altAnim = '-alt';
+					}
+
+					//trace("DA ALT THO?: " + SONG.notes[Math.floor(curStep / 16)].altAnim);
+
+					if(dad.canAutoAnim){
+						switch (Math.abs(daNote.noteData))
+						{
+							case 2:
+								boyfriend.playAnim('singUP' + altAnim, true);
+							case 3:
+								boyfriend.playAnim('singRIGHT' + altAnim, true);
+							case 1:
+								boyfriend.playAnim('singDOWN' + altAnim, true);
+							case 0:
+								boyfriend.playAnim('singLEFT' + altAnim, true);
+						}
+					}
+
+					playerStrums.forEach(function(spr:FlxSprite)
+					{
+						if (Math.abs(daNote.noteData) == spr.ID)
+						{
+							spr.animation.play('confirm', true);
+							if (spr.animation.curAnim.name == 'confirm' && !curStage.startsWith('school'))
+							{
+								spr.centerOffsets();
+								spr.offset.x -= 13;
+								spr.offset.y -= 13;
+							}
+							else
+								spr.centerOffsets();
+						}
+					});
+
+					boyfriend.holdTimer = 0;
 
 					if (SONG.needsVoices)
 						vocals.volume = 1;
