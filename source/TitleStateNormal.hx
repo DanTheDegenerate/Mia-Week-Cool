@@ -355,11 +355,11 @@ class TitleStateNormal extends MusicBeatState
 				addMoreText('present');
 			case 5:
 				deleteCoolText();
-				addMoreText('In association');
+				addMoreText('Created');
 			case 6:
-				addMoreText('with');
+				addMoreText('by');
 			case 7:
-				addMoreText('newgrounds');
+				addMoreText('BiddleZ');
 				ngSpr.visible = true;
 			case 8:
 				deleteCoolText();

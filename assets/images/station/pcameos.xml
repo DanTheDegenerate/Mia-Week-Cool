@@ -1,16 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TextureAtlas imagePath="pcameos.png">
-	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- Created with Adobe Animate version 20.0.2.22168 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="Bop 1 instance 10000" x="0" y="0" width="1187" height="303"/>
-	<SubTexture name="Bop 1 instance 10001" x="0" y="0" width="1187" height="303"/>
-	<SubTexture name="Bop 1 instance 10002" x="0" y="0" width="1187" height="303"/>
-	<SubTexture name="Bop 1 instance 10003" x="0" y="313" width="1187" height="292" frameX="0" frameY="-10" frameWidth="1187" frameHeight="303"/>
-	<SubTexture name="Bop 1 instance 10004" x="0" y="313" width="1187" height="292" frameX="0" frameY="-10" frameWidth="1187" frameHeight="303"/>
-	<SubTexture name="Bop 1 instance 10005" x="0" y="313" width="1187" height="292" frameX="0" frameY="-10" frameWidth="1187" frameHeight="303"/>
-	<SubTexture name="Bop 1 instance 10006" x="0" y="615" width="1187" height="283" frameX="0" frameY="-19" frameWidth="1187" frameHeight="303"/>
-	<SubTexture name="Bop 1 instance 10007" x="0" y="615" width="1187" height="283" frameX="0" frameY="-19" frameWidth="1187" frameHeight="303"/>
-	<SubTexture name="Bop 1 instance 10008" x="0" y="615" width="1187" height="283" frameX="0" frameY="-19" frameWidth="1187" frameHeight="303"/>
-	<SubTexture name="Bop 1 instance 10009" x="0" y="615" width="1187" height="283" frameX="0" frameY="-19" frameWidth="1187" frameHeight="303"/>
-	<SubTexture name="Bop 1 instance 10010" x="0" y="615" width="1187" height="283" frameX="0" frameY="-19" frameWidth="1187" frameHeight="303"/>
+	<SubTexture name="bop0000" x="0" y="0" width="2580" height="1452" frameX="0" frameY="-50" frameWidth="2580" frameHeight="1552"/>
+	<SubTexture name="bop0001" x="2580" y="0" width="2580" height="1471" frameX="0" frameY="-41" frameWidth="2580" frameHeight="1552"/>
+	<SubTexture name="bop0002" x="5160" y="0" width="2580" height="1552"/>
+	<SubTexture name="bop0003" x="0" y="1552" width="2580" height="1490" frameX="0" frameY="-31" frameWidth="2580" frameHeight="1552"/>
+	<SubTexture name="bop0004" x="0" y="0" width="2580" height="1452" frameX="0" frameY="-50" frameWidth="2580" frameHeight="1552"/>
 </TextureAtlas>

@@ -362,13 +362,13 @@ class PlayState extends MusicBeatState
 			subway.updateHitbox();
 			add(subway);
 
-			pcameos = new FlxSprite(-350,-500);
+			pcameos = new FlxSprite(-100,-150);
 			pcameos.frames = FlxAtlasFrames.fromSparrow('assets/images/station/pcameos.png','assets/images/station/pcameos.xml');
-			pcameos.animation.addByPrefix('bop', "Bop 1 instance 1", 24, true);
+			pcameos.animation.addByPrefix('bop', "bop", 24, true);
 			pcameos.antialiasing = true;
 			pcameos.scrollFactor.set(0.9, 0.9);
-			pcameos.setGraphicSize(Std.int(pcameos.width * 4));
-			pcameos.setGraphicSize(Std.int(pcameos.height * 4));
+			pcameos.setGraphicSize(Std.int(pcameos.width * 2));
+			pcameos.setGraphicSize(Std.int(pcameos.height * 2));
 			pcameos.updateHitbox();
 			add(pcameos);
 
@@ -701,13 +701,12 @@ class PlayState extends MusicBeatState
 			stageBG.scrollFactor.set(0.9, 0.9);
 			add(stageBG);
 
-			dcameos = new FlxSprite(360, 110);
+			dcameos = new FlxSprite(-700, -900);
 			dcameos.frames = FlxAtlasFrames.fromSparrow('assets/images/stage/dcameos.png', 'assets/images/stage/dcameos.xml');
-			dcameos.animation.addByPrefix('bop', "Bop 1 instance 1", 24, true);
+			dcameos.animation.addByPrefix('bop', "bop", 24, true);
 			dcameos.antialiasing = true;
 			dcameos.scrollFactor.set(0.9, 0.9);
-			dcameos.setGraphicSize(Std.int(dcameos.width * 4));
-			dcameos.setGraphicSize(Std.int(dcameos.height * 4));
+			dcameos.setGraphicSize(Std.int(dcameos.width * 1));
 			dcameos.updateHitbox();
 			add(dcameos);
 

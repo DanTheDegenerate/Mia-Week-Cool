@@ -192,17 +192,17 @@ class Character extends FlxSprite
 				// DAD ANIMATION LOADING CODE
 				tex = FlxAtlasFrames.fromSparrow('assets/images/DADDY_DEAREST.png', 'assets/images/DADDY_DEAREST.xml');
 				frames = tex;
-				animation.addByPrefix('idle', 'Dad idle dance', 24, false);
-				animation.addByPrefix('singUP', 'Dad Sing Note UP', 24);
-				animation.addByPrefix('singRIGHT', 'Dad Sing Note RIGHT', 24);
-				animation.addByPrefix('singDOWN', 'Dad Sing Note DOWN', 24);
-				animation.addByPrefix('singLEFT', 'Dad Sing Note LEFT', 24);
+				animation.addByPrefix('idle', 'Dearest Idle', 24, false);
+				animation.addByPrefix('singUP', 'up placeholder', 24);
+				animation.addByPrefix('singRIGHT', 'Right DD', 24);
+				animation.addByPrefix('singDOWN', 'down placeholder', 24);
+				animation.addByPrefix('singLEFT', 'Dearest Left', 24);
 
 				addOffset('idle');
-				addOffset("singUP", -9, 50);
-				addOffset("singRIGHT", -4, 26);
-				addOffset("singLEFT", -11, 10);
-				addOffset("singDOWN", 2, -32);
+				addOffset("singUP", 176, 186);
+				addOffset("singRIGHT", 0, 3);
+				addOffset("singLEFT", 180, -8);
+				addOffset("singDOWN", 123, -73);
 
 				playAnim('idle');
 			case 'mia':
