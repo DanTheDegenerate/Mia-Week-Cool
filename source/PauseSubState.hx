@@ -13,7 +13,7 @@ class PauseSubState extends MusicBeatSubstate
 {
 	var grpMenuShit:FlxTypedGroup<Alphabet>;
 
-	var menuItems:Array<String> = ['Resume', 'Restart Song', 'Botplay','Exit to menu'];
+	var menuItems:Array<String> = ['Resume', 'Restart Song','Exit to menu'];
 	var curSelected:Int = 0;
 
 	var pauseMusic:FlxSound;
@@ -112,6 +112,9 @@ class PauseSubState extends MusicBeatSubstate
 						
 					if (PlayState.storyDifficulty == 2)
 						difficulty = '-hard';
+
+					if (PlayState.storyDifficulty == 3)
+						difficulty = '-getreal';
 
 					trace('LOADING NEXT SONG');
 					trace(PlayState.storyPlaylist[0].toLowerCase() + difficulty);

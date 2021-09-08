@@ -202,10 +202,6 @@ class Note extends FlxSprite
 
 		if (mustPress)
 		{
-			
-			if(!PlayState.botplay){
-			
-			
 			// The * 0.5 us so that its easier to hit them too late, instead of too early
 			if (strumTime > Conductor.songPosition - Conductor.safeZoneOffset
 				&& strumTime < Conductor.songPosition + (Conductor.safeZoneOffset * 0.5))
@@ -217,18 +213,8 @@ class Note extends FlxSprite
 
 			if (strumTime < Conductor.songPosition - Conductor.safeZoneOffset)
 				tooLate = true;
-				
-			}else{
-				
-			canBeHit = true;
 
-				if (strumTime <= Conductor.songPosition)
-				{
-					wasGoodHit = true;
-				}
 			}
-			
-		}
 		else
 		{
 			canBeHit = false;

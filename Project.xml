@@ -2,7 +2,7 @@
 <project>
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="Friday Night Funkin' B3 Remixed" file="B3Remixed" main="Main" version="FPS PLUS: v3.7 | B3 Engine: v1.0" company="B3 Team" />
+	<app title="Friday Night Funkin' B3 Remixed" file="B3 Remixed" main="Main" version="FPS PLUS: v3.7 | B3 Engine: v1.0" company="B3 Team" />
 
 	<!--Switch Export with Unique ApplicationID and Icon-->
 	<set name="APP_ID" value="0x0100f6c013bbc000" />

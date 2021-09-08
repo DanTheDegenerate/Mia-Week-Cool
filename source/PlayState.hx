@@ -362,13 +362,13 @@ class PlayState extends MusicBeatState
 			subway.updateHitbox();
 			add(subway);
 
-			pcameos = new FlxSprite(-100,-150);
+			pcameos = new FlxSprite(-335,-551);
 			pcameos.frames = FlxAtlasFrames.fromSparrow('assets/images/station/pcameos.png','assets/images/station/pcameos.xml');
 			pcameos.animation.addByPrefix('bop', "bop", 24, true);
 			pcameos.antialiasing = true;
 			pcameos.scrollFactor.set(0.9, 0.9);
-			pcameos.setGraphicSize(Std.int(pcameos.width * 2));
-			pcameos.setGraphicSize(Std.int(pcameos.height * 2));
+			pcameos.setGraphicSize(Std.int(pcameos.width * 1.65));
+			pcameos.setGraphicSize(Std.int(pcameos.height * 1.65));
 			pcameos.updateHitbox();
 			add(pcameos);
 
@@ -694,14 +694,14 @@ class PlayState extends MusicBeatState
 		else
 		{
 			curStage = 'stage';
-			defaultCamZoom = 0.550;
+			defaultCamZoom = 0.515;
 
 			var stageBG:FlxSprite = new FlxSprite(-700, -300).loadGraphic('assets/images/stage/Stadium.png');
 			stageBG.setGraphicSize(Std.int(stageBG.width * 1));
 			stageBG.scrollFactor.set(0.9, 0.9);
 			add(stageBG);
 
-			dcameos = new FlxSprite(-700, -900);
+			dcameos = new FlxSprite(-700, -580);
 			dcameos.frames = FlxAtlasFrames.fromSparrow('assets/images/stage/dcameos.png', 'assets/images/stage/dcameos.xml');
 			dcameos.animation.addByPrefix('bop', "bop", 24, true);
 			dcameos.antialiasing = true;

@@ -2,9 +2,9 @@
 <TextureAtlas imagePath="dcameos.png">
 	<!-- Created with Adobe Animate version 20.0.2.22168 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="bop0000" x="0" y="0" width="2880" height="1622" frameX="0" frameY="-253" frameWidth="2880" frameHeight="2129"/>
-	<SubTexture name="bop0001" x="2880" y="0" width="2880" height="1947" frameX="0" frameY="-91" frameWidth="2880" frameHeight="2129"/>
-	<SubTexture name="bop0002" x="0" y="1947" width="2880" height="2129"/>
-	<SubTexture name="bop0003" x="2880" y="1947" width="2880" height="2041" frameX="0" frameY="-44" frameWidth="2880" frameHeight="2129"/>
-	<SubTexture name="bop0004" x="0" y="4076" width="2880" height="1704" frameX="0" frameY="-212" frameWidth="2880" frameHeight="2129"/>
+	<SubTexture name="bop0000" x="0" y="0" width="2880" height="1622" frameX="0" frameY="-12" frameWidth="2880" frameHeight="1647"/>
+	<SubTexture name="bop0001" x="2880" y="0" width="2880" height="1641" frameX="0" frameY="-3" frameWidth="2880" frameHeight="1647"/>
+	<SubTexture name="bop0002" x="0" y="1641" width="2880" height="1647"/>
+	<SubTexture name="bop0003" x="2880" y="1641" width="2880" height="1579" frameX="0" frameY="-34" frameWidth="2880" frameHeight="1647"/>
+	<SubTexture name="bop0004" x="0" y="3288" width="2880" height="1560" frameX="0" frameY="-43" frameWidth="2880" frameHeight="1647"/>
 </TextureAtlas>

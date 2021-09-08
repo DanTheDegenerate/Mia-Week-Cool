@@ -2,9 +2,9 @@
 <TextureAtlas imagePath="pcameos.png">
 	<!-- Created with Adobe Animate version 20.0.2.22168 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="bop0000" x="0" y="0" width="2580" height="1452" frameX="0" frameY="-50" frameWidth="2580" frameHeight="1552"/>
-	<SubTexture name="bop0001" x="2580" y="0" width="2580" height="1471" frameX="0" frameY="-41" frameWidth="2580" frameHeight="1552"/>
+	<SubTexture name="bop0000" x="0" y="0" width="2580" height="1452" frameX="0" frameY="-59" frameWidth="2580" frameHeight="1552"/>
+	<SubTexture name="bop0001" x="2580" y="0" width="2580" height="1471" frameX="0" frameY="-50" frameWidth="2580" frameHeight="1552"/>
 	<SubTexture name="bop0002" x="5160" y="0" width="2580" height="1552"/>
-	<SubTexture name="bop0003" x="0" y="1552" width="2580" height="1490" frameX="0" frameY="-31" frameWidth="2580" frameHeight="1552"/>
-	<SubTexture name="bop0004" x="0" y="0" width="2580" height="1452" frameX="0" frameY="-50" frameWidth="2580" frameHeight="1552"/>
+	<SubTexture name="bop0003" x="0" y="1552" width="2580" height="1490" frameX="0" frameY="-40" frameWidth="2580" frameHeight="1552"/>
+	<SubTexture name="bop0004" x="0" y="0" width="2580" height="1452" frameX="0" frameY="-59" frameWidth="2580" frameHeight="1552"/>
 </TextureAtlas>
