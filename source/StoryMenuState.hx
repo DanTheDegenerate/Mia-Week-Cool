@@ -61,7 +61,8 @@ class StoryMenuState extends MusicBeatState
 		add(bgg);
 		weekData = [
 			['Tutorial'],
-			['Bopeebo', 'Fresh', 'Dadbattle'],
+			['Dadbattle'],
+			//['Bopeebo', 'Fresh', 'Dadbattle'],
 			['Spookeez', 'South', 'Not A Monster'],
 			['Pico', 'Philly', "Blammed", 'School'],
 			['Satin-Panties', "High", "Milf"],

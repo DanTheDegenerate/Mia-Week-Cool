@@ -1,5 +1,8 @@
 :music:dad:0.4
+:effect:shake:-1
 :dad:angry:Ok, now you've pissed me off.
+:autoskip:1.7:
+:effect:shake:0
 :gf:bruh: Dad you literally don't need to do thi-
 :dad:angry:100 years of raising my beautiful baby girl. I'm not gonna let some college dropout from the middle of nowhere date her!
 :gf:scared: How the fuck do you even know that? 
@@ -10,5 +13,7 @@
 :bf:smug: Bap!
 :dad:angrysmile: Hah, where did all this confidence come from? You think YOU'LL be able to protect her? 
 :dad:angrysmile: With what muscles?
+:text:speed:0.2
 :bf:angry: ...
+:text:speed:0.04
 :dad:angrysmile: Whatever, a corpse can't protect my daughter.

@@ -2257,19 +2257,20 @@ class PlayState extends MusicBeatState
 		//FlxG.camera.followLerp = 0.04 * (6 / Main.fpsDisplay.currentFPS); 
 
 	}
-
 	function endSong():Void
 	{
 		canPause = false;
 		FlxG.sound.music.volume = 0;
 		vocals.volume = 0;
+		FlxG.sound.music.stop();
+		vocals.stop();
 		if (SONG.validScore)
 		{
 			#if !switch
 			Highscore.saveScore(SONG.song, songScore, storyDifficulty);
 			#end
 		}
-
+		
 		if (isStoryMode)
 		{
 			campaignScore += songScore;
@@ -2278,9 +2279,40 @@ class PlayState extends MusicBeatState
 
 			if (storyPlaylist.length <= 0)
 			{
-				FlxG.sound.playMusic("assets/music/klaskiiLoop.ogg", 0.75);
 
-				FlxG.switchState(new StoryMenuState());
+				
+
+		var hasD = false;
+		if(FileSystem.exists("assets/data/" + SONG.song.toLowerCase() + "/post" + SONG.song.toLowerCase() + ".txt")){
+			try{//checks for end dialogue
+				hasD = true;
+				dialogue = CoolUtil.coolTextFile("assets/data/" + SONG.song.toLowerCase() + "/post" + SONG.song.toLowerCase() + ".txt");
+				trace(dialogue);
+			}
+			catch(e){}
+		}
+				
+				
+				if (hasD){//if it does, do end dialogue
+					var doof2:DialogueBox = new DialogueBox(false, dialogue);
+					doof2.scrollFactor.set();
+					startingSong = true;
+					startedCountdown = false;
+					Conductor.songPosition = 0;
+						
+						
+					doof2.finishThing = function(){
+						FlxG.sound.playMusic("assets/music/klaskiiLoop.ogg", 0.75);
+						FlxG.switchState(new StoryMenuState());
+					};
+					
+					
+					add(doof2);
+					doof2.cameras = [camHUD];
+				}else{//if not just leave : /
+				FlxG.sound.playMusic("assets/music/klaskiiLoop.ogg", 0.75);
+					FlxG.switchState(new StoryMenuState());
+				}
 
 				// if ()
 				StoryMenuState.weekUnlocked[Std.int(Math.min(storyWeek + 1, StoryMenuState.weekUnlocked.length - 1))] = true;
