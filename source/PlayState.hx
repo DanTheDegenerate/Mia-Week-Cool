@@ -2262,8 +2262,6 @@ class PlayState extends MusicBeatState
 		canPause = false;
 		FlxG.sound.music.volume = 0;
 		vocals.volume = 0;
-		FlxG.sound.music.stop();
-		vocals.stop();
 		if (SONG.validScore)
 		{
 			#if !switch
@@ -2294,6 +2292,7 @@ class PlayState extends MusicBeatState
 				
 				
 				if (hasD){//if it does, do end dialogue
+				FlxG.sound.playMusic("assets/music/klaskiiLoop.ogg", 0.3);
 					var doof2:DialogueBox = new DialogueBox(false, dialogue);
 					doof2.scrollFactor.set();
 					startingSong = true;
@@ -2302,7 +2301,6 @@ class PlayState extends MusicBeatState
 						
 						
 					doof2.finishThing = function(){
-						FlxG.sound.playMusic("assets/music/klaskiiLoop.ogg", 0.75);
 						FlxG.switchState(new StoryMenuState());
 					};
 					
