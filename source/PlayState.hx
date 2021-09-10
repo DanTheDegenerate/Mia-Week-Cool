@@ -348,9 +348,9 @@ class PlayState extends MusicBeatState
 			add(halloweenSky);
 			add(halloweenTrees);
 			add(halloweenGround);
-
-
 			isHalloween = true;
+
+
 		}
 		else if (stationSongs.contains(SONG.song.toLowerCase()))
 		{
@@ -1916,9 +1916,6 @@ class PlayState extends MusicBeatState
 				{
 					FlxTween.tween(FlxG.camera, {zoom: 1}, (Conductor.stepCrochet * 4 / 1000), {ease: FlxEase.elasticInOut});
 				}
-
-				camTween = FlxTween.tween(camFollow, {x: followX, y: followY}, 1.95, {ease: FlxEase.quintOut});
-
 			}
 		}
 
@@ -2035,7 +2032,6 @@ class PlayState extends MusicBeatState
 				{
 					if (SONG.song != 'Tutorial')
 						camZooming = true;
-
 					var altAnim:String = "";
 
 					if (SONG.notes[Math.floor(curStep / 16)] != null)
@@ -2087,7 +2083,6 @@ class PlayState extends MusicBeatState
 				{
 					if (SONG.song != 'Tutorial')
 						camZooming = true;
-
 					var altAnim:String = "";
 
 					if (SONG.notes[Math.floor(curStep / 16)] != null)
@@ -2229,7 +2224,7 @@ class PlayState extends MusicBeatState
 
 						if (daNote.tooLate || !daNote.wasGoodHit){
 							
-							health -= 0.0475 * Config.healthDrainMultiplier;
+							health -= 0.0475;
 							misses += 1;
 							updateAccuracy();
 							vocals.volume = 0;
@@ -2749,7 +2744,7 @@ class PlayState extends MusicBeatState
 	{
 		if (!boyfriend.stunned && !startingSong && (!boyfriend.invuln || skipInvCheck) )
 		{
-			health -= healthLoss * Config.healthDrainMultiplier;
+			health -= healthLoss;
 			if (combo > 5)
 			{
 				gf.playAnim('sad');
@@ -2792,7 +2787,7 @@ class PlayState extends MusicBeatState
 		{
 			if (!startingSong && !boyfriend.invuln)
 			{
-				health -= healthLoss * Config.healthDrainMultiplier;
+				health -= healthLoss;
 				if (combo > 5)
 				{
 					gf.playAnim('sad');

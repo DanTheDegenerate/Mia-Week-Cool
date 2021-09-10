@@ -51,13 +51,10 @@ class ConfigMenu extends MusicBeatState
 									"UNCAP FRAMERATE",
 									"NEW INPUT",
 									"ALLOW GHOST TAPPING",
-									"HP GAIN MULTIPLIER",
-									"HP DRAIN MULTIPLIER",
 									"DOWNSCROLL",
 									"NOTE GLOW",
 									"IMPROVED HEALTH HEADS",
 									"[EDIT KEY BINDS]",
-									"FPS PLUS INTRO"
 									];
 								
 	var settingDesc:Array<String> = [
@@ -66,13 +63,10 @@ class ConfigMenu extends MusicBeatState
 									"Uncaps the framerate during gameplay.",
 									"Use the FPS Plus input system.",
 									"Prevents you from missing when you don't need to play.",
-									"Modifies how much Health you gain when hitting a note.",
-									"Modifies how much Health you lose when missing a note.",
 									"Makes notes appear from the top instead the bottom.",
 									"Makes note arrows glow if they are able to be hit.\n[This disables modded note arrows unless there is a version of the files included in the mod.]",
 									"Adds low health icons for characters missing them and adds winning icons.\n[This disables modded health icons unless there is a version of the files included in the mod.]",
 									"Change key binds.",
-									"Toggle FPS+ intro"
 									];
 
 
@@ -261,114 +255,29 @@ class ConfigMenu extends MusicBeatState
 							FlxG.sound.play('assets/sounds/scrollMenu' + TitleState.soundExt);
 							randomTapValue = !randomTapValue;
 						}
-					case 5: //Health Multiplier
-						if (controls.RIGHT_P)
-							{
-								FlxG.sound.play('assets/sounds/scrollMenu' + TitleState.soundExt);
-								healthValue += 1;
-							}
-							
-							if (controls.LEFT_P)
-							{
-								FlxG.sound.play('assets/sounds/scrollMenu' + TitleState.soundExt);
-								healthValue -= 1;
-							}
-							
-							if (healthValue > 50)
-								healthValue = 0;
-							if (healthValue < 0)
-								healthValue = 50;
-								
-						if (controls.RIGHT)
-						{
-							leftRightCount++;
-							
-							if(leftRightCount > 64 && leftRightCount % 10 == 0) {
-								healthValue += 1;
-							}
-						}
-						
-						if (controls.LEFT)
-						{
-							leftRightCount++;
-							
-							if(leftRightCount > 64 && leftRightCount % 10 == 0) {
-								healthValue -= 1;
-							}
-						}
-						
-						if(!controls.RIGHT && !controls.LEFT)
-						{
-							leftRightCount = 0;
-						}
-						
-						if(!controls.RIGHT && !controls.LEFT)
-						{
-							leftRightCount = 0;
-						}				
-					case 6: //Health Drain Multiplier
-						if (controls.RIGHT_P)
-							{
-								FlxG.sound.play('assets/sounds/scrollMenu' + TitleState.soundExt);
-								healthDrainValue += 1;
-							}
-							
-							if (controls.LEFT_P)
-							{
-								FlxG.sound.play('assets/sounds/scrollMenu' + TitleState.soundExt);
-								healthDrainValue -= 1;
-							}
-							
-							if (healthDrainValue > 100)
-								healthDrainValue = 0;
-							if (healthDrainValue < 0)
-								healthDrainValue = 100;
-								
-						if (controls.RIGHT)
-						{
-							leftRightCount++;
-							
-							if(leftRightCount > 64 && leftRightCount % 10 == 0) {
-								healthDrainValue += 1;
-							}
-						}
-						
-						if (controls.LEFT)
-						{
-							leftRightCount++;
-							
-							if(leftRightCount > 64 && leftRightCount % 10 == 0) {
-								healthDrainValue -= 1;
-							}
-						}
-						
-						if(!controls.RIGHT && !controls.LEFT)
-						{
-							leftRightCount = 0;
-						}
-					case 7: //Downscroll
+					case 5: //Downscroll
 						if (controls.RIGHT_P || controls.LEFT_P || controls.ACCEPT) {
 							FlxG.sound.play('assets/sounds/scrollMenu' + TitleState.soundExt);
 							downValue = !downValue;
 						}
-					case 8: //Note Glow
+					case 6: //Note Glow
 						if (controls.RIGHT_P || controls.LEFT_P || controls.ACCEPT) {
 							FlxG.sound.play('assets/sounds/scrollMenu' + TitleState.soundExt);
 							glowValue = !glowValue;
 						}
-					case 9: //Heads
+					case 7: //Heads
 						if (controls.RIGHT_P || controls.LEFT_P || controls.ACCEPT) {
 							FlxG.sound.play('assets/sounds/scrollMenu' + TitleState.soundExt);
 							iconValue = !iconValue;
 						}
-					case 10: //Binds
+					case 8: //Binds
 						if (controls.ACCEPT) {
 							FlxG.sound.play('assets/sounds/scrollMenu' + TitleState.soundExt);
 							canChangeItems = false;
 							Config.write(offsetValue, accuracyType, healthValue / 10.0, healthDrainValue / 10.0, iconValue, downValue, inputValue, glowValue, randomTapValue, noCapValue,introVal);
 							FlxG.switchState(new KeyBindMenu());
 						}
-					case 11: //Binds
+					case 9: //Binds
 						
 						if (controls.RIGHT_P || controls.LEFT_P || controls.ACCEPT) {
 							FlxG.sound.play('assets/sounds/scrollMenu' + TitleState.soundExt);
@@ -454,11 +363,9 @@ class ConfigMenu extends MusicBeatState
 			case 2: return noCapValue;
 			case 3: return inputValue;
 			case 4: return randomTapValue;
-			case 5: return healthValue / 10.0;
-			case 6: return healthDrainValue / 10.0;
-			case 7: return downValue;
-			case 8: return glowValue;
-			case 9: return iconValue;
+			case 5: return downValue;
+			case 6: return glowValue;
+			case 7: return iconValue;
 
 		}
 
