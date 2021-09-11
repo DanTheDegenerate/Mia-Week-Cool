@@ -8,7 +8,7 @@
 :effect:shake:-8
 :effect:fromAngle:-15
 :effect:toX:12
-:pico:angry: What the fuck do you mean he's getting more popular than me?! We've been rapping for only a few hours!
+:pico:angry: What the fuck do you mean he's getting more popular than me?! We've been rapping for like an hour!
 :effect:shake:0
 :text:speed:0.04
 :bf:smug: Bep bo!

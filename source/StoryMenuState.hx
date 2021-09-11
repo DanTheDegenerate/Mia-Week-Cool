@@ -61,7 +61,6 @@ class StoryMenuState extends MusicBeatState
 		add(bgg);
 		weekData = [
 			['Tutorial'],
-			//['Dadbattle'],
 			['Bopeebo', 'Fresh', 'Dadbattle'],
 			['Spookeez', 'South', 'Not A Monster'],
 			['Pico', 'Philly', "Blammed", 'School'],
@@ -86,7 +85,7 @@ class StoryMenuState extends MusicBeatState
 	
 		if (FlxG.sound.music == null)
 		{
-			FlxG.sound.playMusic("assets/music/klaskiiLoop.ogg", 0.75);
+			FlxG.sound.playMusic("assets/music/freakyMenu.ogg", 0.75);
 		}
 		bd = new FlxSprite(0, 0);
 		bd.frames = FlxAtlasFrames.fromSparrow('assets/images/menu/backdrop.png', 'assets/images/menu/backdrop.xml');
