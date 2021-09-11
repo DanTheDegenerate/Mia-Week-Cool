@@ -60,7 +60,7 @@ class GameOverSubstate extends MusicBeatSubstate
 	{
 		super.update(elapsed);
 
-			if (!vibe) rate -= 0.01*60/openfl.Lib.current.stage.frameRate;
+			if (!vibe) rate -= 0.02*60/openfl.Lib.current.stage.frameRate;
 			
 		#if cpp
 		@:privateAccess
