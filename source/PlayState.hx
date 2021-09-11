@@ -1544,7 +1544,7 @@ class PlayState extends MusicBeatState
 		{
 			if (FlxG.sound.music != null)
 			{
-				FlxG.sound.music.pause();
+				if(!boyfriend.stunned)FlxG.sound.music.pause();
 				vocals.pause();
 			}
 
@@ -1989,7 +1989,7 @@ class PlayState extends MusicBeatState
 			paused = true;
 
 			vocals.stop();
-			FlxG.sound.music.stop();
+			//FlxG.sound.music.stop();
 
 			openSubState(new GameOverSubstate(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y, camFollow.getScreenPosition().x, camFollow.getScreenPosition().y));
 

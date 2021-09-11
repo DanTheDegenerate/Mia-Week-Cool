@@ -16,6 +16,7 @@ class GameOverSubstate extends MusicBeatSubstate
 
 	var stageSuffix:String = "";
 	var rate = 1.00;
+	var vibe = false;
 
 	public function new(x:Float, y:Float, camX:Float, camY:Float)
 	{
@@ -58,11 +59,16 @@ class GameOverSubstate extends MusicBeatSubstate
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
-		if(!startVibin)rate -= 0.01;
 
-		if (FlxG.sound.music.playing){
-				lime.media.openal.AL.sourcef(FlxG.sound.music._channel.__source.__backend.handle, lime.media.openal.AL.PITCH, rate);//die rq trust me you finna se soem swagger shit
+			if (!vibe) rate -= 0.01*60/openfl.Lib.current.stage.frameRate;
+			
+		#if cpp
+		@:privateAccess
+		{
+		if (FlxG.sound.music.playing)
+				lime.media.openal.AL.sourcef(FlxG.sound.music._channel.__source.__backend.handle, lime.media.openal.AL.PITCH, rate);
 		}
+		#end
 		FlxG.camera.follow(camFollow, LOCKON);
 
 		if (controls.ACCEPT)
@@ -82,15 +88,18 @@ class GameOverSubstate extends MusicBeatSubstate
 
 		if (bf.animation.curAnim.name == 'firstDeath' && bf.animation.curAnim.finished)
 		{
+			vibe = true;
 		rate = 1.00;
 			FlxG.sound.playMusic('assets/music/gameOver' + stageSuffix + TitleState.soundExt);
 		}
-
-		if (FlxG.sound.music.playing)
-		{
-			Conductor.songPosition = FlxG.sound.music.time;
+		if(vibe){
+				if (FlxG.sound.music.playing)
+				{
+					Conductor.songPosition = FlxG.sound.music.time;
+				}
 		}
 	}
+	
 
 	override function beatHit()
 	{
