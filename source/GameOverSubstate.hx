@@ -15,6 +15,7 @@ class GameOverSubstate extends MusicBeatSubstate
 	var camFollow:FlxObject;
 
 	var stageSuffix:String = "";
+	var rate = 1.00;
 
 	public function new(x:Float, y:Float, camX:Float, camY:Float)
 	{
@@ -57,7 +58,11 @@ class GameOverSubstate extends MusicBeatSubstate
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
+		if(!startVibin)rate -= 0.01;
 
+		if (FlxG.sound.music.playing)
+				lime.media.openal.AL.sourcef(FlxG.sound.music._channel.__source.__backend.handle, lime.media.openal.AL.PITCH, rate);//die rq trust me you finna se soem swagger shit
+		}
 		FlxG.camera.follow(camFollow, LOCKON);
 
 		if (controls.ACCEPT)
@@ -77,6 +82,7 @@ class GameOverSubstate extends MusicBeatSubstate
 
 		if (bf.animation.curAnim.name == 'firstDeath' && bf.animation.curAnim.finished)
 		{
+		rate = 1.00;
 			FlxG.sound.playMusic('assets/music/gameOver' + stageSuffix + TitleState.soundExt);
 		}
 
@@ -102,6 +108,7 @@ class GameOverSubstate extends MusicBeatSubstate
 			isEnding = true;
 			bf.playAnim('deathConfirm', true);
 			FlxG.sound.music.stop();
+			rate = 1.00;
 			FlxG.sound.play('assets/music/gameOverEnd' + stageSuffix + TitleState.soundExt);
 			new FlxTimer().start(0.4, function(tmr:FlxTimer)
 			{
