@@ -31,5 +31,6 @@
 :effect:shake:0
 :effect:toY:8
 :effect:toAngle:-13
+:font:size:30
 :pico:annoyed: Fine. Get ready for that song that everyone knows cause it was in that one Friday Night Funkin animation that also got a mod!
 :gf:reallysmug: that's awfully specific.

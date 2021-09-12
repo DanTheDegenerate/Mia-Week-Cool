@@ -1544,7 +1544,7 @@ class PlayState extends MusicBeatState
 		{
 			if (FlxG.sound.music != null)
 			{
-				if(!boyfriend.stunned)FlxG.sound.music.pause();
+				FlxG.sound.music.pause();
 				vocals.pause();
 			}
 
@@ -1916,6 +1916,8 @@ class PlayState extends MusicBeatState
 				{
 					FlxTween.tween(FlxG.camera, {zoom: 1}, (Conductor.stepCrochet * 4 / 1000), {ease: FlxEase.elasticInOut});
 				}
+
+				camTween = FlxTween.tween(camFollow, {x: followX, y: followY}, 1.95, {ease: FlxEase.quintOut});
 			}
 		}
 
@@ -1989,7 +1991,7 @@ class PlayState extends MusicBeatState
 			paused = true;
 
 			vocals.stop();
-			//FlxG.sound.music.stop();
+			FlxG.sound.music.stop();
 
 			openSubState(new GameOverSubstate(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y, camFollow.getScreenPosition().x, camFollow.getScreenPosition().y));
 
@@ -2257,6 +2259,8 @@ class PlayState extends MusicBeatState
 		canPause = false;
 		FlxG.sound.music.volume = 0;
 		vocals.volume = 0;
+		FlxG.sound.music.stop();
+		vocals.stop();
 		if (SONG.validScore)
 		{
 			#if !switch
@@ -2287,7 +2291,6 @@ class PlayState extends MusicBeatState
 				
 				
 				if (hasD){//if it does, do end dialogue
-				FlxG.sound.playMusic("assets/music/klaskiiLoop.ogg", 0.3);
 					var doof2:DialogueBox = new DialogueBox(false, dialogue);
 					doof2.scrollFactor.set();
 					startingSong = true;
@@ -2296,6 +2299,7 @@ class PlayState extends MusicBeatState
 						
 						
 					doof2.finishThing = function(){
+						FlxG.sound.playMusic("assets/music/klaskiiLoop.ogg", 0.75);
 						FlxG.switchState(new StoryMenuState());
 					};
 					
