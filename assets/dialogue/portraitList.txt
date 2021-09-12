@@ -1,5 +1,5 @@
-bf 234 180
-gf 271 139
-pico 224 179
-spooky 228 83
-pepper 226 59
+bf 234 200
+gf 271 159
+pico 224 199
+spooky 228 110
+pepper 226 69

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="diawait.png">
+	<!-- Created with Adobe Animate version 20.0.3.25487 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="wait0000" x="0" y="0" width="25" height="25" frameX="-1" frameY="0" frameWidth="32" frameHeight="26"/>
+	<SubTexture name="wait0001" x="26" y="0" width="25" height="25" frameX="-1" frameY="0" frameWidth="32" frameHeight="26"/>
+	<SubTexture name="wait0002" x="52" y="0" width="25" height="25" frameX="-1" frameY="0" frameWidth="32" frameHeight="26"/>
+	<SubTexture name="wait0003" x="78" y="0" width="25" height="25" frameX="-1" frameY="0" frameWidth="32" frameHeight="26"/>
+	<SubTexture name="wait0004" x="104" y="0" width="24" height="25" frameX="-2" frameY="0" frameWidth="32" frameHeight="26"/>
+	<SubTexture name="wait0005" x="129" y="0" width="25" height="26" frameX="-1" frameY="0" frameWidth="32" frameHeight="26"/>
+	<SubTexture name="wait0006" x="155" y="0" width="25" height="24" frameX="-1" frameY="0" frameWidth="32" frameHeight="26"/>
+	<SubTexture name="wait0007" x="181" y="0" width="25" height="25" frameX="-1" frameY="0" frameWidth="32" frameHeight="26"/>
+	<SubTexture name="wait0008" x="207" y="0" width="26" height="25" frameX="-1" frameY="0" frameWidth="32" frameHeight="26"/>
+	<SubTexture name="wait0009" x="0" y="27" width="24" height="25" frameX="-1" frameY="0" frameWidth="32" frameHeight="26"/>
+	<SubTexture name="wait0010" x="25" y="27" width="25" height="25" frameX="-1" frameY="0" frameWidth="32" frameHeight="26"/>
+	<SubTexture name="wait0011" x="51" y="27" width="26" height="24" frameX="-1" frameY="-1" frameWidth="32" frameHeight="26"/>
+	<SubTexture name="wait0012" x="78" y="27" width="25" height="25" frameX="-1" frameY="0" frameWidth="32" frameHeight="26"/>
+	<SubTexture name="wait0013" x="104" y="27" width="25" height="25" frameX="-1" frameY="0" frameWidth="32" frameHeight="26"/>
+	<SubTexture name="wait0014" x="130" y="27" width="25" height="25" frameX="-1" frameY="0" frameWidth="32" frameHeight="26"/>
+	<SubTexture name="wait0015" x="156" y="27" width="25" height="26" frameX="-1" frameY="0" frameWidth="32" frameHeight="26"/>
+	<SubTexture name="wait0016" x="182" y="27" width="25" height="23" frameX="-1" frameY="0" frameWidth="32" frameHeight="26"/>
+	<SubTexture name="wait0017" x="208" y="27" width="26" height="25" frameX="-1" frameY="0" frameWidth="32" frameHeight="26"/>
+	<SubTexture name="wait0018" x="0" y="54" width="25" height="25" frameX="-1" frameY="0" frameWidth="32" frameHeight="26"/>
+	<SubTexture name="wait0019" x="26" y="54" width="25" height="25" frameX="-1" frameY="0" frameWidth="32" frameHeight="26"/>
+	<SubTexture name="wait0020" x="52" y="54" width="32" height="21" frameX="0" frameY="-2" frameWidth="32" frameHeight="26"/>
+	<SubTexture name="wait0021" x="85" y="54" width="29" height="20" frameX="-1" frameY="-3" frameWidth="32" frameHeight="26"/>
+	<SubTexture name="wait0022" x="115" y="54" width="28" height="19" frameX="-1" frameY="-4" frameWidth="32" frameHeight="26"/>
+	<SubTexture name="wait0023" x="144" y="54" width="28" height="17" frameX="-1" frameY="-5" frameWidth="32" frameHeight="26"/>
+</TextureAtlas>

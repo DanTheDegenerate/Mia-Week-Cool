@@ -118,7 +118,7 @@ class DialogueBox extends FlxSpriteGroup
 		blackBG = new FlxSprite(-256, -256).makeGraphic(FlxG.width * 2, FlxG.height * 2);
 		//add(blackBG);
 	
-		bgFade = new FlxSprite(-200, -200).makeGraphic(Std.int(FlxG.width * 1.3), Std.int(FlxG.height * 1.3), 0xFF660066);
+		bgFade = new FlxSprite(-200, -200).makeGraphic(Std.int(FlxG.width * 1.3), Std.int(FlxG.height * 1.3), 0xFF381D6B);
 		bgFade.scrollFactor.set();
 		bgFade.alpha = 0;
 		bgFade.blend = "multiply";
@@ -127,6 +127,11 @@ class DialogueBox extends FlxSpriteGroup
 		cutsceneImage = new FlxSprite(0, 0);
 		cutsceneImage.visible = false;
 		add(cutsceneImage);	
+		
+		
+		var bgg:FlxSprite = new FlxSprite( -175.8, -124.2).loadGraphic("assets/images/dialoguecheckerboard.png");
+		FlxTween.tween(bgg, {x:0, y:0}, 2, {type:LOOPING});
+		add(bgg);
 
 		//if (PlayState.SONG.song.toLowerCase() == 'tutorial')
 		//bgFade.visible = false;
@@ -141,11 +146,16 @@ class DialogueBox extends FlxSpriteGroup
 			
 			default:
 				hasDialog = true;
-				box.frames = FlxAtlasFrames.fromSparrow('assets/images/speech_bubble_talking.png','assets/images/speech_bubble_talking.xml');
-				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
-				box.animation.addByIndices('normal', 'speech bubble normal', [4], "", 24);
-				box.y = 335.9;
-				box.x = -20;
+				//box.frames = FlxAtlasFrames.fromSparrow('assets/images/speech_bubble_talking.png','assets/images/speech_bubble_talking.xml');
+				box.loadGraphic("assets/images/dialogueui.png", true,1280,720);
+				box.animation.add('normalOpen',[0], 24, false);
+				box.animation.add('normal', [0], 24);
+				box.y = 0;
+				box.x = 0;
+				arrow = new FlxSprite(1198.85, 606.45);
+				arrow.frames = FlxAtlasFrames.fromSparrow('assets/images/diawait.png', 'assets/images/diawait.xml');
+				arrow.animation.addByIndices("wait", "wait", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19], "");
+				arrow.animation.addByIndices("go", "wait", [20, 21, 22, 23], "", 24,false);
 				//trace("loaded "+)
 				/*
 			case 'senpai':
@@ -275,6 +285,7 @@ class DialogueBox extends FlxSpriteGroup
 		//box.setGraphicSize(Std.int(box.width * 0.9));
 		//box.updateHitbox();
 		add(box);
+		add(arrow);
 		}
 	
 		box.screenCenter(X);
@@ -289,21 +300,21 @@ class DialogueBox extends FlxSpriteGroup
 		}
 
 		
-		dropText = new FlxText(242, 442, Std.int(FlxG.width * 0.6), "", 64);
+		dropText = new FlxText(113.9, 474.05, Std.int(FlxG.width * 0.8), "", 64);
 		dropText.font = 'assets/fonts/funkin.otf';
-		dropText.color = 0xFFD89494;
+		dropText.color = 0xFF00FFFF;
 		add(dropText);
 		skipText = new FlxText(5, 695, 640, "Press SPACE to skip the dialogue.\n", 40);
 		skipText.scrollFactor.set(0, 0);
 		skipText.setFormat("assets/fonts/vcr.tff", 20, FlxColor.WHITE, FlxTextAlign.LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		skipText.borderSize = 2;
 		skipText.borderQuality = 1;
-		add(skipText);
+		//add(skipText);
 
 		
-		swagDialogue = new FlxTypeText(240, 440, Std.int(FlxG.width * 0.6), "", 64);
+		swagDialogue = new FlxTypeText(111.9, 472.05, Std.int(FlxG.width * 0.8), "", 64);
 		swagDialogue.font = 'assets/fonts/funkin.otf';
-		swagDialogue.color = 0xFF3F2021;
+		swagDialogue.color = 0xFFFFFF;
 		swagDialogue.sounds = [FlxG.sound.load('assets/sounds/pixelText' + TitleState.soundExt, 0.6)];
 		add(swagDialogue);
 
@@ -375,6 +386,7 @@ class DialogueBox extends FlxSpriteGroup
 
 		if (FlxG.keys.justPressed.SHIFT && !inAutoText && dialogueStarted == true && !canAdvance && !isEnding)
 		{
+			arrow.animation.play("go");
 			timeBeforeSkip.cancel();
 			canAdvance = true;
 			swagDialogue.skip();
@@ -434,7 +446,7 @@ class DialogueBox extends FlxSpriteGroup
 		FlxTween.tween(swagDialogue, {alpha: 0}, speed, {ease: FlxEase.linear});
 		FlxTween.tween(blackBG, {alpha: 0}, speed, {ease: FlxEase.linear});
 		FlxTween.tween(dropText, {alpha: 0}, speed, {ease: FlxEase.linear});
-		FlxTween.tween(skipText, {alpha: 0}, speed, {ease: FlxEase.linear});
+		//FlxTween.tween(skipText, {alpha: 0}, speed, {ease: FlxEase.linear});
 		FlxG.sound.music.fadeOut(speed, 0);
 
 
@@ -457,7 +469,7 @@ class DialogueBox extends FlxSpriteGroup
 		hideAll();
 		box.visible = true;
 		effectAngle(0);
-		box.flipX = true;
+		//box.flipX = true;
 		swagDialogue.visible = true;
 		dropText.visible = true;
 		trace(curCharacter,curAnim,dialogueList[0]);
@@ -620,9 +632,11 @@ class DialogueBox extends FlxSpriteGroup
 				swagDialogue.prefix = preText;
 				swagDialogue.resetText(dialogueList[0]);
 				
+					arrow.animation.play("wait");
 				if(!inAutoText){
 				timeBeforeSkip.start(swagDialogue.delay*dialogueList[0].length, function(tmr:FlxTimer)
 					{
+						arrow.animation.play("go");
 						canAdvance = true;
 					});
 				}

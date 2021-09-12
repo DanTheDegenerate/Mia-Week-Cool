@@ -13,10 +13,12 @@
 :bf:happy:Where... Pep?
 :spooky:confused:Wait... you know who Pep is?
 :bf:happy:Bap!
-:spooky:happy: I can't understand you but I guess you do! Awesome! You must be the guy that Pep said he was friends with before us! 
+:spooky:happy: I can't understand you but I guess you do! Awesome!
+:spooky:happy:You must be the guy that Pep said he was friends with before us! 
 :effect:toY:-4
 :effect:toY:4
 :bf:smug: skdoo!
 :spooky:confused:Well...
-:spooky:happy:Pep said that you're good at singing and rapping! Can you rap with us so we can make sure your actually Pep's friend?
+:spooky:happy:Pep said that you're good at singing and rapping!
+:spooky:happy:Can you rap with us so we can make sure your actually Pep's friend?
 :bf:happy:bap! 
