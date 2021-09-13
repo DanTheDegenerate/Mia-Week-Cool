@@ -21,7 +21,7 @@ class Config
 	public static function resetSettings():Void{
 
 		FlxG.save.data.offset = 0.0;
-		FlxG.save.data.accuracy = "simple";
+		FlxG.save.data.accuracy = "complex";
 		FlxG.save.data.healthMultiplier = 1.0;
 		FlxG.save.data.healthDrainMultiplier = 1.0;
 		FlxG.save.data.betterIcons = true;
@@ -88,7 +88,7 @@ class Config
 		if(FlxG.save.data.offset == null)
 			FlxG.save.data.offset = 0.0;
 		if(FlxG.save.data.accuracy == null)
-			FlxG.save.data.accuracy = "simple";
+			FlxG.save.data.accuracy = "complex";
 		if(FlxG.save.data.healthMultiplier == null)
 			FlxG.save.data.healthMultiplier = 1.0;
 		if(FlxG.save.data.healthDrainMultiplier == null)
