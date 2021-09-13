@@ -58,7 +58,6 @@ class StoryMenuState extends MusicBeatState
 	
 		var bgg:FlxSprite = new FlxSprite( -56, -26).loadGraphic("assets/images/menu/bg.png");
 		FlxTween.tween(bgg, {x:68, y:61}, 2, {type:LOOPING});
-		add(bgg);
 		weekData = [
 			['Tutorial'],
 			['Bopeebo', 'Fresh', 'Dadbattle'],
@@ -92,7 +91,7 @@ class StoryMenuState extends MusicBeatState
 		bd.animation.addByIndices("bd", "bd", [0, 0, 1, 2, 3, 4, 5, 6],"",0);
 		bd.animation.play("bd", true, false, 0);
 		add(bd);
-		bd.alpha = 0.4;
+		add(bgg);
 		persistentUpdate = persistentDraw = true;
 		var yellowBG:FlxSprite = new FlxSprite();
 		scoreText = new FlxText(660, 10, 0, "SCORE: 49324858", 36);
