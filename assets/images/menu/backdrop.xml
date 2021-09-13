@@ -2,8 +2,11 @@
 <TextureAtlas imagePath="backdrop.png">
 	<!-- Created with Adobe Animate version 20.0.3.25487 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="bd0000" x="0" y="0" width="1278" height="720"/>
-	<SubTexture name="bd0001" x="1279" y="0" width="1278" height="720"/>
-	<SubTexture name="bd0002" x="2558" y="0" width="1278" height="720"/>
-	<SubTexture name="bd0003" x="0" y="721" width="1278" height="720"/>
+	<SubTexture name="bd0000" x="0" y="0" width="1278" height="720" frameX="-2" frameY="0" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="bd0001" x="1279" y="0" width="1278" height="720" frameX="-2" frameY="0" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="bd0002" x="2558" y="0" width="1278" height="720" frameX="-2" frameY="0" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="bd0003" x="0" y="721" width="1280" height="720"/>
+	<SubTexture name="bd0004" x="1281" y="721" width="1280" height="720"/>
+	<SubTexture name="bd0005" x="2562" y="721" width="1280" height="720"/>
+	<SubTexture name="bd0006" x="0" y="1442" width="1278" height="720" frameX="-2" frameY="0" frameWidth="1280" frameHeight="720"/>
 </TextureAtlas>

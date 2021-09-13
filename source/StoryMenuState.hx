@@ -89,7 +89,7 @@ class StoryMenuState extends MusicBeatState
 		}
 		bd = new FlxSprite(0, 0);
 		bd.frames = FlxAtlasFrames.fromSparrow('assets/images/menu/backdrop.png', 'assets/images/menu/backdrop.xml');
-		bd.animation.addByIndices("bd", "bd", [0, 0, 1, 2, 2, 2, 2, 3],"",0);
+		bd.animation.addByIndices("bd", "bd", [0, 0, 1, 2, 3, 4, 5, 6],"",0);
 		bd.animation.play("bd", true, false, 0);
 		add(bd);
 		bd.alpha = 0.4;
