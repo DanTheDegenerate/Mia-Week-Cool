@@ -2240,7 +2240,7 @@ class PlayState extends MusicBeatState
 				{
 					if(Config.newInput){
 
-						if (daNote.tooLate){
+						if (daNote.tooLate && !daNote.isEnd){
 								
 							daNote.active = false;
 							daNote.visible = false;
@@ -2776,7 +2776,7 @@ class PlayState extends MusicBeatState
 					switch(daNote.noteData){
 						case 0:
 							if(leftRelease){
-								noteMiss(daNote.noteData, 0.0475, true);
+								noteMissWrongPress(daNote.noteData, 0.0475);
 								vocals.volume = 0;
 								daNote.tooLate = true;
 								daNote.destroy();
@@ -2784,7 +2784,7 @@ class PlayState extends MusicBeatState
 							}
 						case 1:
 							if(downRelease){
-								noteMiss(daNote.noteData, 0.0475, true);
+								noteMissWrongPress(daNote.noteData, 0.0475);
 								vocals.volume = 0;
 								daNote.tooLate = true;
 								daNote.destroy();
@@ -2792,7 +2792,7 @@ class PlayState extends MusicBeatState
 							}
 						case 2:
 							if(upRelease){
-								noteMiss(daNote.noteData, 0.0475, true);
+								noteMissWrongPress(daNote.noteData, 0.0475);
 								vocals.volume = 0;
 								daNote.tooLate = true;
 								daNote.destroy();
@@ -2800,7 +2800,7 @@ class PlayState extends MusicBeatState
 							}
 						case 3:
 							if(rightRelease){
-								noteMiss(daNote.noteData, 0.0475, true);
+								noteMissWrongPress(daNote.noteData, 0.0475);
 								vocals.volume = 0;
 								daNote.tooLate = true;
 								daNote.destroy();
@@ -2961,6 +2961,7 @@ class PlayState extends MusicBeatState
 
 			switch(Config.newInput){
 				case true:
+					/* // avoid Unmatched patterns: true
 					if (leftP)
 						noteMissWrongPress(0);
 					if (upP)
@@ -2969,7 +2970,13 @@ class PlayState extends MusicBeatState
 						noteMissWrongPress(3);
 					if (downP)
 						noteMissWrongPress(1);
-	
+					misses++; // this is rozebud being a fuckhead and not making it so an anti-mash miss doesn't actually count as a miss, which is STUPID. 
+					*/
+					// also this anti-mash thing should go away lol!
+
+
+				// we have an early hit window, no need for anti-mash on this.
+
 				case false:
 					if (leftP)
 						noteMiss(0);

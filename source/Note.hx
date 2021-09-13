@@ -21,6 +21,8 @@ class Note extends FlxSprite
 	public var prevNote:Note;
 	public var absoluteNumber:Int;
 
+	public var isEnd:Bool = false;
+
 	public var sustainLength:Float = 0;
 	public var isSustainNote:Bool = false;
 
@@ -165,6 +167,8 @@ class Note extends FlxSprite
 				case 0:
 					animation.play('purpleholdend');
 			}
+
+			isEnd = true;
 			
 			
 
@@ -202,7 +206,6 @@ class Note extends FlxSprite
 
 		if (mustPress)
 		{
-			// The * 0.5 us so that its easier to hit them too late, instead of too early
 			if (strumTime > Conductor.songPosition - Conductor.safeZoneOffset
 				&& strumTime < Conductor.songPosition + (Conductor.safeZoneOffset * (isSustainNote ? 0.5 : 1)))
 			{
