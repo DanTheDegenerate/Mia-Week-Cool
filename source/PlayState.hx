@@ -401,6 +401,8 @@ class PlayState extends MusicBeatState
 			cachingSprites1.frames = FlxAtlasFrames.fromSparrow('assets/images/picobutgay.png', 'assets/images/picobutgay.xml');
 			var cachingSprites2:FlxSprite = new FlxSprite(0, 0);
 			cachingSprites2.frames = FlxAtlasFrames.fromSparrow('assets/images/bfbutgay.png', 'assets/images/bfbutgay.xml');
+			add(cachingSprites1);
+			add(cachingSprites2);
 			var subway:FlxSprite = new FlxSprite(-350,-500).loadGraphic('assets/images/station/subway.png');
 			subway.scrollFactor.set(0.9, 0.9);
 			subway.setGraphicSize(Std.int(subway.width * 1));
@@ -1918,7 +1920,11 @@ gayBoppers.push(dcameos);
 					case 'spooky':
 						followY = dad.getMidpoint().y - 450;
 						followX = dad.getMidpoint().x + 15;
-					case 'pico'| 'picoGay':
+					case 'pico': 
+						followY = dad.getMidpoint().y - 275;
+						followX = dad.getMidpoint().x + 400;
+					
+					case 'picoGay':
 						followY = dad.getMidpoint().y - 275;
 						followX = dad.getMidpoint().x + 400;
 				}
