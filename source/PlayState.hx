@@ -1454,6 +1454,8 @@ gayBoppers.push(dcameos);
 				unspawnNotes.push(swagNote);
 				}
 				if(!stacked)allNotes[swagNote.noteData].push(swagNote.strumTime);
+				}else{
+					unspawnNotes.push(swagNote);
 				}
 				///
 				for (susNote in 0...Math.floor(susLength))
