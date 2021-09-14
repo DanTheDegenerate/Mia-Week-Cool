@@ -1445,7 +1445,7 @@ gayBoppers.push(dcameos);
 				
 				var stacked = false;
 				
-				if(swagNote.mustPress){
+				if(gottaHitNote){
 				if (allNotes[swagNote.noteData].contains(swagNote.strumTime)){
 					stacked = true;
 					trace("STACKED");
