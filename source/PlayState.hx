@@ -1440,18 +1440,21 @@ gayBoppers.push(dcameos);
 				var susLength:Float = swagNote.sustainLength;
 
 				susLength = susLength / Conductor.stepCrochet;
+				
+				//FIXING THE STACKED NOTES
+				
 				var stacked = false;
 				
-				if (allNotes[swagNote.noteData].contains(swagNote.strumTime)){
+				if (allNotes[swagNote.noteData].contains(swagNote.strumTime) && swagNote.mustPress){
 					stacked = true;
 					trace("STACKED");
 				}else{
 					
 				unspawnNotes.push(swagNote);
 				}
-				if(!stacked)allNotes[swagNote.noteData].push(swagNote.strumTime);
+				if(!stacked)if(swagNote.mustPress)allNotes[swagNote.noteData].push(swagNote.strumTime);
 				
-				
+				///
 				for (susNote in 0...Math.floor(susLength))
 				{
 					oldNote = unspawnNotes[Std.int(unspawnNotes.length - 1)];
@@ -1937,11 +1940,13 @@ gayBoppers.push(dcameos);
 						followY = dad.getMidpoint().y - 275;
 						followX = dad.getMidpoint().x + 400;
 					
-					case 'picoGay':
+					case 'picoGAY':
 						followY = dad.getMidpoint().y - 275;
 						followX = dad.getMidpoint().x + 400;
 				}
 
+				
+				
 				if (dad.curCharacter == 'mom')
 					vocals.volume = 1;
 
@@ -2140,6 +2145,8 @@ gayBoppers.push(dcameos);
 
 					if(daNote.noteStyle == 2){
 						dad.playAnim('shoot', true);
+						camGame.shake(0.02,0.5);
+						camHUD.shake(0.04,0.2);
 					}
 
 					enemyStrums.forEach(function(spr:FlxSprite)
