@@ -20,6 +20,11 @@ class Note extends FlxSprite
 	public var glowPath:String = (Config.noteGlow) ? "fpsPlus/" : "";
 	public var prevNote:Note;
 	public var absoluteNumber:Int;
+	
+	
+	public var noteStyle:Int = 0;
+	public static var noteStyles:Array<String> = ["normal","cock","shoot"];
+	
 
 	public var isEnd:Bool = false;
 

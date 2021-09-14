@@ -1424,6 +1424,8 @@ gayBoppers.push(dcameos);
 				var swagNote:Note = new Note(daStrumTime, daNoteData, false, oldNote);
 				swagNote.sustainLength = songNotes[2];
 				swagNote.scrollFactor.set(0, 0);
+				
+				if(songNotes[3])swagNote.noteStyle = songNotes[3];
 
 				var susLength:Float = swagNote.sustainLength;
 
@@ -2105,6 +2107,15 @@ gayBoppers.push(dcameos);
 							case 0:
 								dad.playAnim('singLEFT' + altAnim, true);
 						}
+					}
+					
+					
+					if(daNote.noteStyle == 1){
+						dad.playAnim('cock', true);
+					}
+
+					if(daNote.noteStyle == 2){
+						dad.playAnim('shoot', true);
 					}
 
 					enemyStrums.forEach(function(spr:FlxSprite)

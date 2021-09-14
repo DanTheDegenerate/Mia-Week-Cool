@@ -64,7 +64,7 @@ class ChartingState extends MusicBeatState
 	var curSong:String = 'Dadbattle';
 	var amountSteps:Int = 0;
 	var bullshitUI:FlxGroup;
-
+	var style:Int = 0;
 	var strumColors:Array<FlxColor> = [0xFFC24B99, 0xFF00FFFF, 0xFF12FA05, 0xFFF9393F];
 
 	var highlight:FlxSprite;
@@ -102,11 +102,14 @@ class ChartingState extends MusicBeatState
 	
 	var justChanged:Bool;
 
+	
+	var textS:FlxText;
 	override function create()
 	{
 
 		openfl.Lib.current.stage.frameRate = 120;
-
+textS = new FlxText(0, 700, 0, "charting for ", 16);
+textS.scrollFactor.set();
 		var controlInfo = new FlxText(10, 30, 0, "SHIFT - Unlock cursor from grid\nALT - Triplets\nCONTROL - 1/32 Notes\nSHIFT + CONTROL - 1/64 Notes\n\nTAB - Place notes on both sides\nZXNM / HJKL - Place notes during\n              playback\n\nR - Top of section\nSHIFT + R - Song start", 12);
 		controlInfo.scrollFactor.set();
 		add(controlInfo);
@@ -227,6 +230,7 @@ class ChartingState extends MusicBeatState
 
 		add(curRenderedNotes);
 		add(curRenderedSustains);
+add(textS);
 
 		super.create();
 	}
@@ -577,6 +581,8 @@ class ChartingState extends MusicBeatState
 	{
 		curStep = recalculateSteps();
 
+		textS.text = "(Z or X to change notes) Charting for " + Note.noteStyles[style];
+		
 		Conductor.songPosition = FlxG.sound.music.time;
 		_song.song = typingShit.text;
 
@@ -664,6 +670,19 @@ class ChartingState extends MusicBeatState
 			FlxG.switchState(new PlayState());
 		}
 
+		
+		
+		
+		if (FlxG.keys.justPressed.Z)
+		{
+			style --;
+			if (style == -1) style = Note.noteStyles.length - 1;
+		}
+		if (FlxG.keys.justPressed.X)
+		{
+			style ++;
+			if (style == Note.noteStyles.length) style = 0;
+		}
 		if (FlxG.keys.justPressed.E)
 		{
 			changeNoteSustain(Conductor.stepCrochet);
@@ -961,7 +980,7 @@ class ChartingState extends MusicBeatState
 		{
 			var strum = note[0] + Conductor.stepCrochet * (_song.notes[daSec].lengthInSteps * sectionNum);
 
-			var copiedNote:Array<Dynamic> = [strum, note[1], note[2]];
+			var copiedNote:Array<Dynamic> = [strum, note[1], note[2], note[3]];
 			_song.notes[daSec].sectionNotes.push(copiedNote);
 		}
 
@@ -1075,6 +1094,7 @@ class ChartingState extends MusicBeatState
 				note.sustainLength = daSus;
 				note.setGraphicSize(GRID_SIZE, GRID_SIZE);
 				note.updateHitbox();
+				note.noteStyle = style;
 				
 				note.x = Math.floor(noteAdjust[daNoteInfo] * GRID_SIZE);
 
@@ -1179,7 +1199,7 @@ class ChartingState extends MusicBeatState
 		var noteStrum = _noteStrum;
 		var noteSus = 0;
 
-		_song.notes[curSection].sectionNotes.push([noteStrum, noteData, noteSus]);
+		_song.notes[curSection].sectionNotes.push([noteStrum, noteData, noteSus,style]);
 
 		curSelectedNote = _song.notes[curSection].sectionNotes[_song.notes[curSection].sectionNotes.length - 1];
 

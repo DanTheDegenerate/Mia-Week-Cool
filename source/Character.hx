@@ -372,8 +372,12 @@ class Character extends FlxSprite
 
 				animation.addByPrefix('singUPmiss', 'pico Up note miss', 24, false);
 				animation.addByPrefix('singDOWNmiss', 'Pico Down Note MISS', 24, false);
+				animation.addByPrefix('cock', 'Pico gun pull 2', 24, false);
+				animation.addByPrefix('shoot', 'Pico Shoot', 24, false);
 
 				addOffset('idle');
+				addOffset('cock');
+				addOffset('shoot');
 				addOffset("singUP", 27, 139);
 				addOffset("singRIGHT", -84, -11);
 				addOffset("singLEFT", 46, 3);
