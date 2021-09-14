@@ -80,7 +80,7 @@ class MainMenuState extends MusicBeatState
 		magenta.antialiasing = true;
 		add(magenta);
 
-		blackbar = new FlxSprite(-80).loadGraphic('assets/images/black_bar.png');
+		/*blackbar = new FlxSprite(-80).loadGraphic('assets/images/black_bar.png');
 		blackbar.setGraphicSize(Std.int(blackbar.width * 0.69));
 		blackbar.updateHitbox();
 		blackbar.screenCenter();
@@ -89,11 +89,72 @@ class MainMenuState extends MusicBeatState
 		blackbar.visible = true;
 		blackbar.antialiasing = true;
 		add(blackbar);
-		blackbar.scrollFactor.set();
+		blackbar.scrollFactor.set();*/
+
+		var tb:FlxSprite = new FlxSprite(-80).loadGraphic('assets/images/mainmenu/textthing.png');
+		tb.scrollFactor.x = 0;
+		tb.scrollFactor.y = 0;
+		tb.setGraphicSize(Std.int(tb.width * 1));
+		tb.updateHitbox();
+		tb.screenCenter();
+		tb.antialiasing = true;
+		add(tb);	
+
+		var t1:FlxSprite = new FlxSprite(-80).loadGraphic('assets/images/mainmenu/triangles1.png');
+		t1.scrollFactor.x = 0;
+		t1.scrollFactor.y = 0;
+		t1.setGraphicSize(Std.int(t1.width * 1));
+		t1.updateHitbox();
+		t1.screenCenter();
+		t1.antialiasing = true;
+		add(t1);
+
+		var t2:FlxSprite = new FlxSprite(-80).loadGraphic('assets/images/mainmenu/triangles2.png');
+		t2.scrollFactor.x = 0;
+		t2.scrollFactor.y = 0;
+		t2.setGraphicSize(Std.int(t2.width * 1));
+		t2.updateHitbox();
+		t2.screenCenter();
+		t2.antialiasing = true;
+		add(t2);
+
+		var mf:FlxSprite = new FlxSprite(-80).loadGraphic('assets/images/mainmenu/menuframes.png');
+		mf.scrollFactor.x = 0;
+		mf.scrollFactor.y = 0;
+		mf.setGraphicSize(Std.int(mf.width * 1));
+		mf.updateHitbox();
+		mf.screenCenter();
+		mf.antialiasing = true;
+		add(mf);
+
+		var bt1:FlxSprite = new FlxSprite(-80).loadGraphic('assets/images/mainmenu/buttonthing2.png');
+		bt1.scrollFactor.x = 0;
+		bt1.scrollFactor.y = 0;
+		bt1.setGraphicSize(Std.int(bt1.width * 1));
+		bt1.updateHitbox();
+		bt1.screenCenter();
+		bt1.antialiasing = true;
+		add(bt1);
+
+		var bt2:FlxSprite = new FlxSprite(-80).loadGraphic('assets/images/mainmenu/buttonthing1.png');
+		bt2.scrollFactor.x = 0;
+		bt2.scrollFactor.y = 0;
+		bt2.setGraphicSize(Std.int(bt2.width * 1));
+		bt2.updateHitbox();
+		bt2.screenCenter();
+		bt2.antialiasing = true;
+		add(bt2);
+	
+		var bt3:FlxSprite = new FlxSprite(-80).loadGraphic('assets/images/mainmenu/buttonthing3.png');
+		bt3.scrollFactor.x = 0;
+		bt3.scrollFactor.y = 0;
+		bt3.setGraphicSize(Std.int(bt3.width * 1));
+		bt3.updateHitbox();
+		bt3.screenCenter();
+		bt3.antialiasing = true;
+		add(bt3);
 
 		menuItems = new FlxTypedGroup<FlxSprite>();
-		menuBGs = new FlxTypedGroup<FlxSprite>();
-		add(menuBGs);
 		add(menuItems);
 
 		var tex = FlxAtlasFrames.fromSparrow('assets/images/FNF_main_menu_assets.png', 'assets/images/FNF_main_menu_assets.xml');
@@ -102,34 +163,21 @@ class MainMenuState extends MusicBeatState
 
 		for (i in 0...optionShit.length)
 		{
-			var menuItem:FlxSprite = new FlxSprite(0, 60 + (i * 210));
-			var menuBG:FlxSprite = new FlxSprite(0, 60 + (i * 210));
+			var menuItem:FlxSprite = new FlxSprite(15, 180 + (i * 50));
 
 			if(optionShit[i] == "mod") {
 				menuItem.frames = texMod;
 			}
 			else {
 				menuItem.frames = tex;
-				menuBG.frames = texBg;
 			}
 			
 			menuItem.animation.addByPrefix('idle', optionShit[i] + " basic", 24);
 			menuItem.animation.addByPrefix('selected', optionShit[i] + " white", 24);
+			menuItem.setGraphicSize(Std.int(menuItem.width * 0.7));
 			menuItem.animation.play('idle');
 			menuItem.ID = i;
-			menuItem.screenCenter(X);
-
-			menuBG.animation.addByPrefix('idle', "bar basic", 24);
-			menuBG.animation.addByPrefix('selected', "bar white", 24, false);
-			menuBG.animation.play('idle');
-			menuBG.setGraphicSize(Std.int(menuBG.width * 0.85));
-			menuBG.ID = i;
-			menuBG.screenCenter(X);
-
-			menuBGs.add(menuBG);
 			menuItems.add(menuItem);
-			menuBG.scrollFactor.set();
-			menuBG.antialiasing = true;
 			menuItem.scrollFactor.set();
 			menuItem.antialiasing = true;
 		}
@@ -276,11 +324,6 @@ class MainMenuState extends MusicBeatState
 
 		menuItems.forEach(function(spr:FlxSprite)
 		{
-			spr.screenCenter(X);
-		});
-		menuBGs.forEach(function(spr:FlxSprite)
-		{
-			spr.screenCenter(X);
 		});
 	}
 
@@ -311,16 +354,5 @@ class MainMenuState extends MusicBeatState
 
 			spr.updateHitbox();
 		});
-		menuBGs.forEach(function(spr:FlxSprite)
-			{
-				spr.animation.play('idle');
-	
-				if (spr.ID == curSelected)
-				{
-					spr.animation.play('selected');
-				}
-	
-				spr.updateHitbox();
-			});
 	}
 }
