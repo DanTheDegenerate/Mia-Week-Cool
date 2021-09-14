@@ -23,11 +23,25 @@ class Main extends Sprite
 	{
 		super();
 
+		#if CORY
+		
+		
+		if(preload)
+			addChild(new FlxGame(0, 0, CoryState, 1, 144, 144, true));
+		else
+			addChild(new FlxGame(0, 0, CoryState, 1, 144, 144, true));
+
+		#else
+			
+		
 		if(preload)
 			addChild(new FlxGame(0, 0, Startup, 1, 144, 144, true));
 		else
 			addChild(new FlxGame(0, 0, TitleVidState, 1, 144, 144, true));
-
+			
+			
+		#end
+			
 		#if !mobile
 		fpsDisplay = new FPS(10, 3, 0xFFFFFF);
 		fpsDisplay.visible = false;

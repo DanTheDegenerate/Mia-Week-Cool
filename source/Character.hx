@@ -348,8 +348,87 @@ class Character extends FlxSprite
 
 				flipX = true;
 
+			case 'picoGAY':
+				tex = FlxAtlasFrames.fromSparrow('assets/images/picobutgay.png', 'assets/images/picobutgay.xml');
+				frames = tex;
+				animation.addByPrefix('idle', "Pico Idle Dance", 24, false);
+				animation.addByPrefix('singUP', 'pico Up note0', 24, false);
+				animation.addByPrefix('singDOWN', 'Pico Down Note0', 24, false);
+				if (isPlayer)
+				{
+					animation.addByPrefix('singLEFT', 'Pico NOTE LEFT0', 24, false);
+					animation.addByPrefix('singRIGHT', 'Pico Note Right0', 24, false);
+					animation.addByPrefix('singRIGHTmiss', 'Pico Note Right Miss', 24, false);
+					animation.addByPrefix('singLEFTmiss', 'Pico NOTE LEFT miss', 24, false);
+				}
+				else
+				{
+					// Need to be flipped! REDO THIS LATER!
+					animation.addByPrefix('singLEFT', 'Pico Note Right0', 24, false);
+					animation.addByPrefix('singRIGHT', 'Pico NOTE LEFT0', 24, false);
+					animation.addByPrefix('singRIGHTmiss', 'Pico NOTE LEFT miss', 24, false);
+					animation.addByPrefix('singLEFTmiss', 'Pico Note Right Miss', 24, false);
+				}
+
+				animation.addByPrefix('singUPmiss', 'pico Up note miss', 24, false);
+				animation.addByPrefix('singDOWNmiss', 'Pico Down Note MISS', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", 27, 139);
+				addOffset("singRIGHT", -84, -11);
+				addOffset("singLEFT", 46, 3);
+				addOffset("singDOWN", -65, -76);
+				addOffset("singUPmiss", -29, 67);
+				addOffset("singRIGHTmiss", -70, 28);
+				addOffset("singLEFTmiss", 62, 50);
+				addOffset("singDOWNmiss", 200, -34);
+
+				playAnim('idle');
+
+				flipX = true;
+
 			case 'bf':
 				var tex = FlxAtlasFrames.fromSparrow('assets/images/BOYFRIEND.png', 'assets/images/BOYFRIEND.xml');
+				frames = tex;
+				animation.addByPrefix('idle', 'BF idle dance', 24, false);
+				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
+				animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
+				animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT0', 24, false);
+				animation.addByPrefix('singDOWN', 'BF NOTE DOWN0', 24, false);
+				animation.addByPrefix('singUPmiss', 'BF NOTE UP MISS', 24, false);
+				animation.addByPrefix('singLEFTmiss', 'BF NOTE LEFT MISS', 24, false);
+				animation.addByPrefix('singRIGHTmiss', 'BF NOTE RIGHT MISS', 24, false);
+				animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
+				animation.addByPrefix('hey', 'BF HEY', 24, false);
+				animation.addByPrefix('attack', 'boyfriend attack', 24, false);
+
+				animation.addByPrefix('firstDeath', "BF dies", 24, false);
+				animation.addByPrefix('deathLoop', "BF Dead Loop", 24, true);
+				animation.addByPrefix('deathConfirm', "BF Dead confirm", 24, false);
+
+				animation.addByPrefix('scared', 'BF idle shaking', 24);
+
+				addOffset('idle', -5);
+				addOffset("singUP", -11, 12);
+				addOffset("singRIGHT", -15, -4);
+				addOffset("singLEFT", 2, -9);
+				addOffset("singDOWN", 60, -60);
+				addOffset("singUPmiss", -15, 26);
+				addOffset("singRIGHTmiss", -12, 28);
+				addOffset("singLEFTmiss", -4, 4);
+				addOffset("singDOWNmiss", 49, -10);
+				addOffset("hey", -13, 19);
+				addOffset('firstDeath', 57, 3);
+				addOffset('deathLoop', 37, -5);
+				addOffset('deathConfirm', 37, 69);
+				addOffset('scared', -14, -10);
+
+				playAnim('idle');
+
+				flipX = true;
+			
+			case 'bfBisexual':
+				var tex = FlxAtlasFrames.fromSparrow('assets/images/bfbutgay.png', 'assets/images/bfbutgay.xml');
 				frames = tex;
 				animation.addByPrefix('idle', 'BF idle dance', 24, false);
 				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
