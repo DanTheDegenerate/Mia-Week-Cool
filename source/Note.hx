@@ -209,6 +209,10 @@ class Note extends FlxSprite
 	{
 		super.update(elapsed);
 
+		
+		if (noteStyle == 1) color.brightness = 0;
+		if (noteStyle == 2) color.saturation = 0;
+		
 		if (mustPress)
 		{
 			if (strumTime > Conductor.songPosition - Conductor.safeZoneOffset

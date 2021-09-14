@@ -229,6 +229,9 @@ class PlayState extends MusicBeatState
 	var talking:Bool = true;
 	var songScore:Int = 0;
 	var scoreTxt:FlxText;
+	
+	//ANTI STACK SHIT
+	var allNotes:Array<Array<Float>> = [[],[],[],[]];
 
 	public static var campaignScore:Int = 0;
 
@@ -1437,8 +1440,18 @@ gayBoppers.push(dcameos);
 				var susLength:Float = swagNote.sustainLength;
 
 				susLength = susLength / Conductor.stepCrochet;
+				var stacked = false;
+				
+				if (allNotes[swagNote.noteData].contains(swagNote.strumTime)){
+					stacked = true;
+					trace("STACKED");
+				}else{
+					
 				unspawnNotes.push(swagNote);
-
+				}
+				if(!stacked)allNotes[swagNote.noteData].push(swagNote.strumTime);
+				
+				
 				for (susNote in 0...Math.floor(susLength))
 				{
 					oldNote = unspawnNotes[Std.int(unspawnNotes.length - 1)];
