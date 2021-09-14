@@ -1,3 +1,4 @@
+:music:harmony:0.4
 :gf:awkward:Ok so, I told my Mom and Dad about you.
 :effect:toY:20
 :effect:shake:12
