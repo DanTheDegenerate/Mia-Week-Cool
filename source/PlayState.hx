@@ -397,6 +397,10 @@ class PlayState extends MusicBeatState
 		{
 			curStage = 'station';
 			defaultCamZoom = 0.6;
+			var cachingSprites1:FlxSprite = new FlxSprite(0, 0);
+			cachingSprites1.frames = FlxAtlasFrames.fromSparrow('assets/images/picobutgay.png', 'assets/images/picobutgay.xml');
+			var cachingSprites2:FlxSprite = new FlxSprite(0, 0);
+			cachingSprites2.frames = FlxAtlasFrames.fromSparrow('assets/images/bfbutgay.png', 'assets/images/bfbutgay.xml');
 			var subway:FlxSprite = new FlxSprite(-350,-500).loadGraphic('assets/images/station/subway.png');
 			subway.scrollFactor.set(0.9, 0.9);
 			subway.setGraphicSize(Std.int(subway.width * 1));
@@ -433,6 +437,7 @@ gayBoppers.push(pcameos);
 			stationLights.updateHitbox();
 			add(stationLights);
 
+			
 
 			/*for (i in 0...2)
 			{
