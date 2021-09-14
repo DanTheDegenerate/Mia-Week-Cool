@@ -58,6 +58,12 @@ class DialogueBox extends FlxSpriteGroup
 	//Cutscene shit, HAS TO LOAD ON EVERY STAGE IDIOT
 	var cutsceneImage:FlxSprite;
 	var sound:FlxSound;
+	#if CORY
+	var censored = true;
+	#else
+	var censored = false;
+	#end
+	
 
 	public var finishThing:Void->Void;
 	public var portraitList:Array<String> = [];
@@ -92,6 +98,23 @@ class DialogueBox extends FlxSpriteGroup
 	var inAutoText:Bool = false;
 	
 	var timeBeforeSkip:FlxTimer;
+	
+	
+	var cusswords:Array<Array<String>> = [
+	["fuck","f***"],
+	["Fuck","F***"],
+	["FUCK", "F***"],
+	
+	["shit","s***"],
+	["Shit","S***"],
+	["SHIT","S***"],
+	
+	["bitch","b***"],
+	["Bitch","B***"],
+	["BITCH","B***"]
+	
+	];
+	
 	
 
 	public function new(talkingRight:Bool = true, ?dialogueList:Array<String>)
@@ -182,8 +205,16 @@ class DialogueBox extends FlxSpriteGroup
 				add(face);*/
 		}
 
+		
+		
+		
 		this.dialogueList = dialogueList;
 
+		if (censored){
+			trace("censoring");
+			censorTheShit();
+		}
+		
 		if (!hasDialog)
 			return;
 		if (PlayState.SONG.song.toLowerCase() == 'senpai'
@@ -874,6 +905,15 @@ class DialogueBox extends FlxSpriteGroup
 		
 	}
 
-
+	function censorTheShit(){
+		for (i in 0...dialogueList.length){
+			trace(dialogueList[i]);
+			for(u in cusswords){
+				if (StringTools.contains(dialogueList[i], u[0])){
+					dialogueList[i] = StringTools.replace(dialogueList[i], u[0],u[1]);
+				}
+			}	
+		}
+	}
 	
 }
