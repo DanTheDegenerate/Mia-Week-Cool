@@ -2149,7 +2149,7 @@ gayBoppers.push(dcameos);
 					if(daNote.noteStyle == 2){
 						dad.playAnim('shoot', true);
 						camGame.shake(0.02,0.5);
-						camHUD.shake(0.04,0.2);
+						camHUD.shake(0.02,0.2);
 					}
 
 					enemyStrums.forEach(function(spr:FlxSprite)
