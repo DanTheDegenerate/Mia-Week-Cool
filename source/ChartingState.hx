@@ -1088,6 +1088,7 @@ add(textS);
 				var daNoteInfo = i[1];
 				var daStrumTime = i[0];
 				var daSus = i[2];
+				var daStyle = i[3];
 	
 				var note:Note = new Note(daStrumTime, daNoteInfo % 4, true);
 				note.absoluteNumber = daNoteInfo;

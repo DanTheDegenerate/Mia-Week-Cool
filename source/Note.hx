@@ -1,8 +1,10 @@
 package;
 
 import flixel.FlxSprite;
+import flixel.effects.FlxFlicker;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.math.FlxMath;
+import flixel.text.FlxText;
 import flixel.util.FlxColor;
 //import polymod.format.ParseRules.TargetSignatureElement;
 
@@ -40,6 +42,8 @@ class Note extends FlxSprite
 	public static var GREEN_NOTE:Int = 2;
 	public static var BLUE_NOTE:Int = 1;
 	public static var RED_NOTE:Int = 3;
+	
+	public var aight:Int = 0;
 
 	public function new(_strumTime:Float, _noteData:Int, ?_editor = false, ?_prevNote:Note, ?_sustainNote:Bool = false)
 	{
@@ -121,6 +125,12 @@ class Note extends FlxSprite
 				animation.addByPrefix('greenhold', 'green hold piece');
 				animation.addByPrefix('redhold', 'red hold piece');
 				animation.addByPrefix('bluehold', 'blue hold piece');
+				
+					animation.addByPrefix('green', 'arrowUP');
+					animation.addByPrefix('blue', 'arrowDOWN');
+					animation.addByPrefix('purple', 'arrowLEFT');
+					animation.addByPrefix('red', 'arrowRIGHT');
+
 
 				if(Config.noteGlow){
 					animation.addByPrefix('purple glow', 'Purple Active');
@@ -209,9 +219,11 @@ class Note extends FlxSprite
 	{
 		super.update(elapsed);
 
+			if (noteStyle == 1) 
+					animation.play('purple');
+			if (noteStyle == 2)
+					animation.play('red');
 		
-		if (noteStyle == 1) color.brightness = 0;
-		if (noteStyle == 2) color.saturation = 0;
 		
 		if (mustPress)
 		{
