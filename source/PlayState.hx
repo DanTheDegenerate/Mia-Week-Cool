@@ -1445,15 +1445,16 @@ gayBoppers.push(dcameos);
 				
 				var stacked = false;
 				
-				if (allNotes[swagNote.noteData].contains(swagNote.strumTime) && swagNote.mustPress){
+				if(swagNote.mustPress){
+				if (allNotes[swagNote.noteData].contains(swagNote.strumTime)){
 					stacked = true;
 					trace("STACKED");
 				}else{
 					
 				unspawnNotes.push(swagNote);
 				}
-				if(!stacked)if(swagNote.mustPress)allNotes[swagNote.noteData].push(swagNote.strumTime);
-				
+				if(!stacked)allNotes[swagNote.noteData].push(swagNote.strumTime);
+				}
 				///
 				for (susNote in 0...Math.floor(susLength))
 				{
