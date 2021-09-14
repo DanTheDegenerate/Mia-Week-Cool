@@ -76,6 +76,8 @@ class PlayState extends MusicBeatState
 	public static var evilSchoolSongs:Array<String>;
 	
 	public static var botplay:Bool = true;
+	
+	var gayStation:FlxSprite;
 
 	var camFocus:String = "";
 	var camTween:FlxTween;
@@ -145,8 +147,17 @@ class PlayState extends MusicBeatState
 	private var healthBar:FlxBar;
 
 	private var generatedMusic:Bool = false;
+	
 	private var startingSong:Bool = false;
+	
+	
+	
+	private var gayPico:Bool = false;
 
+	
+	
+	
+	
 	private var iconP1:HealthIcon;
 	private var iconP2:HealthIcon;
 	private var camHUD:FlxCamera;
@@ -159,6 +170,10 @@ class PlayState extends MusicBeatState
 	var hasDialogue:Bool = false;
 	var lyricTxt:FlxText;
 
+	var gayBoppers:Array <FlxSprite> = [];
+	
+	
+	
 	var dialogue:Array<String> = ['strange code', '>:]'];
 
 	/*var bfPos:Array<Array<Float>> = [
@@ -387,6 +402,15 @@ class PlayState extends MusicBeatState
 			subway.setGraphicSize(Std.int(subway.width * 1));
 			subway.updateHitbox();
 			add(subway);
+			
+			
+			
+			gayStation = new FlxSprite(-350,-500).loadGraphic('assets/images/station/subway but gay.png');
+			gayStation.scrollFactor.set(0.9, 0.9);
+			gayStation.setGraphicSize(Std.int(subway.width * 1));
+			gayStation.updateHitbox();
+			add(gayStation);
+			gayStation.visible = false;
 
 			pcameos = new FlxSprite(-335,-551);
 			pcameos.frames = FlxAtlasFrames.fromSparrow('assets/images/station/pcameos.png','assets/images/station/pcameos.xml');
@@ -397,8 +421,8 @@ class PlayState extends MusicBeatState
 			pcameos.setGraphicSize(Std.int(pcameos.height * 1.65));
 			pcameos.updateHitbox();
 			add(pcameos);
-
-			pcameos.animation.play('bop', true);
+gayBoppers.push(pcameos);
+			pcameos.animation.play('bop', false);
 
 			var stationLights:FlxSprite = new FlxSprite(-350,-500);
 			stationLights.frames = FlxAtlasFrames.fromSparrow('assets/images/station/lightsSheet.png','assets/images/station/lightsSheet.xml');
@@ -735,8 +759,8 @@ class PlayState extends MusicBeatState
 			dcameos.setGraphicSize(Std.int(dcameos.width * 1));
 			dcameos.updateHitbox();
 			add(dcameos);
-
-			dcameos.animation.play('bop', true);
+gayBoppers.push(dcameos);
+			dcameos.animation.play('bop');
 		}
 
 		switch(SONG.song.toLowerCase()){
@@ -1877,10 +1901,7 @@ class PlayState extends MusicBeatState
 				{
 					case "mom" | "mom-car":
 						followY = dad.getMidpoint().y;
-					case 'senpai':
-						followY = dad.getMidpoint().y - 430;
-						followX = dad.getMidpoint().x - 100;
-					case 'senpai-angry':
+					case 'senpai' | 'senpai-angry':
 						followY = dad.getMidpoint().y - 430;
 						followX = dad.getMidpoint().x - 100;
 					case 'mia':
@@ -1890,7 +1911,7 @@ class PlayState extends MusicBeatState
 					case 'spooky':
 						followY = dad.getMidpoint().y - 450;
 						followX = dad.getMidpoint().x + 15;
-					case 'pico':
+					case 'pico'| 'picoGay':
 						followY = dad.getMidpoint().y - 275;
 						followX = dad.getMidpoint().x + 400;
 				}
@@ -3242,6 +3263,12 @@ class PlayState extends MusicBeatState
 			notes.sort(FlxSort.byY, FlxSort.DESCENDING);
 		}
 
+		for (i in gayBoppers){
+			i.animation.play("bop",true);
+		}
+		
+		
+		
 		if (SONG.notes[Math.floor(curStep / 16)] != null)
 		{
 			if (SONG.notes[Math.floor(curStep / 16)].changeBPM)
@@ -3264,6 +3291,17 @@ class PlayState extends MusicBeatState
 		}
 		// FlxG.log.add('change bpm' + SONG.notes[Std.int(curStep / 16)].changeBPM);
 
+		
+		if (SONG.song.toLowerCase() == "school"){
+			if (curBeat == 112){
+				gay(true);
+			}
+			if (curBeat == 176){
+				gay(false);
+			}
+		}
+		
+		
 		// HARDCODING FOR MILF ZOOMS!
 		if (curSong.toLowerCase() == 'milf' && curBeat >= 168 && curBeat <= 200 && camZooming && FlxG.camera.zoom < 1.35)
 		{
@@ -3386,5 +3424,44 @@ class PlayState extends MusicBeatState
 		return (a <= b + tolerance && a >= b - tolerance);
 	}
 
+	
+	function gay(lgbtqaiPlusRep:Bool = false){
+		gayPico = lgbtqaiPlusRep; // :D
+		gf.visible = !lgbtqaiPlusRep;
+		gayStation.visible = lgbtqaiPlusRep;
+		
+		for (i in gayBoppers){
+			i.visible = !lgbtqaiPlusRep;
+		}
+		if (gayPico){
+				var olddadx = dad.x;
+					var olddady = dad.y;
+					remove(dad);
+					dad = new Character(olddadx, olddady, "picoGAY");
+					add(dad);
+					
+				var oldbfx = boyfriend.x;
+					var oldbfy = boyfriend.y;
+					remove(boyfriend);
+					boyfriend = new Boyfriend(oldbfx, oldbfy, "bfBisexual");
+					add(boyfriend);
+					
+		}else{
+				var olddadx = dad.x;
+					var olddady = dad.y;
+					remove(dad);
+					dad = new Character(olddadx, olddady, "pico");
+					add(dad);
+					
+				var oldbfx = boyfriend.x;
+					var oldbfy = boyfriend.y;
+					remove(boyfriend);
+					boyfriend = new Boyfriend(oldbfx, oldbfy, "week3bf");
+					add(boyfriend);
+					
+		}
+	}
+	
+	
 	var curLight:Int = 0;
 }

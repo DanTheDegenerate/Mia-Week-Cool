@@ -26,7 +26,7 @@
 :bf:angry:Ba?!
 :pico:smug: I won't kill you. I think.
 :pico:smug: Lets kick it up a notch. Time to "educate" you on who I am. 
-:autoskip:during:1.8
+:autoskip:during:1.9
 :music:fadeOutFull:0.1
 :text:speed:0.05
 :gf:reallysmug:(Get it? Cause the next song is Schoo
