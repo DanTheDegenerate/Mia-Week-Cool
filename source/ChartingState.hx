@@ -1095,7 +1095,7 @@ add(textS);
 				note.sustainLength = daSus;
 				note.setGraphicSize(GRID_SIZE, GRID_SIZE);
 				note.updateHitbox();
-				note.noteStyle = style;
+				note.noteStyle = daStyle;
 				
 				note.x = Math.floor(noteAdjust[daNoteInfo] * GRID_SIZE);
 
