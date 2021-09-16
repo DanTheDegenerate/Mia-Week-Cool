@@ -5,6 +5,7 @@ gf-spooky
 gf-train
 spooky
 pico
+picoGAY
 mom
 mom-car
 bf-car

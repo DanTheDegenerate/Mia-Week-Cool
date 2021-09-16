@@ -376,8 +376,8 @@ class Character extends FlxSprite
 				animation.addByPrefix('shoot', 'Pico Shoot', 24, false);
 
 				addOffset('idle');
-				addOffset('cock',10,-20);
-				addOffset('shoot',-24,30);
+				addOffset('cock', 0, 40);
+				addOffset('shoot', -24, 20);
 				addOffset("singUP", 27, 139);
 				addOffset("singRIGHT", -84, -11);
 				addOffset("singLEFT", 46, 3);
