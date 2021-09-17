@@ -349,7 +349,7 @@ class TitleStateNormal extends MusicBeatState
 		switch (curBeat)
 		{
 			case 1:
-				createCoolText(['The BZ Remixed Team']);
+				createCoolText(['STUDIO BREAKBEAT']);
 			case 3:
 				deleteCoolText();
 				addMoreText('present');
