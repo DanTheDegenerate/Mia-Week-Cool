@@ -44,23 +44,25 @@ class CreditsState extends MusicBeatState
 		songs.push(new CredsMetadata("The Official Twitter Account", 1, 'bf'));
 		
 		songs.push(new CredsMetadata("MUSICIANS", 999, 'title'));
-		songs.push(new CredsMetadata("Biddle3", 0, ''));
+		songs.push(new CredsMetadata("Biddle", 0, ''));
+
 		songs.push(new CredsMetadata("VOICE ACTORS", 999, 'title'));
 		songs.push(new CredsMetadata("spiteater", 0, ''));
+
 		songs.push(new CredsMetadata("ARTISTS and ANIMATORS", 999, 'title'));
-		
 		songs.push(new CredsMetadata("SugarRatio", 2, ''));
 		songs.push(new CredsMetadata("Moisty", 3, ''));
 		songs.push(new CredsMetadata("Shell", 4, ''));
-		songs.push(new CredsMetadata("BlazeTheWolf55", 4, ''));
+		songs.push(new CredsMetadata("BlazeTheWolf10", 4, ''));
 		songs.push(new CredsMetadata("NeatoNG_", 5, ''));
 		songs.push(new CredsMetadata("Cval", 5, ''));
 		songs.push(new CredsMetadata("Deca", 5, ''));
 		songs.push(new CredsMetadata("PacioFD", 5, ''));
-		songs.push(new CredsMetadata("DanTheMan", 6, ''));
-		songs.push(new CredsMetadata("Johnscomics3", 6, ''));
-		songs.push(new CredsMetadata("Jams3D", 6, ''));
+		songs.push(new CredsMetadata("DegenDan", 6, ''));
+		songs.push(new CredsMetadata("Johnscomics2", 6, ''));
+		songs.push(new CredsMetadata("Jams", 6, ''));
 		songs.push(new CredsMetadata("Teethlust", 6, ''));
+		
 		
 		songs.push(new CredsMetadata("PROGRAMMERS", 999, 'title'));
 		songs.push(new CredsMetadata("KadeDeveloper", 5, ''));
@@ -68,11 +70,17 @@ class CreditsState extends MusicBeatState
 		songs.push(new CredsMetadata("Sulayre", 5, ''));
 		songs.push(new CredsMetadata("Cval", 5, ''));
 		
+		songs.push(new CredsMetadata("WRITERS", 999, 'title'));
+		songs.push(new CredsMetadata("DuckierKarma", 5, ''));
+		
 		songs.push(new CredsMetadata("CHARTERS", 10, 'title'));
 		songs.push(new CredsMetadata("Cval", 5, ''));
-		songs.push(new CredsMetadata("DanTheMan", 5, ''));
+		songs.push(new CredsMetadata("DegenDan", 5, ''));
 		songs.push(new CredsMetadata("FoxeruKun", 5, ''));
 
+		songs.push(new CredsMetadata("SPECIAL THANKS", 10, 'title'));
+		songs.push(new CredsMetadata("CelShader", 6, ''));
+		songs.push(new CredsMetadata("ayybeff", 6, ''));
 		var isDebug:Bool = true;
 
 		/*if (StoryMenuState.weekUnlocked[2] || isDebug)
@@ -236,14 +244,28 @@ class CreditsState extends MusicBeatState
 				FlxG.openURL('https://twitter.com/cval_brown');
 				case "Shell":
 				FlxG.openURL('https://twitter.com/Sh3llynn');
+				case "Deca":
+				FlxG.openURL('https://twitter.com/TheSculpturema1');
 				case "bbpanzu":
 				FlxG.openURL('https://twitter.com/bbsub3');
-				case "DanTheMan":
+				case "DegenDan":
 				FlxG.openURL('https://www.youtube.com/channel/UC2n1_Ww41kLMuO4tKnKX37Q');
 				case "Sulayre":
 				FlxG.openURL('https://twitter.com/Sulayre');
+				case "CelShader":
+				FlxG.openURL('https://twitter.com/CELSHDR');
+				case "Biddle":
+				FlxG.openURL('https://twitter.com/Biddy312');
+				case "Jams":
+				FlxG.openURL('https://twitter.com/jams3d');
+				case "Moisty":
+				FlxG.openURL('https://youtube.com/channel/UC7M0aIL8-eVSJker9p0OyUQ');
+
 				default:
-					FlxG.openURL('https://twitter.com/'+songs[curSelected].songName);
+					if (songs[curSelected].songCharacter != "title")
+						{
+							FlxG.openURL('https://twitter.com/'+songs[curSelected].songName);
+						}
 					
 			}
 		}
