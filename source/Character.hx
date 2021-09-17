@@ -193,16 +193,16 @@ class Character extends FlxSprite
 				tex = FlxAtlasFrames.fromSparrow('assets/images/DADDY_DEAREST.png', 'assets/images/DADDY_DEAREST.xml');
 				frames = tex;
 				animation.addByPrefix('idle', 'Dearest Idle', 24, false);
-				animation.addByPrefix('singUP', 'up placeholder', 24);
+				animation.addByPrefix('singUP', 'UP Pose', 24);
 				animation.addByPrefix('singRIGHT', 'Right DD', 24);
 				animation.addByPrefix('singDOWN', 'down placeholder', 24);
 				animation.addByPrefix('singLEFT', 'Dearest Left', 24);
 
 				addOffset('idle');
-				addOffset("singUP", 176, 186);
+				addOffset("singUP", 104, 113);
 				addOffset("singRIGHT", 0, 3);
 				addOffset("singLEFT", 180, -8);
-				addOffset("singDOWN", 123, -73);
+				addOffset("singDOWN", 86, -73);
 
 				playAnim('idle');
 			case 'mia':
