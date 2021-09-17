@@ -170,7 +170,13 @@ class TitleStateNormal extends MusicBeatState
 			skipIntro();
 		else{
 			initialized = true;
-			FlxG.sound.playMusic('assets/music/freakyMenu' + TitleState.soundExt, 0.8);
+			var ttt = "";
+			#if CORY
+			ttt = "Cory";
+			#end
+			
+			
+			FlxG.sound.playMusic('assets/music/freakyMenu'+ttt + TitleState.soundExt, 0.8);
 		}
 	}
 
