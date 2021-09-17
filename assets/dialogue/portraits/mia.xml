@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="mia.png">
+	<!-- Created with Adobe Animate version 20.0.3.25487 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="mia_portrait0000" x="0" y="0" width="250" height="367"/>
+	<SubTexture name="mia_portrait0001" x="251" y="0" width="250" height="367"/>
+	<SubTexture name="mia_portrait0002" x="502" y="0" width="250" height="367"/>
+	<SubTexture name="mia_portrait0003" x="753" y="0" width="250" height="367"/>
+	<SubTexture name="mia_portrait0004" x="1004" y="0" width="250" height="367"/>
+	<SubTexture name="mia_portrait0005" x="1255" y="0" width="250" height="367"/>
+	<SubTexture name="mia_portrait0006" x="1506" y="0" width="250" height="367"/>
+	<SubTexture name="mia_portrait0007" x="1757" y="0" width="250" height="367"/>
+	<SubTexture name="mia_portrait0008" x="0" y="368" width="250" height="367"/>
+</TextureAtlas>

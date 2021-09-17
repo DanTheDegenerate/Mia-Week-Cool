@@ -1,0 +1,6 @@
+indices:default:0
+indices:nervous:1
+indices:smug:0
+indices:impressed:8
+indices:amused:3
+indices:confident:0
