@@ -842,7 +842,7 @@ gayBoppers.push(dcameos);
 				dad.y += 130;
 			case 'dad':
 				camPos.x += 400;
-				dad.y -= 100
+				dad.y -= 140;
 			case 'pico':
 				camPos.x += 600;
 				dad.y += 300;
