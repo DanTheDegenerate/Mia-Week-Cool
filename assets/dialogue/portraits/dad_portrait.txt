@@ -1,0 +1,6 @@
+indices:default:0
+indices:smug:0
+indices:angry:1
+indices:surprised:2
+indices:angrysmile:3
+indices:insane:4

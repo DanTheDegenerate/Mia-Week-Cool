@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="dad.png">
+	<!-- Created with Adobe Animate version 20.0.2.22168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="dad portrait0000" x="0" y="0" width="341" height="485"/>
+	<SubTexture name="dad portrait0001" x="341" y="0" width="341" height="485"/>
+	<SubTexture name="dad portrait0002" x="682" y="0" width="341" height="485"/>
+	<SubTexture name="dad portrait0003" x="0" y="485" width="341" height="485"/>
+	<SubTexture name="dad portrait0004" x="341" y="485" width="341" height="485"/>
+</TextureAtlas>

@@ -1,7 +1,7 @@
 :music:dad:0.4
-:dad:smug:Wow. 
-:dad:smug:Got past the baby song. Surprising. 
+:dad:surprised:Wow. 
+:dad:surprised:Got past the baby song. Surprising. 
 :bf:smug:Bap bloop!
-:dad:smile:Don't get your hopes up just cause you surpassed my extremely low expectations.
-:dad:smile:Let's pick up the pace.
+:dad:smug:Don't get your hopes up just cause you surpassed my extremely low expectations.
+:dad:angrysmile:Let's pick up the pace.
 :bf:Happy:Boop!
