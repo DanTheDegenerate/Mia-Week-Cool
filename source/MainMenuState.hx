@@ -291,6 +291,16 @@ if(scrollTxt.x < -1280) scrollTxt.x = 0;
 					#end
 				}
 				
+
+				else if (optionShit[curSelected] == 'discord')
+				{
+					#if linux
+					Sys.command('/usr/bin/xdg-open', ["https://discord.gg/b3-remixed", "&"]);
+					#else
+					FlxG.openURL('https://discord.gg/b3-remixed');
+					#end
+				}
+				
 				else
 				{
 					selectedSomethin = true;
@@ -337,6 +347,9 @@ if(scrollTxt.x < -1280) scrollTxt.x = 0;
 									case 'options':
 										FlxG.switchState(new ConfigMenu());
 										trace("options time");
+									case 'credits':
+										FlxG.switchState(new CreditsState());
+										trace("credits time");
 								}
 							});
 						}
