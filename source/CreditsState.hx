@@ -114,8 +114,9 @@ class CreditsState extends MusicBeatState
 		for (i in 0...songs.length)
 		{
 			var leng = 0;
-			if (songs[i].songCharacter == "title") leng = 30;
-			var songText:Alphabet = new Alphabet(0, (70 * i) + leng, songs[i].songName, songs[i].songCharacter == "title", false);
+			if (songs[i].songCharacter == "title") leng = 50;
+			var songText:Alphabet = new Alphabet(0, (20 * i) + leng, songs[i].songName, songs[i].songCharacter == "title", false);
+			if (songs[i].songCharacter == "title")  songText.offset.y = -100;
 			songText.isMenuItem = true;
 			songText.targetY = i;
 			grpSongs.add(songText);
