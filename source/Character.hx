@@ -199,10 +199,10 @@ class Character extends FlxSprite
 				animation.addByPrefix('singLEFT', 'Dearest Left', 24);
 
 				addOffset('idle');
-				addOffset("singUP", 104, 113);
-				addOffset("singRIGHT", 0, 3);
-				addOffset("singLEFT", 180, -8);
-				addOffset("singDOWN", 86, -73);
+				addOffset("singUP", 95, 197);
+				addOffset("singRIGHT", -27, -5);
+				addOffset("singLEFT", 392, 6);
+				addOffset("singDOWN", 239, -134);
 
 				playAnim('idle');
 			case 'mia':

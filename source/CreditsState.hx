@@ -241,7 +241,7 @@ class CreditsState extends MusicBeatState
 				case "DanTheMan":
 				FlxG.openURL('https://www.youtube.com/channel/UC2n1_Ww41kLMuO4tKnKX37Q');
 				case "Sulayre":
-				FlxG.openURL('https://twitter.com/NewSrPerez');
+				FlxG.openURL('https://twitter.com/Sulayre');
 				default:
 					FlxG.openURL('https://twitter.com/'+songs[curSelected].songName);
 					
