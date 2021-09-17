@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="backtxt.png">
+	<!-- Created with Adobe Animate version 20.0.3.25487 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="backtxt0000" x="0" y="0" width="2560" height="36" frameX="-529" frameY="-437" frameWidth="3089" frameHeight="721"/>
+	<SubTexture name="backtxt0001" x="0" y="37" width="3049" height="720" frameX="-40" frameY="0" frameWidth="3089" frameHeight="721"/>
+	<SubTexture name="backtxt0002" x="0" y="758" width="3089" height="720" frameX="0" frameY="-1" frameWidth="3089" frameHeight="721"/>
+	<SubTexture name="backtxt0003" x="0" y="1479" width="2560" height="36" frameX="-529" frameY="-437" frameWidth="3089" frameHeight="721"/>
+	<SubTexture name="backtxt0004" x="0" y="1516" width="2560" height="36" frameX="-529" frameY="-437" frameWidth="3089" frameHeight="721"/>
+</TextureAtlas>

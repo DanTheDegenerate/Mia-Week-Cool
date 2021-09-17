@@ -7,6 +7,7 @@ import Discord.DiscordClient;
 import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.FlxSprite;
+import flixel.addons.plugin.FlxScrollingText;
 import flixel.effects.FlxFlicker;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.group.FlxGroup.FlxTypedGroup;
@@ -19,6 +20,7 @@ import lime.app.Application;
 import lime.utils.Assets;
 import flixel.math.FlxMath;
 import flixel.text.FlxText;
+import openfl.Lib;
 
 using StringTools;
 
@@ -32,7 +34,7 @@ class MainMenuState extends MusicBeatState
 	//var configText:FlxText;
 	//var configSelected:Int = 0;
 	
-	var optionShit:Array<String> = ['story mode', 'freeplay', "options"];
+	var optionShit:Array<String> = ['story mode', 'freeplay', "options", 'credits', "discord"];
 
 	var magenta:FlxSprite;
 	var blackbar:FlxSprite;
@@ -40,6 +42,7 @@ class MainMenuState extends MusicBeatState
 
 	var versionText:FlxText;
 	var keyWarning:FlxText;
+	var scrollTxt:FlxSprite;
 
 	override function create()
 	{
@@ -91,6 +94,8 @@ class MainMenuState extends MusicBeatState
 		add(blackbar);
 		blackbar.scrollFactor.set();*/
 
+		
+		
 		var tb:FlxSprite = new FlxSprite(-80).loadGraphic('assets/images/mainmenu/textthing.png');
 		tb.scrollFactor.x = 0;
 		tb.scrollFactor.y = 0;
@@ -100,6 +105,19 @@ class MainMenuState extends MusicBeatState
 		tb.antialiasing = true;
 		add(tb);	
 
+		
+		scrollTxt = new FlxSprite(0, 0);
+		scrollTxt.frames = FlxAtlasFrames.fromSparrow('assets/images/mainmenu/backtxt.png', 'assets/images/mainmenu/backtxt.xml');
+		scrollTxt.animation.addByPrefix("txt", "backtxt", 0, false);
+		scrollTxt.animation.play("txt", true, false, curSelected);
+		scrollTxt.antialiasing = true;
+		scrollTxt.screenCenter();
+		scrollTxt.y = 0;
+		scrollTxt.scrollFactor.x = 0;
+		scrollTxt.scrollFactor.y = 0;
+		add(scrollTxt);
+		
+		
 		var t1:FlxSprite = new FlxSprite(-80).loadGraphic('assets/images/mainmenu/triangles1.png');
 		t1.scrollFactor.x = 0;
 		t1.scrollFactor.y = 0;
@@ -172,8 +190,8 @@ class MainMenuState extends MusicBeatState
 				menuItem.frames = tex;
 			}
 			
-			menuItem.animation.addByPrefix('idle', optionShit[i] + " basic", 24);
-			menuItem.animation.addByPrefix('selected', optionShit[i] + " white", 24);
+			menuItem.animation.addByIndices('idle', optionShit[i],[0],"", 24);
+			menuItem.animation.addByIndices('selected', optionShit[i],[3],"", 24);
 			menuItem.setGraphicSize(Std.int(menuItem.width * 0.7));
 			menuItem.animation.play('idle');
 			menuItem.ID = i;
@@ -184,6 +202,8 @@ class MainMenuState extends MusicBeatState
 
 		FlxG.camera.follow(camFollow, null, 0.004);
 
+		
+		
 		versionText = new FlxText(5, FlxG.height - 21, 0, Assets.getText('assets/data/version.txt'), 16);
 		versionText.scrollFactor.set();
 		versionText.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -217,7 +237,8 @@ class MainMenuState extends MusicBeatState
 		{
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
 		}
-
+scrollTxt.x -= 3 * 60 / Lib.current.stage.frameRate;
+if(scrollTxt.x < -1280) scrollTxt.x = 0;
 		if (!selectedSomethin)
 		{
 			if (controls.UP_P)
@@ -242,7 +263,11 @@ class MainMenuState extends MusicBeatState
 			{
 				FlxG.switchState(new TitleState());
 			}
-
+			if (FlxG.keys.justPressed.Q)
+			{
+				trace(scrollTxt.getPosition());
+			}
+//scrollTxt.setPosition(FlxG.mouse.x, FlxG.mouse.y);
 			if (controls.ACCEPT)
 			{
 			
@@ -337,6 +362,7 @@ class MainMenuState extends MusicBeatState
  		if (curSelected < 0)
 			curSelected = menuItems.length - 1;
 			
+		scrollTxt.animation.play("txt", true, false, curSelected);
 		/*if (configSelected > 3)
 			configSelected = 0;
 		if (configSelected < 0)
