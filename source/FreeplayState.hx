@@ -66,7 +66,7 @@ class FreeplayState extends MusicBeatState
 			addWeek(['Pico', 'Philly', 'Blammed', 'School'], 3, ['pico']);
 
 		if (StoryMenuState.weekUnlocked[4] || isDebug)
-			addWeek(['Satin-Panties', 'High', 'Milf'], 4, ['mom']);
+			addWeek(['Satin-Panties', 'High', 'Milf', "Milkies"], 4, ['mom']);
 
 		if (StoryMenuState.weekUnlocked[5] || isDebug)
 			addWeek(['Cocoa', 'Eggnog', 'Winter-Horrorland'], 5, ['parents-christmas', 'parents-christmas', 'monster-christmas']);
@@ -75,7 +75,7 @@ class FreeplayState extends MusicBeatState
 			addWeek(['Senpai', 'Roses', 'Thorns'], 6, ['senpai', 'senpai-angry', 'spirit']);
 
 		if (StoryMenuState.weekUnlocked[7] || isDebug)
-			addWeek(['mi-opera', 'mia battle', 'diva'], 7, ['mia']);
+			addWeek(["mi-opera", "mia battle", 'diva', "revolution", "mania"], 7, ['mia']);
 
 
 

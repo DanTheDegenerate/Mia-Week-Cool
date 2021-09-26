@@ -275,8 +275,8 @@ class PlayState extends MusicBeatState
 		stageSongs = ["tutorial", "bopeebo", "fresh", "dadbattle"];
 		spookySongs = ["spookeez", "south", "not a monster"];
 		stationSongs = ["pico", "philly", "blammed", "school"];
-		limoSongs = ["satin-panties", "high", "milf"];
-		miaSongs = ["mi-opera", "mia battle", "diva"];
+		limoSongs = ["satin-panties", "high", "milf", "milkies"];
+		miaSongs = ["mi-opera", "mia battle", "diva", "revolution", "mania"];
 		mallSongs = ["cocoa", "eggnog"];
 		evilMallSongs = ["winter-horrorland"];
 		schoolSongs = ["senpai", "roses"];
@@ -2935,7 +2935,7 @@ gayBoppers.push(dcameos);
 		});
 	}
 
-	function noteMiss(direction:Int = 1, ?healthLoss:Float = 0.04, ?playAudio:Bool = true, ?skipInvCheck:Bool = false):Void
+	function noteMiss(direction:Int = 1, ?healthLoss:Float = 0.1, ?playAudio:Bool = true, ?skipInvCheck:Bool = false):Void
 	{
 		if (!boyfriend.stunned && !startingSong && (!boyfriend.invuln || skipInvCheck) )
 		{
@@ -2978,7 +2978,7 @@ gayBoppers.push(dcameos);
 		}
 	}
 
-	function noteMissWrongPress(direction:Int = 1, ?healthLoss:Float = 0.0475):Void
+	function noteMissWrongPress(direction:Int = 1, ?healthLoss:Float = 0.1):Void
 		{
 			if (!startingSong && !boyfriend.invuln)
 			{

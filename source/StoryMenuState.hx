@@ -63,10 +63,10 @@ class StoryMenuState extends MusicBeatState
 			['Bopeebo', 'Fresh', 'Dadbattle'],
 			['Spookeez', 'South', 'Not A Monster'],
 			['Pico', 'Philly', "Blammed", 'School'],
-			['Satin-Panties', "High", "Milf"],
+			['Satin-Panties', "High", "Milf", "Milkies"],
 			['Cocoa', 'Eggnog', 'Winter-Horrorland'],
 			['Senpai', 'Roses', 'Thorns'],
-			['Mi-opera','Mia Battle', 'Diva']
+			['Diva', "Revolution", "Mania"]
 		];
 		
 		weekCharacters = [
