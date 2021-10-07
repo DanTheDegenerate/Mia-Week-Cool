@@ -58,7 +58,7 @@ Adjusted some of the health icons and adds winning icons.
 - [Kawaisprite](https://twitter.com/kawaisprite) - Musician
 
 ### FPS Plus
-- [Rozebud](https://twitter.com/helpme_thebigt) - *Everything*
+- [Rozebud](https://twitter.com/helpme_thebigt) - *Hack'd*
 
 ### Shoutouts
 - [KadeDev](https://twitter.com/KadeDeveloper) - Occasional code advice. (Sometime I don't listen though...)
