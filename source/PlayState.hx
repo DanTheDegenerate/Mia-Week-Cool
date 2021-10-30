@@ -69,6 +69,7 @@ class PlayState extends MusicBeatState
 	public static var stationSongs:Array<String>;
 	public static var limoSongs:Array<String>;
 	public static var miaSongs:Array<String>;
+	public static var gfSongs:Array<String>;
 	public static var mallSongs:Array<String>;
 	public static var evilMallSongs:Array<String>;
 	public static var schoolSongs:Array<String>;
@@ -277,6 +278,7 @@ class PlayState extends MusicBeatState
 		stationSongs = ["pico", "philly", "blammed", "school"];
 		limoSongs = ["satin-panties", "high", "milf"];
 		miaSongs = ["mi-opera", "mia battle", "diva"];
+		gfSongs = ["fang", "succ", "nom"]; 
 		mallSongs = ["cocoa", "eggnog"];
 		evilMallSongs = ["winter-horrorland"];
 		schoolSongs = ["senpai", "roses"];
@@ -551,6 +553,24 @@ gayBoppers.push(pcameos);
 				frontBoppers.animation.play('bop', true);
 				backBoppers.animation.play('bop', true);
 
+			}
+		else if (gfSongs.contains(SONG.song.toLowerCase()))
+		{
+			curStage = 'room';
+			defaultCamZoom = 0.7;
+
+			var roomBG:FlxSprite = new FlxSprite(-550, -270).loadGraphic('assets/images/halloween/room.png');
+			roomBG.setGraphicSize(Std.int(roomBG.width * 1));
+			roomBG.scrollFactor.set(0.9, 0.9);
+			add(roomBG);
+
+			var windowcity:FlxSprite = new FlxSprite(-550, -270).loadGraphic('assets/images/halloween/windowcity.png');
+			windowcity.antialiasing = true;
+			windowcity.scrollFactor.set(0.9, 0.9);
+			windowcity.active = false;
+			windowcity.setGraphicSize(Std.int(windowcity.width * 1));
+			windowcity.updateHitbox();
+			add(windowcity);
 			}
 		else if (mallSongs.contains(SONG.song.toLowerCase()))
 		{
@@ -864,6 +884,13 @@ gayBoppers.push(dcameos);
 				dad.x -= -113;
 				dad.y += 164;
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case "hungrygf":
+				dad.x -= -113;
+				dad.y += 164;
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case "susgf":
+				dad.x -= -63;
+				dad.y += -238;
 		}
 
 		boyfriend = new Boyfriend(770, 450, SONG.player1);
@@ -905,6 +932,10 @@ gayBoppers.push(dcameos);
 				boyfriend.y += 220;
 				gf.x += 180;
 				gf.y += 300;
+			case 'room':
+				dad.y -= -470;
+				gf.x += 0;
+				gf.y += 900;
 			case 'spooky':
 				boyfriend.y += 600;
 				boyfriend.x += 450;
@@ -1983,6 +2014,9 @@ gayBoppers.push(dcameos);
 						followX = boyfriend.getMidpoint().x - 200;
 						followY = boyfriend.getMidpoint().y - 200;
 					case 'schoolEvil':
+						followX = boyfriend.getMidpoint().x - 200;
+						followY = boyfriend.getMidpoint().y - 200;
+					case 'room':
 						followX = boyfriend.getMidpoint().x - 200;
 						followY = boyfriend.getMidpoint().y - 200;
 					case 'miaStadium':

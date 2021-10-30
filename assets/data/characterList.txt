@@ -3,6 +3,9 @@ dad
 gf
 gf-spooky
 gf-train
+hungrygf
+susgf
+vampgf
 spooky
 pico
 picoGAY
@@ -11,6 +14,7 @@ mom-car
 bf-car
 week2bf
 week3bf
+roombf
 parents-christmas
 monster-christmas
 bf-christmas

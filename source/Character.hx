@@ -221,6 +221,38 @@ class Character extends FlxSprite
 				addOffset("singDOWN", 62, 8);
 	
 				playAnim('idle');
+			case 'hungrygf':
+				tex = FlxAtlasFrames.fromSparrow('assets/images/B3_GF_Phase_1_Assets.png', 'assets/images/B3_GF_Phase_1_Assets.xml');
+				frames = tex;
+				animation.addByPrefix('idle', 'G Idle Dance', 24, false);
+				animation.addByPrefix('singUP', 'G Up', 24);
+				animation.addByPrefix('singRIGHT', 'G Right', 24);
+				animation.addByPrefix('singDOWN', 'G Down', 24);
+				animation.addByPrefix('singLEFT', 'G Left', 24);
+
+				addOffset('idle');
+				addOffset("singUP", 9, 1);
+				addOffset("singRIGHT", -15, -7);
+				addOffset("singLEFT", 57, -7);
+				addOffset("singDOWN", -12, -34);
+	
+				playAnim('idle');
+			case 'susgf':
+				tex = FlxAtlasFrames.fromSparrow('assets/images/B3_GF_Phase_2_Assets.png', 'assets/images/B3_GF_Phase_2_Assets.xml');
+				frames = tex;
+				animation.addByPrefix('idle', 'G Idle Dance', 24, false);
+				animation.addByPrefix('singUP', 'G Up', 24);
+				animation.addByPrefix('singRIGHT', 'G Right', 24);
+				animation.addByPrefix('singDOWN', 'G Down', 24);
+				animation.addByPrefix('singLEFT', 'G Left', 24);
+
+				addOffset('idle');
+				addOffset("singUP", 0, 0);
+				addOffset("singRIGHT", -34, -4);
+				addOffset("singLEFT", 17, -3);
+				addOffset("singDOWN", 3, -28);
+		
+				playAnim('idle');
 			case 'spooky':
 				tex = FlxAtlasFrames.fromSparrow('assets/images/spooky_kids_assets.png', 'assets/images/spooky_kids_assets.xml');
 				frames = tex;
@@ -551,6 +583,63 @@ class Character extends FlxSprite
 
 				flipX = true;
 
+			case 'roombf':
+				var tex = FlxAtlasFrames.fromSparrow('assets/images/B3_BF_Halloween_Assets.png', 'assets/images/B3_BF_Halloween_Assets.xml');
+				frames = tex;
+				animation.addByPrefix('idle', 'BF Idle Dance', 24, false);
+				animation.addByPrefix('singUP', 'BF Up', 24, false);
+				animation.addByPrefix('singRIGHT', 'BF Right', 24, false);
+				animation.addByPrefix('singLEFT', 'BF Left', 24, false);
+				animation.addByPrefix('singDOWN', 'BF Down', 24, false);
+				animation.addByPrefix('singUPmiss', 'Up Miss', 24, false);
+				animation.addByPrefix('singRIGHTmiss', 'Left MISS', 24, false);
+				animation.addByPrefix('singLEFTmiss', 'Right Miss', 24, false);
+				animation.addByPrefix('singDOWNmiss', 'Down Miss', 24, false);
+				animation.addByPrefix('hey', 'BF HEY', 24, false);
+				animation.addByPrefix('attack', 'boyfriend attack', 24, false);
+
+				animation.addByPrefix('firstDeath', "BF Dies", 24, false);
+				animation.addByPrefix('deathLoop', "BF Dead Loop", 24, true);
+				animation.addByPrefix('deathConfirm', "BF Death Confirm", 24, false);
+
+				animation.addByPrefix('scared', 'BF idle shaking', 24);
+
+				addOffset('idle', -5);
+				addOffset("singUP", 0, -4);
+				addOffset("singRIGHT", -1, 6);
+				addOffset("singLEFT", 1, -11);
+				addOffset("singDOWN", 0, -20);
+				addOffset("singUPmiss", -3, -2);
+				addOffset("singRIGHTmiss", -3, 8);
+				addOffset("singLEFTmiss", 0, -11);
+				addOffset("singDOWNmiss", -1, -22);
+				addOffset("hey", -13, 19);
+				addOffset('firstDeath', 57, 3);
+				addOffset('deathLoop', 37, -5);
+				addOffset('deathConfirm', 37, 69);
+				addOffset('scared', -14, -10);
+
+				playAnim('idle');
+
+				flipX = true;
+			case 'bf-burger-dead':
+				frames = FlxAtlasFrames.fromSparrow('assets/images/burgerdeath.png', 'assets/images/burgerdeath.xml');
+				animation.addByPrefix('singUP', "BF Dies", 24, false);
+				animation.addByPrefix('firstDeath', "BF Dies", 24, false);
+				animation.addByPrefix('deathLoop', "BF Dead Loop", 24, true);
+				animation.addByPrefix('deathConfirm', "BF Death Confirm", 24, false);
+				animation.play('firstDeath');
+
+				addOffset('firstDeath');
+				addOffset('deathLoop', -36);
+				addOffset('deathConfirm', -36);
+				playAnim('firstDeath');
+				// pixel bullshit
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+				antialiasing = false;
+				flipX = true;
+	
 			case 'bf-christmas':
 				var tex = FlxAtlasFrames.fromSparrow('assets/images/christmas/bfChristmas.png', 'assets/images/christmas/bfChristmas.xml');
 				frames = tex;

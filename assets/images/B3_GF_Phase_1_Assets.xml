@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="B3_GF_Phase_1_Assets.png">
+	<!-- Created with Adobe Animate version 21.0.0.35450 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="G Down 10000" x="30" y="30" width="325" height="472" frameX="0" frameY="-13" frameWidth="325" frameHeight="485"/>
+	<SubTexture name="G Down 10001" x="30" y="30" width="325" height="472" frameX="0" frameY="-13" frameWidth="325" frameHeight="485"/>
+	<SubTexture name="G Down 10002" x="355" y="30" width="320" height="485" frameX="-4" frameY="0" frameWidth="325" frameHeight="485"/>
+	<SubTexture name="G Down 10003" x="675" y="30" width="320" height="485" frameX="-4" frameY="0" frameWidth="325" frameHeight="485"/>
+	<SubTexture name="G Down 10004" x="995" y="30" width="320" height="485" frameX="-3" frameY="0" frameWidth="325" frameHeight="485"/>
+	<SubTexture name="G Down 10005" x="995" y="30" width="320" height="485" frameX="-3" frameY="0" frameWidth="325" frameHeight="485"/>
+	<SubTexture name="G Down 10006" x="1315" y="30" width="321" height="485" frameX="-3" frameY="0" frameWidth="325" frameHeight="485"/>
+	<SubTexture name="G Down 10007" x="1315" y="30" width="321" height="485" frameX="-3" frameY="0" frameWidth="325" frameHeight="485"/>
+	<SubTexture name="G Down 10008" x="1315" y="30" width="321" height="485" frameX="-3" frameY="0" frameWidth="325" frameHeight="485"/>
+	<SubTexture name="G Down 10009" x="1636" y="30" width="321" height="485" frameX="-3" frameY="0" frameWidth="325" frameHeight="485"/>
+	<SubTexture name="G Down 10010" x="1636" y="30" width="321" height="485" frameX="-3" frameY="0" frameWidth="325" frameHeight="485"/>
+	<SubTexture name="G Down 10011" x="1636" y="30" width="321" height="485" frameX="-3" frameY="0" frameWidth="325" frameHeight="485"/>
+	<SubTexture name="G Down 10012" x="1957" y="30" width="321" height="485" frameX="-3" frameY="0" frameWidth="325" frameHeight="485"/>
+	<SubTexture name="G Down 10013" x="1957" y="30" width="321" height="485" frameX="-3" frameY="0" frameWidth="325" frameHeight="485"/>
+	<SubTexture name="G Idle Dance 10000" x="2278" y="30" width="319" height="515" frameX="-9" frameY="-8" frameWidth="328" frameHeight="523"/>
+	<SubTexture name="G Idle Dance 10001" x="2278" y="30" width="319" height="515" frameX="-9" frameY="-8" frameWidth="328" frameHeight="523"/>
+	<SubTexture name="G Idle Dance 10002" x="2597" y="30" width="320" height="517" frameX="-7" frameY="-6" frameWidth="328" frameHeight="523"/>
+	<SubTexture name="G Idle Dance 10003" x="2917" y="30" width="320" height="517" frameX="-7" frameY="-6" frameWidth="328" frameHeight="523"/>
+	<SubTexture name="G Idle Dance 10004" x="3237" y="30" width="319" height="518" frameX="-5" frameY="-5" frameWidth="328" frameHeight="523"/>
+	<SubTexture name="G Idle Dance 10005" x="3237" y="30" width="319" height="518" frameX="-5" frameY="-5" frameWidth="328" frameHeight="523"/>
+	<SubTexture name="G Idle Dance 10006" x="3556" y="30" width="316" height="523" frameX="0" frameY="0" frameWidth="328" frameHeight="523"/>
+	<SubTexture name="G Idle Dance 10007" x="3556" y="30" width="316" height="523" frameX="0" frameY="0" frameWidth="328" frameHeight="523"/>
+	<SubTexture name="G Idle Dance 10008" x="30" y="553" width="311" height="523" frameX="-4" frameY="0" frameWidth="328" frameHeight="523"/>
+	<SubTexture name="G Idle Dance 10009" x="341" y="553" width="311" height="523" frameX="-4" frameY="0" frameWidth="328" frameHeight="523"/>
+	<SubTexture name="G Idle Dance 10010" x="652" y="553" width="312" height="523" frameX="-3" frameY="0" frameWidth="328" frameHeight="523"/>
+	<SubTexture name="G Idle Dance 10011" x="652" y="553" width="312" height="523" frameX="-3" frameY="0" frameWidth="328" frameHeight="523"/>
+	<SubTexture name="G Idle Dance 10012" x="964" y="553" width="312" height="523" frameX="-3" frameY="0" frameWidth="328" frameHeight="523"/>
+	<SubTexture name="G Idle Dance 10013" x="964" y="553" width="312" height="523" frameX="-3" frameY="0" frameWidth="328" frameHeight="523"/>
+	<SubTexture name="G Left 10000" x="1276" y="553" width="334" height="519" frameX="0" frameY="0" frameWidth="346" frameHeight="519"/>
+	<SubTexture name="G Left 10001" x="1276" y="553" width="334" height="519" frameX="0" frameY="0" frameWidth="346" frameHeight="519"/>
+	<SubTexture name="G Left 10002" x="1610" y="553" width="333" height="516" frameX="-10" frameY="-3" frameWidth="346" frameHeight="519"/>
+	<SubTexture name="G Left 10003" x="1943" y="553" width="333" height="516" frameX="-10" frameY="-3" frameWidth="346" frameHeight="519"/>
+	<SubTexture name="G Left 10004" x="2276" y="553" width="335" height="516" frameX="-11" frameY="-3" frameWidth="346" frameHeight="519"/>
+	<SubTexture name="G Left 10005" x="2611" y="553" width="335" height="516" frameX="-11" frameY="-3" frameWidth="346" frameHeight="519"/>
+	<SubTexture name="G Left 10006" x="2611" y="553" width="335" height="516" frameX="-11" frameY="-3" frameWidth="346" frameHeight="519"/>
+	<SubTexture name="G Left 10007" x="2611" y="553" width="335" height="516" frameX="-11" frameY="-3" frameWidth="346" frameHeight="519"/>
+	<SubTexture name="G Left 10008" x="2946" y="553" width="335" height="516" frameX="-11" frameY="-3" frameWidth="346" frameHeight="519"/>
+	<SubTexture name="G Left 10009" x="2946" y="553" width="335" height="516" frameX="-11" frameY="-3" frameWidth="346" frameHeight="519"/>
+	<SubTexture name="G Left 10010" x="2946" y="553" width="335" height="516" frameX="-11" frameY="-3" frameWidth="346" frameHeight="519"/>
+	<SubTexture name="G Left 10011" x="2276" y="553" width="335" height="516" frameX="-11" frameY="-3" frameWidth="346" frameHeight="519"/>
+	<SubTexture name="G Left 10012" x="2276" y="553" width="335" height="516" frameX="-11" frameY="-3" frameWidth="346" frameHeight="519"/>
+	<SubTexture name="G Left 10013" x="2276" y="553" width="335" height="516" frameX="-11" frameY="-3" frameWidth="346" frameHeight="519"/>
+	<SubTexture name="G Right 10000" x="3281" y="553" width="373" height="513" frameX="-4" frameY="-2" frameWidth="377" frameHeight="515"/>
+	<SubTexture name="G Right 10001" x="3281" y="553" width="373" height="513" frameX="-4" frameY="-2" frameWidth="377" frameHeight="515"/>
+	<SubTexture name="G Right 10002" x="3654" y="553" width="375" height="515" frameX="0" frameY="0" frameWidth="377" frameHeight="515"/>
+	<SubTexture name="G Right 10003" x="3654" y="553" width="375" height="515" frameX="0" frameY="0" frameWidth="377" frameHeight="515"/>
+	<SubTexture name="G Right 10004" x="30" y="1076" width="374" height="515" frameX="-1" frameY="0" frameWidth="377" frameHeight="515"/>
+	<SubTexture name="G Right 10005" x="404" y="1076" width="374" height="515" frameX="-1" frameY="0" frameWidth="377" frameHeight="515"/>
+	<SubTexture name="G Right 10006" x="778" y="1076" width="374" height="515" frameX="-1" frameY="0" frameWidth="377" frameHeight="515"/>
+	<SubTexture name="G Right 10007" x="778" y="1076" width="374" height="515" frameX="-1" frameY="0" frameWidth="377" frameHeight="515"/>
+	<SubTexture name="G Right 10008" x="1152" y="1076" width="374" height="515" frameX="-1" frameY="0" frameWidth="377" frameHeight="515"/>
+	<SubTexture name="G Right 10009" x="1152" y="1076" width="374" height="515" frameX="-1" frameY="0" frameWidth="377" frameHeight="515"/>
+	<SubTexture name="G Right 10010" x="1152" y="1076" width="374" height="515" frameX="-1" frameY="0" frameWidth="377" frameHeight="515"/>
+	<SubTexture name="G Right 10011" x="1526" y="1076" width="374" height="515" frameX="-1" frameY="0" frameWidth="377" frameHeight="515"/>
+	<SubTexture name="G Right 10012" x="1526" y="1076" width="374" height="515" frameX="-1" frameY="0" frameWidth="377" frameHeight="515"/>
+	<SubTexture name="G Right 10013" x="1526" y="1076" width="374" height="515" frameX="-1" frameY="0" frameWidth="377" frameHeight="515"/>
+	<SubTexture name="G Up 10000" x="1900" y="1076" width="303" height="523" frameX="0" frameY="0" frameWidth="308" frameHeight="523"/>
+	<SubTexture name="G Up 10001" x="1900" y="1076" width="303" height="523" frameX="0" frameY="0" frameWidth="308" frameHeight="523"/>
+	<SubTexture name="G Up 10002" x="2203" y="1076" width="304" height="520" frameX="-3" frameY="-3" frameWidth="308" frameHeight="523"/>
+	<SubTexture name="G Up 10003" x="2203" y="1076" width="304" height="520" frameX="-3" frameY="-3" frameWidth="308" frameHeight="523"/>
+	<SubTexture name="G Up 10004" x="2507" y="1076" width="307" height="520" frameX="-1" frameY="-3" frameWidth="308" frameHeight="523"/>
+	<SubTexture name="G Up 10005" x="2814" y="1076" width="307" height="520" frameX="-1" frameY="-3" frameWidth="308" frameHeight="523"/>
+	<SubTexture name="G Up 10006" x="2814" y="1076" width="307" height="520" frameX="-1" frameY="-3" frameWidth="308" frameHeight="523"/>
+	<SubTexture name="G Up 10007" x="2814" y="1076" width="307" height="520" frameX="-1" frameY="-3" frameWidth="308" frameHeight="523"/>
+	<SubTexture name="G Up 10008" x="3121" y="1076" width="307" height="520" frameX="-1" frameY="-3" frameWidth="308" frameHeight="523"/>
+	<SubTexture name="G Up 10009" x="3121" y="1076" width="307" height="520" frameX="-1" frameY="-3" frameWidth="308" frameHeight="523"/>
+	<SubTexture name="G Up 10010" x="3121" y="1076" width="307" height="520" frameX="-1" frameY="-3" frameWidth="308" frameHeight="523"/>
+	<SubTexture name="G Up 10011" x="2507" y="1076" width="307" height="520" frameX="-1" frameY="-3" frameWidth="308" frameHeight="523"/>
+	<SubTexture name="G Up 10012" x="2507" y="1076" width="307" height="520" frameX="-1" frameY="-3" frameWidth="308" frameHeight="523"/>
+	<SubTexture name="G Up 10013" x="2507" y="1076" width="307" height="520" frameX="-1" frameY="-3" frameWidth="308" frameHeight="523"/>
+</TextureAtlas>
