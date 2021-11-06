@@ -557,7 +557,7 @@ gayBoppers.push(pcameos);
 		else if (gfSongs.contains(SONG.song.toLowerCase()))
 		{
 			curStage = 'room';
-			defaultCamZoom = 0.7;
+			defaultCamZoom = 0.77;
 
 			var roomBG:FlxSprite = new FlxSprite(-550, -270).loadGraphic('assets/images/halloween/room.png');
 			roomBG.setGraphicSize(Std.int(roomBG.width * 1));
@@ -571,6 +571,11 @@ gayBoppers.push(pcameos);
 			windowcity.setGraphicSize(Std.int(windowcity.width * 1));
 			windowcity.updateHitbox();
 			add(windowcity);
+
+			var filterBG:FlxSprite = new FlxSprite(-550, -270).loadGraphic('assets/images/halloween/filterforbg.png');
+			filterBG.setGraphicSize(Std.int(filterBG.width * 1));
+			filterBG.scrollFactor.set(0.9, 0.9);
+			add(filterBG);
 			}
 		else if (mallSongs.contains(SONG.song.toLowerCase()))
 		{
@@ -886,11 +891,11 @@ gayBoppers.push(dcameos);
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
 			case "hungrygf":
 				dad.x -= -113;
-				dad.y += 164;
+				dad.y += -230;
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
 			case "susgf":
 				dad.x -= -63;
-				dad.y += -238;
+				dad.y += -250;
 		}
 
 		boyfriend = new Boyfriend(770, 450, SONG.player1);

@@ -588,8 +588,8 @@ class Character extends FlxSprite
 				frames = tex;
 				animation.addByPrefix('idle', 'BF Idle Dance', 24, false);
 				animation.addByPrefix('singUP', 'BF Up', 24, false);
-				animation.addByPrefix('singRIGHT', 'BF Right', 24, false);
-				animation.addByPrefix('singLEFT', 'BF Left', 24, false);
+				animation.addByPrefix('singRIGHT', 'BF Left', 24, false);
+				animation.addByPrefix('singLEFT', 'BF Right', 24, false);
 				animation.addByPrefix('singDOWN', 'BF Down', 24, false);
 				animation.addByPrefix('singUPmiss', 'Up Miss', 24, false);
 				animation.addByPrefix('singRIGHTmiss', 'Left MISS', 24, false);
@@ -631,11 +631,11 @@ class Character extends FlxSprite
 				animation.play('firstDeath');
 
 				addOffset('firstDeath');
-				addOffset('deathLoop', -36);
-				addOffset('deathConfirm', -36);
+				addOffset('deathLoop');
+				addOffset('deathConfirm');
 				playAnim('firstDeath');
 				// pixel bullshit
-				setGraphicSize(Std.int(width * 6));
+				setGraphicSize(Std.int(width * 1));
 				updateHitbox();
 				antialiasing = false;
 				flipX = true;

@@ -48,7 +48,7 @@ class Startup extends MusicBeatState
         splash.updateHitbox();
         splash.screenCenter();
 
-        loadingText = new FlxText(5, FlxG.height - 30, 0, "Preloading Assets...", 24);
+        loadingText = new FlxText(5, FlxG.height - 30, 0, "Preloading Your Death...", 24);
         loadingText.setFormat("assets/fonts/vcr.ttf", 24, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
         add(loadingText);
 

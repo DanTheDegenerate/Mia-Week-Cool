@@ -380,9 +380,9 @@ class TitleStateNormal extends MusicBeatState
 			case 13:
 				addMoreText('Night');
 			case 14:
-				addMoreText('Funkin');
+				addMoreText('Spookin');
 			case 15:
-				addMoreText('BZ REMIXED');
+				addMoreText('BZ SCREAMIXED');
 			case 16:
 				skipIntro();
 		}
