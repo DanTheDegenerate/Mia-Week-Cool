@@ -592,8 +592,8 @@ class Character extends FlxSprite
 				animation.addByPrefix('singLEFT', 'BF Right', 24, false);
 				animation.addByPrefix('singDOWN', 'BF Down', 24, false);
 				animation.addByPrefix('singUPmiss', 'Up Miss', 24, false);
-				animation.addByPrefix('singRIGHTmiss', 'Left MISS', 24, false);
-				animation.addByPrefix('singLEFTmiss', 'Right Miss', 24, false);
+				animation.addByPrefix('singRIGHTmiss', 'Right Miss', 24, false);
+				animation.addByPrefix('singLEFTmiss', 'Left MISS', 24, false);
 				animation.addByPrefix('singDOWNmiss', 'Down Miss', 24, false);
 				animation.addByPrefix('hey', 'BF HEY', 24, false);
 				animation.addByPrefix('attack', 'boyfriend attack', 24, false);
@@ -605,18 +605,18 @@ class Character extends FlxSprite
 				animation.addByPrefix('scared', 'BF idle shaking', 24);
 
 				addOffset('idle', -5);
-				addOffset("singUP", 0, -4);
+				addOffset("singUP", -6, -4);
 				addOffset("singRIGHT", -1, 6);
 				addOffset("singLEFT", 1, -11);
 				addOffset("singDOWN", 0, -20);
 				addOffset("singUPmiss", -3, -2);
-				addOffset("singRIGHTmiss", -3, 8);
-				addOffset("singLEFTmiss", 0, -11);
+				addOffset("singRIGHTmiss", -2, -11);
+				addOffset("singLEFTmiss", -4, 6);
 				addOffset("singDOWNmiss", -1, -22);
 				addOffset("hey", -13, 19);
-				addOffset('firstDeath', 57, 3);
-				addOffset('deathLoop', 37, -5);
-				addOffset('deathConfirm', 37, 69);
+				addOffset('firstDeath', 257, 83);
+				addOffset('deathLoop', -20, -62);
+				addOffset('deathConfirm', 3, 30);
 				addOffset('scared', -14, -10);
 
 				playAnim('idle');
@@ -630,14 +630,10 @@ class Character extends FlxSprite
 				animation.addByPrefix('deathConfirm', "BF Death Confirm", 24, false);
 				animation.play('firstDeath');
 
-				addOffset('firstDeath');
-				addOffset('deathLoop');
-				addOffset('deathConfirm');
+				addOffset('firstDeath', 257, 83);
+				addOffset('deathLoop', -20, -62);
+				addOffset('deathConfirm', 3, 30);
 				playAnim('firstDeath');
-				// pixel bullshit
-				setGraphicSize(Std.int(width * 1));
-				updateHitbox();
-				antialiasing = false;
 				flipX = true;
 	
 			case 'bf-christmas':
