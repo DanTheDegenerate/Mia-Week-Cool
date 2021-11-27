@@ -22,7 +22,7 @@ class HealthIcon extends FlxSprite
 			loadGraphic('assets/images/fpsPlus/iconGrid.png', true, 150, 150);
 			
 			animation.add('bf', [0, 1, 30], 0, false, isPlayer);
-			animation.add('roombf', [0, 1, 30], 0, false, isPlayer);
+			animation.add('roombf', [9, 10, 11], 0, false, isPlayer);
 			animation.add('mia', [24, 25, 26], 0, false, isPlayer);
 			animation.add('bf-car', [0, 1, 30], 0, false, isPlayer);
 			animation.add('week2bf', [0, 1, 30], 0, false, isPlayer);
@@ -43,11 +43,11 @@ class HealthIcon extends FlxSprite
 			animation.add('parents-christmas', [17, 18, 36], 0, false, isPlayer);
 			animation.add('monster', [19, 20, 37], 0, false, isPlayer);
 			animation.add('monster-christmas', [19, 20, 37], 0, false, isPlayer);
-			animation.add('gf', [16, 49, (_id != -1) ? 49 : 35], 0, false, isPlayer);
-			animation.add('hungrygf', [16, 49, 35], 0, false, isPlayer);
-			animation.add('susgf', [16, 49, 35], 0, false, isPlayer);
-			animation.add('vampgf', [16, 49, 35], 0, false, isPlayer);
-			animation.add('gf-car', [16, 49, 35], 0, false, isPlayer);
+			animation.add('gf', [54, 53, (_id != -1) ? 55 : 35], 0, false, isPlayer);
+			animation.add('hungrygf', [58, 57, 56], 0, false, isPlayer);
+			animation.add('susgf', [29, 28, 27], 0, false, isPlayer);
+			animation.add('vampgf', [50, 51, 52], 0, false, isPlayer);
+			animation.add('gf-car', [54, 53, 55], 0, false, isPlayer);
 			animation.add('gf-pixel', [16, 49, 35], 0, false, isPlayer);
 			animation.add('week2gf', [16, 49, 35], 0, false, isPlayer);
 			animation.add('week3gf', [16, 49, 35], 0, false, isPlayer);

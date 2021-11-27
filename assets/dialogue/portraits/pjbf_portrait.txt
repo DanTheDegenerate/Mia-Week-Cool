@@ -1,0 +1,6 @@
+indices:default:0
+indices:guh:0
+indices:groggy:1
+indices:bruh:2
+indices:happy:3
+indices:burger:4

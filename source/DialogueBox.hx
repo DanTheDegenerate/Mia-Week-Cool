@@ -332,7 +332,7 @@ class DialogueBox extends FlxSpriteGroup
 
 		
 		dropText = new FlxText(113.9, 474.05, Std.int(FlxG.width * 0.8), "", 64);
-		dropText.font = 'assets/fonts/funkin.otf';
+		dropText.font = 'assets/fonts/Helvetica-BoldItalic.ttf';
 		dropText.color = 0xFF00FFFF;
 		add(dropText);
 		skipText = new FlxText(5, 695, 640, "Press SPACE to skip the dialogue.\n", 40);
@@ -344,7 +344,7 @@ class DialogueBox extends FlxSpriteGroup
 
 		
 		swagDialogue = new FlxTypeText(111.9, 472.05, Std.int(FlxG.width * 0.8), "", 64);
-		swagDialogue.font = 'assets/fonts/funkin.otf';
+		swagDialogue.font = 'assets/fonts/Helvetica-BoldItalic.ttf';
 		swagDialogue.color = 0xFFFFFF;
 		swagDialogue.sounds = [FlxG.sound.load('assets/sounds/pixelText' + TitleState.soundExt, 0.6)];
 		add(swagDialogue);

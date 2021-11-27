@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="pjbf.png">
+	<!-- Created with Adobe Animate version 20.0.2.22168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="pjbf_portrait0000" x="0" y="0" width="395" height="203" frameX="-144" frameY="-97" frameWidth="551" frameHeight="301"/>
+	<SubTexture name="pjbf_portrait0001" x="395" y="0" width="503" height="289" frameX="-28" frameY="-3" frameWidth="551" frameHeight="301"/>
+	<SubTexture name="pjbf_portrait0002" x="0" y="289" width="551" height="295" frameX="0" frameY="0" frameWidth="551" frameHeight="301"/>
+	<SubTexture name="pjbf_portrait0003" x="0" y="584" width="527" height="290" frameX="-11" frameY="-3" frameWidth="551" frameHeight="301"/>
+	<SubTexture name="pjbf_portrait0004" x="527" y="584" width="449" height="248" frameX="-94" frameY="-53" frameWidth="551" frameHeight="301"/>
+</TextureAtlas>

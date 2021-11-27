@@ -1,0 +1,8 @@
+indices:default:0
+indices:tears:0
+indices:vamp:1
+indices:happy:2
+indices:yum:3
+indices:fboy:4
+indices:starving:5
+indices:dio:6

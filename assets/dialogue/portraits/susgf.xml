@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="susgf.png">
+	<!-- Created with Adobe Animate version 20.0.2.22168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="susgf_portrait0000" x="0" y="0" width="559" height="337" frameX="-30" frameY="-26" frameWidth="668" frameHeight="366"/>
+	<SubTexture name="susgf_portrait0001" x="559" y="0" width="561" height="329" frameX="-35" frameY="-35" frameWidth="668" frameHeight="366"/>
+	<SubTexture name="susgf_portrait0002" x="1120" y="0" width="536" height="319" frameX="-30" frameY="-43" frameWidth="668" frameHeight="366"/>
+	<SubTexture name="susgf_portrait0003" x="0" y="337" width="662" height="338" frameX="-6" frameY="-26" frameWidth="668" frameHeight="366"/>
+	<SubTexture name="susgf_portrait0004" x="662" y="337" width="622" height="340" frameX="-14" frameY="-26" frameWidth="668" frameHeight="366"/>
+	<SubTexture name="susgf_portrait0005" x="1284" y="337" width="608" height="363" frameX="-4" frameY="0" frameWidth="668" frameHeight="366"/>
+	<SubTexture name="susgf_portrait0006" x="0" y="700" width="623" height="365" frameX="0" frameY="0" frameWidth="668" frameHeight="366"/>
+</TextureAtlas>

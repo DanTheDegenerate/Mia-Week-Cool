@@ -63,11 +63,11 @@ class StoryMenuState extends MusicBeatState
 			['Bopeebo', 'Fresh', 'Dadbattle'],
 			['Spookeez', 'South', 'Not A Monster'],
 			['Pico', 'Philly', "Blammed", 'School'],
-			['Fang', 'Succ', 'Nom'],
 			['Satin-Panties', "High", "Milf"],
 			['Cocoa', 'Eggnog', 'Winter-Horrorland'],
 			['Senpai', 'Roses', 'Thorns'],
-			['Mi-opera','Mia Battle', 'Diva']
+			['Mi-opera','Mia Battle', 'Diva'],
+			['Fang', 'Succ', 'Nom']
 			
 		];
 		
@@ -76,10 +76,10 @@ class StoryMenuState extends MusicBeatState
 			['dad', 'bf', 'gf'],
 			['spooky', 'bf', 'gf'],
 			['pico', 'bf', 'gf'],
-			['dad', 'bf', 'gf'],
 			['mom', 'bf', 'gf'],
 			['parents-christmas', 'bf', 'gf'],
 			['senpai', 'bf', 'gf'],
+			['dad', 'bf', 'gf'],
 			['dad', 'bf', 'gf']
 		];
 	
