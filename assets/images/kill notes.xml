@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="kill notes.png">
+	<!-- Created with Adobe Animate version 20.0.2.22168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="blue hold end0000" x="0" y="0" width="50" height="64"/>
+	<SubTexture name="blue hold piece0000" x="50" y="0" width="50" height="44"/>
+	<SubTexture name="bluedie0000" x="100" y="0" width="356" height="199"/>
+	<SubTexture name="green hold end0000" x="456" y="0" width="50" height="64"/>
+	<SubTexture name="green hold piece0000" x="0" y="199" width="50" height="44"/>
+	<SubTexture name="greendie0000" x="100" y="0" width="356" height="199"/>
+	<SubTexture name="pruple end hold0000" x="50" y="199" width="50" height="64"/>
+	<SubTexture name="purpdie0000" x="100" y="0" width="356" height="199"/>
+	<SubTexture name="red hold end0000" x="100" y="199" width="50" height="64"/>
+	<SubTexture name="red hold piece0000" x="150" y="199" width="50" height="44"/>
+	<SubTexture name="reddie0000" x="100" y="0" width="356" height="199"/>
+</TextureAtlas>
