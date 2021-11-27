@@ -253,6 +253,24 @@ class Character extends FlxSprite
 				addOffset("singDOWN", 3, -28);
 		
 				playAnim('idle');
+			case 'vampgf':
+				tex = FlxAtlasFrames.fromSparrow('assets/images/b3_gf_phase_3.png', 'assets/images/b3_gf_phase_3.xml');
+				frames = tex;
+				animation.addByPrefix('idle', 'GF_Idle', 24, false);
+				animation.addByPrefix('singUP', 'GF_UpPose', 24);
+				animation.addByPrefix('singRIGHT', 'GF_RightPose', 24);
+				animation.addByPrefix('singDOWN', 'GF_DownPose', 24);
+				animation.addByPrefix('singLEFT', 'GF_LeftPose', 24);
+				animation.addByPrefix('talk1', 'GF_TALK_START', 24);
+
+				addOffset('idle');
+				addOffset("singUP", 9, 1);
+				addOffset("singRIGHT", -15, -7);
+				addOffset("singLEFT", 57, -7);
+				addOffset("singDOWN", -12, -34);
+				addOffset("talk1", 0, 0);
+	
+				playAnim('idle');
 			case 'spooky':
 				tex = FlxAtlasFrames.fromSparrow('assets/images/spooky_kids_assets.png', 'assets/images/spooky_kids_assets.xml');
 				frames = tex;
