@@ -3327,6 +3327,12 @@ gayBoppers.push(dcameos);
 			}
 		}
 
+		if (SONG.song.toLowerCase() == 'nom')
+			{
+				imhungy();
+				//dad.playAnim('GF_TALK_START', true);
+			}
+
 		/*if (dad.curCharacter == 'spooky' && totalSteps % 4 == 2)
 		{
 			// dad.dance();
@@ -3337,6 +3343,14 @@ gayBoppers.push(dcameos);
 
 	var lightningStrikeBeat:Int = 0;
 	var lightningOffset:Int = 8;
+
+	function imhungy()
+		{
+			if (curStep == 0)
+			{
+				dad.playAnim('GF_TALK_START', true);
+			}
+		}
 
 	override function beatHit()
 	{
