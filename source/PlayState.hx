@@ -3346,7 +3346,7 @@ gayBoppers.push(dcameos);
 
 	function imhungy()
 		{
-			if (curStep == 0)
+			if (curBeat == 0)
 			{
 				dad.playAnim('GF_TALK_START', true);
 			}
