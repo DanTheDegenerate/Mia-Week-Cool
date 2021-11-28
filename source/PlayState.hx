@@ -3391,9 +3391,12 @@ gayBoppers.push(dcameos);
 			}
 		}
 
-		if (SONG.song.toLowerCase() == 'nom' && curBeat == 0)
+		if (SONG.song.toLowerCase() == 'nom')
 		{
-			dad.playAnim('GF_TALK_START', true);
+			if (curBeat == 0)
+			{
+				dad.playAnim('GF_TALK_START', true);
+			}
 		}
 		
 		// HARDCODING FOR MILF ZOOMS!
