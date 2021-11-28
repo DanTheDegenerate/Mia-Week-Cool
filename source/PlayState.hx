@@ -3327,12 +3327,6 @@ gayBoppers.push(dcameos);
 			}
 		}
 
-		if (SONG.song.toLowerCase() == 'nom')
-			{
-				imhungy();
-				//dad.playAnim('GF_TALK_START', true);
-			}
-
 		/*if (dad.curCharacter == 'spooky' && totalSteps % 4 == 2)
 		{
 			// dad.dance();
@@ -3346,10 +3340,7 @@ gayBoppers.push(dcameos);
 
 	function imhungy()
 		{
-			if (curBeat == 0)
-			{
-				dad.playAnim('GF_TALK_START', true);
-			}
+			dad.playAnim('GF_TALK_START', true);
 		}
 
 	override function beatHit()
@@ -3399,7 +3390,11 @@ gayBoppers.push(dcameos);
 				gay(false);
 			}
 		}
-		
+
+		if (SONG.song.toLowerCase() == 'nom' && curBeat == 0)
+		{
+			dad.playAnim('GF_TALK_START', true);
+		}
 		
 		// HARDCODING FOR MILF ZOOMS!
 		if (curSong.toLowerCase() == 'milf' && curBeat >= 168 && curBeat <= 200 && camZooming && FlxG.camera.zoom < 1.35)
