@@ -6,3 +6,4 @@ indices:yum:3
 indices:fboy:4
 indices:starving:5
 indices:dio:6
+indices:burger:7
