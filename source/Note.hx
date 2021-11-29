@@ -245,7 +245,7 @@ class Note extends FlxSprite
 						prevNote.animation.play('purplehold');
 				}
 
-				prevNote.offset.y = -19;
+				prevNote.offset.x = -19;
 				prevNote.scale.y *= (2.25 * FlxMath.roundDecimal(PlayState.SONG.speed, 1));
 				// prevNote.setGraphicSize();
 			}
