@@ -173,7 +173,7 @@ class Note extends FlxSprite
 				if (noteStyle == DEATH_NOTE){
 					setGraphicSize(Std.int(width * 0.8));
 					updateHitbox();
-					offset.x= -30;
+					offset.x= 30;//offset debuging. you do it im a bit tired
 					offset.y = 0;
 				}
 				
@@ -245,7 +245,7 @@ class Note extends FlxSprite
 						prevNote.animation.play('purplehold');
 				}
 
-				prevNote.offset.x = 20;
+				prevNote.offset.y = -19;
 				prevNote.scale.y *= (2.25 * FlxMath.roundDecimal(PlayState.SONG.speed, 1));
 				// prevNote.setGraphicSize();
 			}
