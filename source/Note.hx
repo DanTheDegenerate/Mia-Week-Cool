@@ -24,9 +24,31 @@ class Note extends FlxSprite
 	public var absoluteNumber:Int;
 	
 	
-	public var noteStyle:Int = 0;
-	public static var noteStyles:Array<String> = ["normal","cock","shoot"];
+	//HOW TO MAKE CUSTOM NOTES!!!!
 	
+	/*
+	 
+	1. Note.hx-
+		add onto the noteStyles array for whatever notes ya want
+		
+	2. PlayState-
+		on the goodNoteHit function or the noteMiss funtion, just do a 
+		if(daNote.noteStyle == whateverstylenumber){
+			doABitch();
+			eatass ++;
+			health= -48958;
+		
+		}
+	
+	
+	 */
+	public var noteStyle:Int = 0;
+	public static var noteStyles:Array<String> = ["normal", "cock", "shoot", "death"];
+	
+	public static var NORMAL_NOTE = 0;
+	public static var COCK_NOTE = 1;// :P
+	public static var SHOOT_NOTE = 2;
+	public static var DEATH_NOTE = 3;
 
 	public var isEnd:Bool = false;
 
@@ -45,7 +67,7 @@ class Note extends FlxSprite
 	
 	public var aight:Int = 0;
 
-	public function new(_strumTime:Float, _noteData:Int, ?_editor = false, ?_prevNote:Note, ?_sustainNote:Bool = false)
+	public function new(_strumTime:Float, _noteData:Int, ?_editor = false, ?_prevNote:Note, ?_sustainNote:Bool = false,noteStyle:Int=0)
 	{
 		super();
 
@@ -54,7 +76,7 @@ class Note extends FlxSprite
 
 		prevNote = _prevNote;
 		isSustainNote = _sustainNote;
-
+		this.noteStyle = noteStyle;
 		x += 100;
 		// MAKE SURE ITS DEFINITELY OFF SCREEN?
 		y -= 2000;
@@ -109,7 +131,12 @@ class Note extends FlxSprite
 				updateHitbox();
 
 			default:
-				frames = FlxAtlasFrames.fromSparrow('assets/images/' + glowPath + 'NOTE_assets.png', 'assets/images/' + glowPath + 'NOTE_assets.xml');
+				var notepath = glowPath + 'NOTE_assets';
+				if (noteStyle == DEATH_NOTE){
+					notepath = 'kill notes';
+				}
+				trace(notepath);
+				frames = FlxAtlasFrames.fromSparrow('assets/images/' + notepath + '.png', 'assets/images/' + notepath + '.xml');
 
 				animation.addByPrefix('greenScroll', 'green0');
 				animation.addByPrefix('redScroll', 'red0');
@@ -141,6 +168,16 @@ class Note extends FlxSprite
 
 				setGraphicSize(Std.int(width * 0.7));
 				updateHitbox();
+				
+				
+				if (noteStyle == DEATH_NOTE){
+					setGraphicSize(Std.int(width * 0.8));
+					updateHitbox();
+					offset.x= -30;
+					offset.y = 0;
+				}
+				
+				
 				antialiasing = true;
 		}
 

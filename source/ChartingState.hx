@@ -1090,7 +1090,7 @@ add(textS);
 				var daSus = i[2];
 				var daStyle = i[3];
 	
-				var note:Note = new Note(daStrumTime, daNoteInfo % 4, true);
+				var note:Note = new Note(daStrumTime, daNoteInfo % 4, true,null,false,daStyle);
 				note.absoluteNumber = daNoteInfo;
 				note.sustainLength = daSus;
 				note.setGraphicSize(GRID_SIZE, GRID_SIZE);
