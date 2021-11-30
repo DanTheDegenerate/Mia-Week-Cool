@@ -70,6 +70,7 @@ class PlayState extends MusicBeatState
 	public static var limoSongs:Array<String>;
 	public static var miaSongs:Array<String>;
 	public static var gfSongs:Array<String>;
+	public static var nomgfSongs:Array<String>;
 	public static var mallSongs:Array<String>;
 	public static var evilMallSongs:Array<String>;
 	public static var schoolSongs:Array<String>;
@@ -278,7 +279,8 @@ class PlayState extends MusicBeatState
 		stationSongs = ["pico", "philly", "blammed", "school"];
 		limoSongs = ["satin-panties", "high", "milf"];
 		miaSongs = ["mi-opera", "mia battle", "diva"];
-		gfSongs = ["fang", "succ", "nom"]; 
+		gfSongs = ["fang", "succ"]; 
+		nomgfSongs =["nom"];
 		mallSongs = ["cocoa", "eggnog"];
 		evilMallSongs = ["winter-horrorland"];
 		schoolSongs = ["senpai", "roses"];
@@ -557,6 +559,29 @@ gayBoppers.push(pcameos);
 		else if (gfSongs.contains(SONG.song.toLowerCase()))
 		{
 			curStage = 'room';
+			defaultCamZoom = 0.77;
+
+			var roomBG:FlxSprite = new FlxSprite(-550, -270).loadGraphic('assets/images/halloween/room.png');
+			roomBG.setGraphicSize(Std.int(roomBG.width * 1));
+			roomBG.scrollFactor.set(0.9, 0.9);
+			add(roomBG);
+
+			var windowcity:FlxSprite = new FlxSprite(-550, -270).loadGraphic('assets/images/halloween/windowcity.png');
+			windowcity.antialiasing = true;
+			windowcity.scrollFactor.set(0.9, 0.9);
+			windowcity.active = false;
+			windowcity.setGraphicSize(Std.int(windowcity.width * 1));
+			windowcity.updateHitbox();
+			add(windowcity);
+
+			var filterBG:FlxSprite = new FlxSprite(-550, -270).loadGraphic('assets/images/halloween/filterforbg.png');
+			filterBG.setGraphicSize(Std.int(filterBG.width * 1));
+			filterBG.scrollFactor.set(0.9, 0.9);
+			add(filterBG);
+			}
+		else if (nomgfSongs.contains(SONG.song.toLowerCase()))
+		{
+			curStage = 'darkroom';
 			defaultCamZoom = 0.77;
 
 			var roomBG:FlxSprite = new FlxSprite(-550, -270).loadGraphic('assets/images/halloween/room.png');
@@ -896,6 +921,10 @@ gayBoppers.push(dcameos);
 			case "susgf":
 				dad.x -= -63;
 				dad.y += -250;
+			case "vampgf":
+				dad.x += 0;
+				dad.y += -1;
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
 		}
 
 		boyfriend = new Boyfriend(770, 450, SONG.player1);
@@ -940,7 +969,12 @@ gayBoppers.push(dcameos);
 			case 'room':
 				dad.y -= -470;
 				gf.x += 0;
-				gf.y += 900;
+				gf.y += 1500;
+			case 'darkroom':
+				dad.y -= 0;
+				dad.x += -248;
+				gf.x += 0;
+				gf.y += 1500;
 			case 'spooky':
 				boyfriend.y += 600;
 				boyfriend.x += 450;

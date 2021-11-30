@@ -264,10 +264,10 @@ class Character extends FlxSprite
 				animation.addByPrefix('talk1', 'GF_TALK_START', 24);
 
 				addOffset('idle');
-				addOffset("singUP", 9, 1);
-				addOffset("singRIGHT", -15, -7);
-				addOffset("singLEFT", 57, -7);
-				addOffset("singDOWN", -12, -34);
+				addOffset("singUP", -6, 163);
+				addOffset("singRIGHT", -75, -106);
+				addOffset("singLEFT", 456, -35);
+				addOffset("singDOWN", -76, -247);
 				addOffset("talk1", 0, 0);
 	
 				playAnim('idle');

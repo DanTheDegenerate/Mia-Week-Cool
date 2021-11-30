@@ -33,6 +33,9 @@ class GameOverSubstate extends MusicBeatSubstate
 			case 'room':
 				stageSuffix = '-burger';
 				daBf = 'bf-burger-dead';
+			case 'darkroom':
+				stageSuffix = '-burger';
+				daBf = 'bf-burger-dead';
 			default:
 				daBf = 'bf';
 		}
