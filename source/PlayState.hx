@@ -1454,7 +1454,9 @@ gayBoppers.push(dcameos);
 			{
 				var daStrumTime:Float = songNotes[0];
 				var daNoteData:Int = Std.int(songNotes[1] % 4);
+				var daStyle:Int = 0;
 
+				if (songNotes[3]) daStyle = songNotes[3];
 				var gottaHitNote:Bool = section.mustHitSection;
 
 				if (songNotes[1] > 3)
@@ -1468,7 +1470,9 @@ gayBoppers.push(dcameos);
 				else
 					oldNote = null;
 
-				var swagNote:Note = new Note(daStrumTime, daNoteData, false, oldNote);
+					
+					
+				var swagNote:Note = new Note(daStrumTime, daNoteData, false, oldNote,false,daStyle);
 				swagNote.sustainLength = songNotes[2];
 				swagNote.scrollFactor.set(0, 0);
 				
@@ -2283,8 +2287,8 @@ gayBoppers.push(dcameos);
 
 					if (daNote.alpha > 0.3){
 
-						if(Config.newInput){
-							noteMiss(daNote.noteData, 0.055, false, true);
+						if(Config.newInput && daNote.noteStyle != Note.DEATH_NOTE){
+							noteMiss(daNote.noteData, 0.055, false, true,daNote.noteStyle);
 							vocals.volume = 0;
 						}
 
@@ -2302,7 +2306,7 @@ gayBoppers.push(dcameos);
 						daNote.destroy();
 					}
 	
-					if(daNote.prevNote.wasGoodHit){
+					if(daNote.prevNote.wasGoodHit && daNote.noteStyle != Note.DEATH_NOTE){
 						
 						var upP = controls.UP;
 						var rightP = controls.RIGHT;
@@ -2312,28 +2316,28 @@ gayBoppers.push(dcameos);
 						switch(daNote.noteData){
 							case 0:
 								if(!leftP){
-									noteMiss(0, 0.03, true, true);
+									noteMiss(0, 0.03, true, true,daNote.noteStyle);
 									vocals.volume = 0;
 									daNote.tooLate = true;
 									daNote.destroy();
 								}
 							case 1:
 								if(!downP){
-									noteMiss(1, 0.03, true, true);
+									noteMiss(1, 0.03, true, true,daNote.noteStyle);
 									vocals.volume = 0;
 									daNote.tooLate = true;
 									daNote.destroy();
 								}
 							case 2:
 								if(!upP){
-									noteMiss(2, 0.03, true, true);
+									noteMiss(2, 0.03, true, true,daNote.noteStyle);
 									vocals.volume = 0;
 									daNote.tooLate = true;
 									daNote.destroy();
 								}
 							case 3:
 								if(!rightP){
-									noteMiss(3, 0.03, true, true);
+									noteMiss(3, 0.03, true, true,daNote.noteStyle);
 									vocals.volume = 0;
 									daNote.tooLate = true;
 									daNote.destroy();
@@ -2358,7 +2362,8 @@ gayBoppers.push(dcameos);
 					}
 					else{
 
-						if (daNote.tooLate || !daNote.wasGoodHit){
+						
+						if ((daNote.tooLate || !daNote.wasGoodHit)&& daNote.noteStyle != Note.DEATH_NOTE){
 							
 							health -= 0.0475;
 							misses += 1;
@@ -2877,7 +2882,7 @@ gayBoppers.push(dcameos);
 					daNote.destroy();
 				}
 
-				if(daNote.prevNote.wasGoodHit && !daNote.wasGoodHit){
+				if(daNote.prevNote.wasGoodHit && !daNote.wasGoodHit && daNote.noteStyle != Note.DEATH_NOTE){
 
 					switch(daNote.noteData){
 						case 0:
@@ -2974,9 +2979,9 @@ gayBoppers.push(dcameos);
 		});
 	}
 
-	function noteMiss(direction:Int = 1, ?healthLoss:Float = 0.04, ?playAudio:Bool = true, ?skipInvCheck:Bool = false):Void
+	function noteMiss(direction:Int = 1, ?healthLoss:Float = 0.04, ?playAudio:Bool = true, ?skipInvCheck:Bool = false,noteType:Int=0):Void
 	{
-		if (!boyfriend.stunned && !startingSong && (!boyfriend.invuln || skipInvCheck) )
+		if (!boyfriend.stunned && !startingSong && (!boyfriend.invuln || skipInvCheck) && noteType != Note.DEATH_NOTE )
 		{
 			health -= healthLoss;
 			if (combo > 5)
@@ -3163,7 +3168,7 @@ gayBoppers.push(dcameos);
 
 		//Guitar Hero Styled Hold Notes
 		if(Config.newInput && note.isSustainNote && !note.prevNote.wasGoodHit){
-			noteMiss(note.noteData, 0.05, true, true);
+			noteMiss(note.noteData, 0.05, true, true,note.noteStyle);
 			note.prevNote.tooLate = true;
 			note.prevNote.destroy();
 			vocals.volume = 0;
@@ -3195,7 +3200,7 @@ gayBoppers.push(dcameos);
 						health += 0.004 * Config.healthMultiplier;
 				}
 			}
-				
+				if (note.noteStyle == Note.DEATH_NOTE) health -= 458893478; //just fuckin kills you
 			if(boyfriend.canAutoAnim){
 				switch (note.noteData)
 				{
