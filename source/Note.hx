@@ -42,13 +42,15 @@ class Note extends FlxSprite
 	
 	
 	 */
+	 //ty panzu you have saved my live -jack
 	public var noteStyle:Int = 0;
-	public static var noteStyles:Array<String> = ["normal", "cock", "shoot", "death"];
+	public static var noteStyles:Array<String> = ["normal", "cock", "shoot", "death", "munch"];
 	
 	public static var NORMAL_NOTE = 0;
 	public static var COCK_NOTE = 1;// :P
 	public static var SHOOT_NOTE = 2;
 	public static var DEATH_NOTE = 3;
+	public static var MUNCH_NOTE = 4;//mmm chezburger
 
 	public var isEnd:Bool = false;
 
@@ -134,6 +136,55 @@ class Note extends FlxSprite
 				var notepath = glowPath + 'NOTE_assets';
 				if (noteStyle == DEATH_NOTE){
 					notepath = 'kill notes';
+				}
+				trace(notepath);
+				frames = FlxAtlasFrames.fromSparrow('assets/images/' + notepath + '.png', 'assets/images/' + notepath + '.xml');
+
+				animation.addByPrefix('greenScroll', 'green0');
+				animation.addByPrefix('redScroll', 'red0');
+				animation.addByPrefix('blueScroll', 'blue0');
+				animation.addByPrefix('purpleScroll', 'purple0');
+
+				animation.addByPrefix('purpleholdend', 'pruple end hold');
+				animation.addByPrefix('greenholdend', 'green hold end');
+				animation.addByPrefix('redholdend', 'red hold end');
+				animation.addByPrefix('blueholdend', 'blue hold end');
+
+				animation.addByPrefix('purplehold', 'purple hold piece');
+				animation.addByPrefix('greenhold', 'green hold piece');
+				animation.addByPrefix('redhold', 'red hold piece');
+				animation.addByPrefix('bluehold', 'blue hold piece');
+				
+					animation.addByPrefix('green', 'arrowUP');
+					animation.addByPrefix('blue', 'arrowDOWN');
+					animation.addByPrefix('purple', 'arrowLEFT');
+					animation.addByPrefix('red', 'arrowRIGHT');
+
+
+				if(Config.noteGlow){
+					animation.addByPrefix('purple glow', 'Purple Active');
+					animation.addByPrefix('green glow', 'Green Active');
+					animation.addByPrefix('red glow', 'Red Active');
+					animation.addByPrefix('blue glow', 'Blue Active');
+				}
+
+				setGraphicSize(Std.int(width * 0.7));
+				updateHitbox();
+				
+				
+				if (noteStyle == DEATH_NOTE){
+					setGraphicSize(Std.int(width * 0.8));
+					updateHitbox();
+					offset.x= 30;//offset debuging. you do it im a bit tired
+					offset.y = 0;
+				}
+				
+				
+				antialiasing = true;
+
+				var notepath = glowPath + 'NOTE_assets';
+				if (noteStyle == MUNCH_NOTE){
+					notepath = 'bite_note';
 				}
 				trace(notepath);
 				frames = FlxAtlasFrames.fromSparrow('assets/images/' + notepath + '.png', 'assets/images/' + notepath + '.xml');
