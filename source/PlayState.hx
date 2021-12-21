@@ -971,8 +971,8 @@ gayBoppers.push(dcameos);
 				gf.x += 0;
 				gf.y += 1500;
 			case 'darkroom':
-				dad.y -= 0;
-				dad.x += -248;
+				dad.y -= 119;
+				dad.x += -300;
 				gf.x += 0;
 				gf.y += 1500;
 			case 'spooky':

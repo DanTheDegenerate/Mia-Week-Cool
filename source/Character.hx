@@ -257,18 +257,18 @@ class Character extends FlxSprite
 				tex = FlxAtlasFrames.fromSparrow('assets/images/b3_gf_phase_3.png', 'assets/images/b3_gf_phase_3.xml');
 				frames = tex;
 				animation.addByPrefix('idle', 'GF_Idle', 24, false);
-				animation.addByPrefix('singUP', 'GF_UpPose', 24);
-				animation.addByPrefix('singRIGHT', 'GF_RightPose', 24);
-				animation.addByPrefix('singDOWN', 'GF_DownPose', 24);
-				animation.addByPrefix('singLEFT', 'GF_LeftPose', 24);
-				animation.addByPrefix('talk1', 'GF_TALK_START', 24);
+				animation.addByPrefix('singUP', 'GF_Up', 24);
+				animation.addByPrefix('singRIGHT', 'GF_Right', 24);
+				animation.addByPrefix('singDOWN', 'GF_Down', 24);
+				animation.addByPrefix('singLEFT', 'GF_Left', 24);
+				animation.addByPrefix('bite', 'GF_Bite', 24);
 
 				addOffset('idle');
-				addOffset("singUP", -6, 163);
-				addOffset("singRIGHT", -75, -106);
-				addOffset("singLEFT", 456, -35);
-				addOffset("singDOWN", -76, -247);
-				addOffset("talk1", 0, 0);
+				addOffset("singUP", 25, 169);
+				addOffset("singRIGHT", -145, -123);
+				addOffset("singLEFT", 357, -76);
+				addOffset("singDOWN", -110, -315);
+				addOffset("bite", 0, 0);
 	
 				playAnim('idle');
 			case 'spooky':
