@@ -78,7 +78,7 @@ class FreeplayState extends MusicBeatState
 			addWeek(['mi-opera', 'mia battle', 'diva'], 7, ['mia']);
 
 		if (StoryMenuState.weekUnlocked[8] || isDebug)
-			addWeek(['fang', 'succ', 'nom'], 8, ['hungrygf', 'susgf', 'vampgf']);
+			addWeek(['Fang', 'Succ', 'Nom'], 8, ['hungrygf', 'susgf', 'vampgf']);
 
 
 

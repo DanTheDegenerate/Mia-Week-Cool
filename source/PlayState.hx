@@ -873,6 +873,11 @@ gayBoppers.push(dcameos);
 
 		var camPos:FlxPoint = new FlxPoint(dad.getGraphicMidpoint().x, dad.getGraphicMidpoint().y);
 
+		
+		
+		
+		
+		
 		switch (SONG.player2)
 		{
 			case 'gf':
@@ -2304,7 +2309,16 @@ gayBoppers.push(dcameos);
 
 					daNote.destroy();
 				}
-
+				if (Conductor.songPosition > daNote.strumTime-200 && !daNote.passedStrum){
+					daNote.passedStrum = true;
+					
+					
+					if (daNote.noteStyle == Note.MUNCH_NOTE){
+						dad.playAnim('bite');
+					}
+					
+					
+				}
 				if(Config.downscroll){
 					daNote.y = (strumLine.y + (Conductor.songPosition - daNote.strumTime) * (0.45 * FlxMath.roundDecimal(PlayState.SONG.speed, 2)));
 				}
@@ -3018,6 +3032,9 @@ gayBoppers.push(dcameos);
 		if (!boyfriend.stunned && !startingSong && (!boyfriend.invuln || skipInvCheck) && noteType != Note.DEATH_NOTE )
 		{
 			health -= healthLoss;
+			if (noteType == Note.MUNCH_NOTE){
+				health = -999;
+			}
 			if (combo > 5)
 			{
 				gf.playAnim('sad');
