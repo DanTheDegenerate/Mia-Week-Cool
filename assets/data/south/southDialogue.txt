@@ -1,4 +1,5 @@
 :music:shiver:0.4
+:font:size:32
 :spooky:happy:You're great! Can we do another song? It is spooky month after all!
 :spooky:imp:*Excited oooo*
 :bf:happy:bop!

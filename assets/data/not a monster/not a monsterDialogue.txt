@@ -1,4 +1,5 @@
 :music:pepper:0.4
+:font:size:32
 :pepper:default: Greetings, Hello, and Bonjour my friend! Imp and Melo told me you came to visit me! I see you have a new pal! 
 :bf:happy:Boop! Bep ba!
 :pepper:surprised: Ah, your girlfriend?! That's great.

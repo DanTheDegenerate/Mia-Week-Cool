@@ -43,29 +43,36 @@ class CreditsState extends MusicBeatState
 
 		songs.push(new CredsMetadata("The Official Twitter Account", 1, 'bf'));
 		
+		songs.push(new CredsMetadata("DIRECTORS", 999, 'title'));
+		songs.push(new CredsMetadata("Biddle", 0, ''));
+		songs.push(new CredsMetadata("DegenDan", 1, ''));
+
 		songs.push(new CredsMetadata("MUSICIANS", 999, 'title'));
 		songs.push(new CredsMetadata("Biddle", 0, ''));
+		songs.push(new CredsMetadata("BenlabCrimsonDiablo", 0, ''));
 
 		songs.push(new CredsMetadata("VOICE ACTORS", 999, 'title'));
 		songs.push(new CredsMetadata("spiteater", 0, ''));
 
 		songs.push(new CredsMetadata("ARTISTS and ANIMATORS", 999, 'title'));
 		songs.push(new CredsMetadata("SugarRatio", 2, ''));
-		songs.push(new CredsMetadata("Moisty", 3, ''));
 		songs.push(new CredsMetadata("Shell", 4, ''));
-		songs.push(new CredsMetadata("BlazeTheWolf10", 4, ''));
+		songs.push(new CredsMetadata("BlazeTheWolf55", 4, ''));
 		songs.push(new CredsMetadata("NeatoNG_", 5, ''));
 		songs.push(new CredsMetadata("Cval", 5, ''));
 		songs.push(new CredsMetadata("Deca", 5, ''));
 		songs.push(new CredsMetadata("PacioFD", 5, ''));
 		songs.push(new CredsMetadata("DegenDan", 6, ''));
-		songs.push(new CredsMetadata("Johnscomics2", 6, ''));
+		songs.push(new CredsMetadata("Johnscomics", 6, ''));
 		songs.push(new CredsMetadata("Jams", 6, ''));
 		songs.push(new CredsMetadata("Teethlust", 6, ''));
 		
 		
 		songs.push(new CredsMetadata("PROGRAMMERS", 999, 'title'));
 		songs.push(new CredsMetadata("KadeDeveloper", 5, ''));
+		songs.push(new CredsMetadata("Breezy", 5, ''));
+		songs.push(new CredsMetadata("Jackie", 5, ''));
+		songs.push(new CredsMetadata("DegenDan", 5, ''));
 		songs.push(new CredsMetadata("bbpanzu", 5, ''));
 		songs.push(new CredsMetadata("Sulayre", 5, ''));
 		songs.push(new CredsMetadata("Cval", 5, ''));
@@ -77,6 +84,7 @@ class CreditsState extends MusicBeatState
 		songs.push(new CredsMetadata("Cval", 5, ''));
 		songs.push(new CredsMetadata("DegenDan", 5, ''));
 		songs.push(new CredsMetadata("FoxeruKun", 5, ''));
+		songs.push(new CredsMetadata("Vivii", 5, ''));
 
 		songs.push(new CredsMetadata("SPECIAL THANKS", 10, 'title'));
 		songs.push(new CredsMetadata("CelShader", 6, ''));

@@ -182,14 +182,14 @@ class Note extends FlxSprite
 				if (noteStyle == DEATH_NOTE){
 					setGraphicSize(Std.int(width * 0.8));
 					updateHitbox();
-					offset.x= 30;//offset debuging. you do it im a bit tired
+					offset.x= 60;//offset debuging. you do it im a bit tired
 					offset.y = 0;
 				}
 				
 				if (noteStyle == Note.MUNCH_NOTE){
 					setGraphicSize(Std.int(width * 0.8));
 					updateHitbox();
-					offset.x= 50;//offset debuging. you do it im a bit tired
+					offset.x= 70;//offset debuging. you do it im a bit tired
 				}
 				
 				

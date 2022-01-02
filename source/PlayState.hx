@@ -2315,6 +2315,7 @@ gayBoppers.push(dcameos);
 					
 					if (daNote.noteStyle == Note.MUNCH_NOTE){
 						dad.playAnim('bite');
+						boyfriend.playAnim('dodge');
 					}
 					
 					

@@ -1,4 +1,5 @@
 :music:dad:0.4
+:font:size:32
 :dad:smug:Hello, boy.
 :bf:depressed:boop...
 :dad:smug:Is this your first time in front of hundreds of people? 

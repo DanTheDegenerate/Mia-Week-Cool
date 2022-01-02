@@ -1,4 +1,5 @@
 :music:mia:0.4
+:font:size:32
 :mia:nervous: Oh... you're here. I... didn't quite expect you to show up yet.
 :bf:surprised: ...Bap?
 :mia:nervous: ...Nevermind, don't worry about it. 
