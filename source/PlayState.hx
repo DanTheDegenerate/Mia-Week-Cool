@@ -926,10 +926,6 @@ gayBoppers.push(dcameos);
 			case "susgf":
 				dad.x -= -63;
 				dad.y += -250;
-			case "gftalk":
-				dad.x += 200;
-				dad.y += 401;
-				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
 			case "vampgf":
 				dad.x += 0;
 				dad.y += -1;
@@ -3380,8 +3376,6 @@ gayBoppers.push(dcameos);
 
 	override function stepHit()
 	{
-		if (curSong == "Nom" )
-
 		if (SONG.needsVoices)
 		{
 			if (vocals.time > Conductor.songPosition + 20 || vocals.time < Conductor.songPosition - 20)
@@ -3454,20 +3448,14 @@ gayBoppers.push(dcameos);
 			}
 		}
 
-
-		//GF Talk!!!!!
-		if (curSong.toLowerCase() == 'nom' && curBeat == 16)
+		if (SONG.song.toLowerCase() == 'nom')
+		{
+			if (curBeat == 0)
 			{
-					remove(dad);
-					dad = new Character(dad.x - 200, dad.y - 400, 'vampgf');
-					add(dad);
+				dad.playAnim('GF_TALK_START', true);
 			}
-
-		if (curSong.toLowerCase() == 'nom' && curBeat == 1)
-			{
-				dad.playAnim('talk', true);
-			}
-
+		}
+		
 		// HARDCODING FOR MILF ZOOMS!
 		if (curSong.toLowerCase() == 'milf' && curBeat >= 168 && curBeat <= 200 && camZooming && FlxG.camera.zoom < 1.35)
 		{
