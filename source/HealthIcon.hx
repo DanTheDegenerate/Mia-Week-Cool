@@ -47,6 +47,7 @@ class HealthIcon extends FlxSprite
 			animation.add('hungrygf', [58, 57, 56], 0, false, isPlayer);
 			animation.add('susgf', [29, 28, 27], 0, false, isPlayer);
 			animation.add('vampgf', [50, 51, 52], 0, false, isPlayer);
+			animation.add('gftalk', [50, 51, 52], 0, false, isPlayer);
 			animation.add('gf-car', [54, 53, 55], 0, false, isPlayer);
 			animation.add('gf-pixel', [16, 49, 35], 0, false, isPlayer);
 			animation.add('week2gf', [16, 49, 35], 0, false, isPlayer);
