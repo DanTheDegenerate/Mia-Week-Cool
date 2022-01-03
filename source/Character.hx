@@ -221,14 +221,6 @@ class Character extends FlxSprite
 				addOffset("singDOWN", 62, 8);
 	
 				playAnim('idle');
-			case 'gftalk':
-				tex = FlxAtlasFrames.fromSparrow('assets/images/GF_TALK.png', 'assets/images/GF_TALK.xml');
-				frames = tex;
-				animation.addByPrefix('idle', 'RATIO', 24, false);
-				animation.addByPrefix('talk', 'GF_TALK_START', 24, false);
-				addOffset('idle');
-
-				playAnim('idle');
 			case 'hungrygf':
 				tex = FlxAtlasFrames.fromSparrow('assets/images/B3_GF_Phase_1_Assets.png', 'assets/images/B3_GF_Phase_1_Assets.xml');
 				frames = tex;
