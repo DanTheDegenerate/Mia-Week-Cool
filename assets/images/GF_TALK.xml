@@ -131,5 +131,5 @@
 	<SubTexture name="GF_TALK_START0126" x="923" y="3222" width="307" height="522" frameX="-15" frameY="-18" frameWidth="359" frameHeight="541"/>
 	<SubTexture name="GF_TALK_START0127" x="923" y="3222" width="307" height="522" frameX="-15" frameY="-18" frameWidth="359" frameHeight="541"/>
 	<SubTexture name="GF_TALK_START0128" x="923" y="3222" width="307" height="522" frameX="-15" frameY="-18" frameWidth="359" frameHeight="541"/>
-	<SubTexture name="GF_TALK_START0129" x="923" y="3222" width="307" height="522" frameX="-15" frameY="-18" frameWidth="359" frameHeight="541"/>
+	<SubTexture name="RATIO" x="923" y="3222" width="307" height="522" frameX="-15" frameY="-18" frameWidth="359" frameHeight="541"/>
 </TextureAtlas>
