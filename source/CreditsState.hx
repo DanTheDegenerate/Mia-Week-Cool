@@ -59,9 +59,16 @@ class CreditsState extends MusicBeatState
 		songs.push(new CredsMetadata("Shell", 4, ''));
 		songs.push(new CredsMetadata("BlazeTheWolf55", 4, ''));
 		songs.push(new CredsMetadata("NeatoNG_", 5, ''));
+		songs.push(new CredsMetadata("Random Inc.", 5, ''));
+		songs.push(new CredsMetadata("Faye", 5, ''));
 		songs.push(new CredsMetadata("Cval", 5, ''));
+		songs.push(new CredsMetadata("Xooplord", 5, ''));
+		songs.push(new CredsMetadata("BizarreEthen", 5, ''));
+		songs.push(new CredsMetadata("EthanTheDoodler", 5, ''));
 		songs.push(new CredsMetadata("Deca", 5, ''));
 		songs.push(new CredsMetadata("PacioFD", 5, ''));
+		songs.push(new CredsMetadata("Squidley", 5, ''));
+		songs.push(new CredsMetadata("Yabo", 5, ''));
 		songs.push(new CredsMetadata("DegenDan", 6, ''));
 		songs.push(new CredsMetadata("Johnscomics", 6, ''));
 		songs.push(new CredsMetadata("Jams", 6, ''));
@@ -75,6 +82,7 @@ class CreditsState extends MusicBeatState
 		songs.push(new CredsMetadata("DegenDan", 5, ''));
 		songs.push(new CredsMetadata("bbpanzu", 5, ''));
 		songs.push(new CredsMetadata("Sulayre", 5, ''));
+		songs.push(new CredsMetadata("Snowy", 5, ''));
 		songs.push(new CredsMetadata("Cval", 5, ''));
 		
 		songs.push(new CredsMetadata("WRITERS", 999, 'title'));
@@ -83,6 +91,7 @@ class CreditsState extends MusicBeatState
 		songs.push(new CredsMetadata("CHARTERS", 10, 'title'));
 		songs.push(new CredsMetadata("Cval", 5, ''));
 		songs.push(new CredsMetadata("DegenDan", 5, ''));
+		songs.push(new CredsMetadata("DiscWraith", 5, ''));
 		songs.push(new CredsMetadata("FoxeruKun", 5, ''));
 		songs.push(new CredsMetadata("Vivii", 5, ''));
 
@@ -269,7 +278,30 @@ class CreditsState extends MusicBeatState
 				FlxG.openURL('https://twitter.com/jams3d');
 				case "Moisty":
 				FlxG.openURL('https://youtube.com/channel/UC7M0aIL8-eVSJker9p0OyUQ');
-
+				case "Jackie":
+				FlxG.openURL('https://twitter.com/Jack_exe_lol');
+				case "Faye":
+				FlxG.openURL('https://twitter.com/JusttFaye');
+				case "Xooplord":
+				FlxG.openURL('https://twitter.com/xooplord');
+				case "BizarreEthen":
+				FlxG.openURL('https://twitter.com/BizarreEthen');
+				case "Squidley":
+				FlxG.openURL('https://gamejolt.com/@squidleey');
+				case "BenlabCrimsonDiablo":
+				FlxG.openURL('https://soundcloud.com/benlabthesecond?ref=clipboard&p=a&c=1&si=4f0e902b0beb435d85390f2cbef9a741&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing');
+				case 'Snowy':
+				FlxG.openURL('https://gamejolt.com/@voids_');
+				case 'Random Inc.':
+				FlxG.openURL('https://twitter.com/RandomIncIsDead');
+				case 'EthanTheDoodler':
+				FlxG.openURL('https://twitter.com/D00dlerEthan');
+				case 'Breezy':
+				FlxG.openURL('https://twitter.com/BreezyMelee?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor');
+				case 'Yabo':
+				FlxG.openURL('https://gamejolt.com/@itsYabo');
+			
+				
 				default:
 					if (songs[curSelected].songCharacter != "title")
 						{
