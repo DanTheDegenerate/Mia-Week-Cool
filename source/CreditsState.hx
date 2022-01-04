@@ -302,7 +302,7 @@ class CreditsState extends MusicBeatState
 				case 'EthanTheDoodler':
 				FlxG.openURL('https://twitter.com/D00dlerEthan');
 				case 'Breezy':
-				FlxG.openURL('https://twitter.com/BreezyMelee?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor');
+				FlxG.openURL('https://twitter.com/BreezyMelee');
 				case 'Yabo':
 				FlxG.openURL('https://gamejolt.com/@itsYabo');
 				case 'Vivii':
