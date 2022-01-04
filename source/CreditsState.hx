@@ -317,6 +317,8 @@ class CreditsState extends MusicBeatState
 				FlxG.openURL('https://twitter.com/paciofdd');
 				case 'Penkaru':
 				FlxG.openURL('https://twitter.com/pex_ton');
+				case 'SugarRatio':
+				FlxG.openURL('https://twitter.com/sugarratio');
 
 			
 				
