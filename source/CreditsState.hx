@@ -50,10 +50,14 @@ class CreditsState extends MusicBeatState
 		songs.push(new CredsMetadata("MUSICIANS", 999, 'title'));
 		songs.push(new CredsMetadata("Biddle", 0, ''));
 		songs.push(new CredsMetadata("BenlabCrimsonDiablo", 0, ''));
+		songs.push(new CredsMetadata("Penkaru", 0, ''));
 
 		songs.push(new CredsMetadata("VOICE ACTORS", 999, 'title'));
 		songs.push(new CredsMetadata("spiteater", 0, ''));
 		songs.push(new CredsMetadata("Illuztriouz3", 0, ''));
+		songs.push(new CredsMetadata("SugarRatio", 0, ''));
+		songs.push(new CredsMetadata("LunaticHugo3", 0, ''));
+
 
 
 		songs.push(new CredsMetadata("ARTISTS and ANIMATORS", 999, 'title'));
@@ -76,7 +80,6 @@ class CreditsState extends MusicBeatState
 		songs.push(new CredsMetadata("Jams", 6, ''));
 		songs.push(new CredsMetadata("Teethlust", 6, ''));
 		songs.push(new CredsMetadata("Ito", 6, ''));
-		songs.push(new CredsMetadata("Penkaru", 6, ''));
 		
 		
 		songs.push(new CredsMetadata("PROGRAMMERS", 999, 'title'));
@@ -96,7 +99,6 @@ class CreditsState extends MusicBeatState
 		songs.push(new CredsMetadata("Cval", 5, ''));
 		songs.push(new CredsMetadata("DegenDan", 5, ''));
 		songs.push(new CredsMetadata("DiscWraith", 5, ''));
-		songs.push(new CredsMetadata("Snowy", 5, ''));
 		songs.push(new CredsMetadata("Foxeru", 5, ''));
 		songs.push(new CredsMetadata("Vivii", 5, ''));
 
@@ -320,6 +322,10 @@ class CreditsState extends MusicBeatState
 				FlxG.openURL('https://twitter.com/pex_ton');
 				case 'SugarRatio':
 				FlxG.openURL('https://twitter.com/sugarratio');
+				case 'Foodieti':
+				FlxG.openURL('https://twitter.com/foodieti');
+				case 'LunaticHugo3':
+				FlxG.openURL('https://twitter.com/lunatichugo?s=21');
 
 			
 				
