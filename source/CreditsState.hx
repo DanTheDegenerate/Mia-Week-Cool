@@ -99,6 +99,7 @@ class CreditsState extends MusicBeatState
 		songs.push(new CredsMetadata("Cval", 5, ''));
 		songs.push(new CredsMetadata("DegenDan", 5, ''));
 		songs.push(new CredsMetadata("DiscWraith", 5, ''));
+		songs.push(new CredsMetadata("Snowy", 5, ''));
 		songs.push(new CredsMetadata("Foxeru", 5, ''));
 		songs.push(new CredsMetadata("Vivii", 5, ''));
 
