@@ -51,6 +51,7 @@ class CreditsState extends MusicBeatState
 		songs.push(new CredsMetadata("Biddle", 0, ''));
 		songs.push(new CredsMetadata("BenlabCrimsonDiablo", 0, ''));
 		songs.push(new CredsMetadata("Penkaru", 0, ''));
+		songs.push(new CredsMetadata("Foodieti", 0, ''));
 
 		songs.push(new CredsMetadata("VOICE ACTORS", 999, 'title'));
 		songs.push(new CredsMetadata("spiteater", 0, ''));
