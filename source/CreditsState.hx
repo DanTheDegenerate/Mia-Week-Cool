@@ -53,17 +53,19 @@ class CreditsState extends MusicBeatState
 
 		songs.push(new CredsMetadata("VOICE ACTORS", 999, 'title'));
 		songs.push(new CredsMetadata("spiteater", 0, ''));
+		songs.push(new CredsMetadata("Illuztriouz3", 0, ''));
+
 
 		songs.push(new CredsMetadata("ARTISTS and ANIMATORS", 999, 'title'));
 		songs.push(new CredsMetadata("SugarRatio", 2, ''));
-		songs.push(new CredsMetadata("Shell", 4, ''));
+		songs.push(new CredsMetadata("Shellynn", 4, ''));
 		songs.push(new CredsMetadata("BlazeTheWolf55", 4, ''));
 		songs.push(new CredsMetadata("NeatoNG_", 5, ''));
 		songs.push(new CredsMetadata("Random Inc.", 5, ''));
 		songs.push(new CredsMetadata("JustFaye", 5, ''));
 		songs.push(new CredsMetadata("Cval", 5, ''));
 		songs.push(new CredsMetadata("Xooplord", 5, ''));
-		songs.push(new CredsMetadata("BizarreEthen", 5, ''));
+		songs.push(new CredsMetadata("Bizarre_Ethen", 5, ''));
 		songs.push(new CredsMetadata("EthanTheDoodler", 5, ''));
 		songs.push(new CredsMetadata("Deca", 5, ''));
 		songs.push(new CredsMetadata("PacioFD", 5, ''));
@@ -73,6 +75,8 @@ class CreditsState extends MusicBeatState
 		songs.push(new CredsMetadata("Johnscomics", 6, ''));
 		songs.push(new CredsMetadata("Jams", 6, ''));
 		songs.push(new CredsMetadata("Teethlust", 6, ''));
+		songs.push(new CredsMetadata("Ito", 6, ''));
+		songs.push(new CredsMetadata("Penkaru", 6, ''));
 		
 		
 		songs.push(new CredsMetadata("PROGRAMMERS", 999, 'title'));
@@ -92,12 +96,13 @@ class CreditsState extends MusicBeatState
 		songs.push(new CredsMetadata("Cval", 5, ''));
 		songs.push(new CredsMetadata("DegenDan", 5, ''));
 		songs.push(new CredsMetadata("DiscWraith", 5, ''));
-		songs.push(new CredsMetadata("FoxeruKun", 5, ''));
+		songs.push(new CredsMetadata("Foxeru", 5, ''));
 		songs.push(new CredsMetadata("Vivii", 5, ''));
 
 		songs.push(new CredsMetadata("SPECIAL THANKS", 10, 'title'));
 		songs.push(new CredsMetadata("CelShader", 6, ''));
 		songs.push(new CredsMetadata("ayybeff", 6, ''));
+	        songs.push(new CredsMetadata("Penkaru", 6, ''));
 		var isDebug:Bool = true;
 
 		/*if (StoryMenuState.weekUnlocked[2] || isDebug)
@@ -260,7 +265,7 @@ class CreditsState extends MusicBeatState
 				FlxG.openURL('https://twitter.com/b3fnf');
 				case "Cval":
 				FlxG.openURL('https://twitter.com/cval_brown');
-				case "Shell":
+				case "Shellynn":
 				FlxG.openURL('https://twitter.com/Sh3llynn');
 				case "Deca":
 				FlxG.openURL('https://twitter.com/TheSculpturema1');
@@ -284,7 +289,7 @@ class CreditsState extends MusicBeatState
 				FlxG.openURL('https://twitter.com/JusttFaye');
 				case "Xooplord":
 				FlxG.openURL('https://twitter.com/xooplord');
-				case "BizarreEthen":
+				case "Bizarre_Ethen":
 				FlxG.openURL('https://twitter.com/BizarreEthen');
 				case "Squidley":
 				FlxG.openURL('https://gamejolt.com/@squidleey');
@@ -302,6 +307,17 @@ class CreditsState extends MusicBeatState
 				FlxG.openURL('https://gamejolt.com/@itsYabo');
 				case 'Vivii':
 				FlxG.openURL('https://twitter.com/Glitchy2260');
+				case 'Ito':
+				FlxG.openURL('https://twitter.com/ItoSaihara_');
+				case 'Illuztriouz3':
+				FlxG.openURL('https://twitter.com/RealIlluztriouz');
+				case 'Foxeru':
+				FlxG.openURL('https://twitter.com/foxerukun');
+				case 'PacioFD':
+				FlxG.openURL('https://twitter.com/paciofdd');
+				case 'Penkaru':
+				FlxG.openURL('https://twitter.com/pex_ton');
+
 			
 				
 				default:
