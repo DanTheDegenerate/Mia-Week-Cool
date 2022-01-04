@@ -61,6 +61,8 @@ class CreditsState extends MusicBeatState
 
 
 		songs.push(new CredsMetadata("ARTISTS and ANIMATORS", 999, 'title'));
+		songs.push(new CredsMetadata("Jams", 6, ''));
+		songs.push(new CredsMetadata("PacioFD", 5, ''));
 		songs.push(new CredsMetadata("SugarRatio", 2, ''));
 		songs.push(new CredsMetadata("Shellynn", 4, ''));
 		songs.push(new CredsMetadata("BlazeTheWolf55", 4, ''));
@@ -72,12 +74,10 @@ class CreditsState extends MusicBeatState
 		songs.push(new CredsMetadata("Bizarre_Ethen", 5, ''));
 		songs.push(new CredsMetadata("EthanTheDoodler", 5, ''));
 		songs.push(new CredsMetadata("Deca", 5, ''));
-		songs.push(new CredsMetadata("PacioFD", 5, ''));
 		songs.push(new CredsMetadata("Squidley", 5, ''));
 		songs.push(new CredsMetadata("Yabo", 5, ''));
 		songs.push(new CredsMetadata("DegenDan", 6, ''));
 		songs.push(new CredsMetadata("Johnscomics", 6, ''));
-		songs.push(new CredsMetadata("Jams", 6, ''));
 		songs.push(new CredsMetadata("Teethlust", 6, ''));
 		songs.push(new CredsMetadata("Ito", 6, ''));
 		
