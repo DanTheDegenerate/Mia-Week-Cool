@@ -60,7 +60,7 @@ class CreditsState extends MusicBeatState
 		songs.push(new CredsMetadata("BlazeTheWolf55", 4, ''));
 		songs.push(new CredsMetadata("NeatoNG_", 5, ''));
 		songs.push(new CredsMetadata("Random Inc.", 5, ''));
-		songs.push(new CredsMetadata("Faye", 5, ''));
+		songs.push(new CredsMetadata("JustFaye", 5, ''));
 		songs.push(new CredsMetadata("Cval", 5, ''));
 		songs.push(new CredsMetadata("Xooplord", 5, ''));
 		songs.push(new CredsMetadata("BizarreEthen", 5, ''));
@@ -280,7 +280,7 @@ class CreditsState extends MusicBeatState
 				FlxG.openURL('https://youtube.com/channel/UC7M0aIL8-eVSJker9p0OyUQ');
 				case "Jackie":
 				FlxG.openURL('https://twitter.com/Jack_exe_lol');
-				case "Faye":
+				case "JustFaye":
 				FlxG.openURL('https://twitter.com/JusttFaye');
 				case "Xooplord":
 				FlxG.openURL('https://twitter.com/xooplord');
@@ -300,6 +300,8 @@ class CreditsState extends MusicBeatState
 				FlxG.openURL('https://twitter.com/BreezyMelee?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor');
 				case 'Yabo':
 				FlxG.openURL('https://gamejolt.com/@itsYabo');
+				case 'Vivii':
+				FlxG.openURL('https://twitter.com/Glitchy2260');
 			
 				
 				default:
